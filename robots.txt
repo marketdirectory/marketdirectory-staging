@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /owner
+Disallow: /login
+Disallow: /signup
+Disallow: /reset-password
+Disallow: /submit-market
+
+Sitemap: https://cms.marketdirectory.co.uk/sitemap.xml

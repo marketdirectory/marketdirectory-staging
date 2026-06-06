@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarketDirectory.co.uk | UK Street & Flea Markets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      html.dark {
+        color-scheme: dark;
+      }
+
+      html.dark body {
+        background-color: #030712 !important;
+        color: #e5e7eb !important;
+      }
+
+      html.dark .bg-white {
+        background-color: #111827 !important;
+      }
+      html.dark .bg-gray-50 {
+        background-color: #030712 !important;
+      }
+      html.dark .bg-gray-100 {
+        background-color: #111827 !important;
+      }
+      html.dark .border-gray-100,
+      html.dark .border-gray-200,
+      html.dark .border-gray-300 {
+        border-color: #374151 !important;
+      }
+      html.dark .text-gray-900 {
+        color: #f9fafb !important;
+      }
+      html.dark .text-gray-800,
+      html.dark .text-gray-700 {
+        color: #e5e7eb !important;
+      }
+      html.dark .text-gray-600,
+      html.dark .text-gray-500 {
+        color: #9ca3af !important;
+      }
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+    <script>
+      (function () {
+        try {
+          var key = "md_theme";
+          var stored = localStorage.getItem(key);
+          var dark = stored ? stored === "dark" : false;
+          if (dark) {
+            document.documentElement.classList.add("dark");
+            document.documentElement.setAttribute("data-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            document.documentElement.setAttribute("data-theme", "light");
+          }
+        } catch (_) {}
+      })();
+    </script>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@googlemaps/js-api-loader": "https://esm.sh/@googlemaps/js-api-loader@1.16.2"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-Q6XWYTwi.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BDw2QHaF.css">
+</head>
+  <body class="bg-white text-slate-800 antialiased selection:bg-accent-500 selection:text-white transition-colors duration-300 dark:bg-gray-950 dark:text-gray-100">
+    <div id="root"></div>
+</body>
+</html>
