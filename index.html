@@ -71,6 +71,76 @@
         } catch (_) {}
       })();
     </script>
+    <script>
+      (function () {
+        var recoveryKey = "marketdirectory_asset_recovery";
+        var assetPattern = /\/assets\/[^?#]+\.(?:js|mjs|css)(?:[?#].*)?$/i;
+        var errorPattern = /failed to fetch dynamically imported module|loading chunk|chunkloaderror|failed to load module script|expected a javascript-or-wasm module script|mime type/i;
+
+        function assetUrl(value) {
+          if (!value) return "";
+          try {
+            return new URL(value, window.location.href).href;
+          } catch (_) {
+            return "";
+          }
+        }
+
+        function isAsset(value) {
+          var url = assetUrl(value);
+          return url ? assetPattern.test(new URL(url).pathname) : false;
+        }
+
+        function recover(reason, url) {
+          var failedUrl = assetUrl(url) || reason || "unknown";
+          var now = Date.now();
+          var previous = null;
+
+          try {
+            previous = JSON.parse(sessionStorage.getItem(recoveryKey) || "null");
+          } catch (_) {
+            previous = null;
+          }
+
+          if (previous && previous.url === failedUrl && now - Number(previous.at || 0) < 5 * 60 * 1000) {
+            return;
+          }
+
+          try {
+            sessionStorage.setItem(recoveryKey, JSON.stringify({ at: now, reason: reason, url: failedUrl }));
+          } catch (_) {}
+
+          var next = new URL(window.location.href);
+          next.searchParams.set("md_asset_reload", String(now));
+          window.location.replace(next.toString());
+        }
+
+        window.addEventListener("error", function (event) {
+          var target = event && event.target;
+          if (target && target !== window) {
+            var tagName = String(target.tagName || "").toUpperCase();
+            var url = tagName === "SCRIPT" ? target.src : tagName === "LINK" ? target.href : "";
+            if (isAsset(url)) {
+              recover("asset-load-error", url);
+              return;
+            }
+          }
+
+          var message = String((event && event.message) || "");
+          if (errorPattern.test(message)) {
+            recover("module-runtime-error", window.location.href);
+          }
+        }, true);
+
+        window.addEventListener("unhandledrejection", function (event) {
+          var reason = event && event.reason;
+          var message = String((reason && (reason.message || reason.toString())) || reason || "");
+          if (errorPattern.test(message)) {
+            recover("module-promise-error", window.location.href);
+          }
+        });
+      })();
+    </script>
 
   <script type="importmap">
 {

@@ -1,7 +1,8 @@
 {
   "sourceRepository": "marketdirectory/marketdirectory",
-  "sourceSha": "720b2b94815e48fc59835af51497ffb45e50cbbd",
+  "sourceSha": "eef6e66233f7c5afbf7dc5ae76f97617e955ed4d",
   "distBundle": "assets/index-BMP_zIAN.js",
   "distCss": "assets/index-ZnfmRpuC.css",
-  "deployedAt": "2026-06-15T13:51:00Z"
+  "assetRetentionDeployments": 8,
+  "deployedAt": "2026-06-15T14:21:32Z"
 }

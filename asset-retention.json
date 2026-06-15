@@ -1,0 +1,14 @@
+{
+  "retentionDeployments": 8,
+  "updatedAt": "2026-06-15T14:21:32.658Z",
+  "deployments": [
+    {
+      "sourceSha": "eef6e66233f7c5afbf7dc5ae76f97617e955ed4d",
+      "deployedAt": "2026-06-15T14:21:32.658Z",
+      "assets": [
+        "assets/index-BMP_zIAN.js",
+        "assets/index-ZnfmRpuC.css"
+      ]
+    }
+  ]
+}
