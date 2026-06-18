@@ -1,7 +1,15 @@
 {
   "retentionDeployments": 8,
-  "updatedAt": "2026-06-16T12:29:23.060Z",
+  "updatedAt": "2026-06-18T02:03:59.196Z",
   "deployments": [
+    {
+      "sourceSha": "33ab84ba0333591dc290b41e5b93eeace432d957",
+      "deployedAt": "2026-06-18T02:03:59.195Z",
+      "assets": [
+        "assets/index-DMCIhlxt.css",
+        "assets/index-EXK77mp6.js"
+      ]
+    },
     {
       "sourceSha": "84519b6467130c544ee6899b8756ccf4d2ebabab",
       "deployedAt": "2026-06-16T12:29:23.059Z",
