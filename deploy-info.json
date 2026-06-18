@@ -1,8 +1,8 @@
 {
   "sourceRepository": "marketdirectory/marketdirectory",
-  "sourceSha": "2bd07fdbc3da04727d081f1f5b75860587510661",
-  "distBundle": "assets/index-CnA5XToR.js",
-  "distCss": "assets/index-DlXqxIcH.css",
+  "sourceSha": "2a86f969f7dccab6db873da78dde792301fabb79",
+  "distBundle": "assets/index-BbaZ6Bte.js",
+  "distCss": "assets/index-CFATBhgC.css",
   "assetRetentionDeployments": 8,
-  "deployedAt": "2026-06-18T02:48:42Z"
+  "deployedAt": "2026-06-18T03:21:32Z"
 }
