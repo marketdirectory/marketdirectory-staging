@@ -54,6 +54,13 @@
           -ms-overflow-style: none;  /* IE and Edge */
           scrollbar-width: none;  /* Firefox */
       }
+
+      /* Admin Users & Roles: keep navigation compact and prioritise the review workspace. */
+      @media (min-width: 1280px) {
+        div[class*="xl:grid-cols-[minmax(0,0.9fr)_minmax(520px,1.1fr)]"] {
+          grid-template-columns: minmax(300px, 3fr) minmax(0, 7fr) !important;
+        }
+      }
     </style>
     <script>
       (function () {
