@@ -80,6 +80,41 @@
     </script>
     <script>
       (function () {
+        function reframeAdminTraderVisibility() {
+          if (!window.location.pathname.startsWith('/admin')) return;
+          var headings = document.querySelectorAll('h3');
+          headings.forEach(function (heading) {
+            if ((heading.textContent || '').trim() !== 'Public profile & discovery') return;
+            var section = heading.closest('section');
+            if (!section) return;
+
+            heading.textContent = 'Public profile controls';
+            var intro = heading.parentElement && heading.parentElement.querySelector('p');
+            if (intro) intro.textContent = 'Approved traders are added to public discovery automatically. Use these controls only for visibility exceptions and directory overrides.';
+
+            var checkbox = section.querySelector('input[type="checkbox"]');
+            var label = checkbox && checkbox.closest('label');
+            if (label) {
+              var blocks = label.querySelectorAll('span > span');
+              if (blocks[0]) blocks[0].textContent = 'Visible in public directory';
+              if (blocks[1]) blocks[1].textContent = 'Approved traders are visible by default. Turn this off only when you intentionally need to hide this trader from public browsing.';
+            }
+
+            var buttons = section.querySelectorAll('button');
+            buttons.forEach(function (button) {
+              if ((button.textContent || '').trim() === 'Save discovery') button.textContent = 'Save public settings';
+            });
+          });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          reframeAdminTraderVisibility();
+          new MutationObserver(reframeAdminTraderVisibility).observe(document.body, { childList: true, subtree: true });
+        });
+      })();
+    </script>
+    <script>
+      (function () {
         var recoveryKey = "marketdirectory_asset_recovery";
         var assetPattern = /\/assets\/[^?#]+\.(?:js|mjs|css)(?:[?#].*)?$/i;
         var errorPattern = /failed to fetch dynamically imported module|loading chunk|chunkloaderror|failed to load module script|expected a javascript-or-wasm module script|mime type/i;
