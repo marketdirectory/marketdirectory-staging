@@ -8,4 +8,4 @@ Disallow: /signup
 Disallow: /reset-password
 Disallow: /submit-market
 
-Sitemap: https://cms.marketdirectory.co.uk/sitemap.xml
+Sitemap: https://marketdirectory.co.uk/sitemap.xml
