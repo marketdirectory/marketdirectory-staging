@@ -1,0 +1,46 @@
+/* Scoped polish for the public market directory hero. */
+div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) {
+  box-shadow: none !important;
+}
+
+div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) > div.max-w-7xl {
+  padding-top: 1.2rem;
+  padding-bottom: 1rem;
+}
+
+div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) h1 {
+  max-width: 56rem;
+  font-size: clamp(2rem, 3.2vw, 2.8rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) div.mb-6:has(> h1) {
+  margin-bottom: 1rem;
+}
+
+/* Trader directory is navigation, not an active market-type filter. */
+div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) a[href="/traders"] {
+  border-color: #dfe5ec !important;
+  background: #ffffff !important;
+  color: #475467 !important;
+  box-shadow: none !important;
+}
+
+div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) a[href="/traders"]:hover {
+  border-color: #e85d04 !important;
+  color: #c64d03 !important;
+}
+
+@media (max-width: 767px) {
+  div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) > div.max-w-7xl {
+    padding-top: 1rem;
+    padding-bottom: 0.9rem;
+  }
+
+  div.border-b.border-slate-200.bg-white.shadow-sm:has(.md-market-browse-controls) h1 {
+    font-size: 2rem !important;
+    line-height: 1.1;
+  }
+}
