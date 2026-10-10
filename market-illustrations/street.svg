@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-label="Stylised, fictional market illustration"><defs><linearGradient id="bg" x2=".7" y2="1"><stop stop-color="#EEE8DD"/><stop offset="1" stop-color="#FAF6EC"/></linearGradient><pattern id="texture" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1.2" fill="#475B68" opacity=".07"/></pattern><clipPath id="clip"><rect width="960" height="600" rx="24"/></clipPath></defs><g clip-path="url(#clip)"><rect width="960" height="600" fill="url(#bg)"/><rect width="960" height="600" fill="url(#texture)"/><circle cx="767" cy="130" r="59" fill="#E9B456" opacity=".55"/><path d="M0 420q190-90 370 0t590-20v200H0z" fill="#475B68" opacity=".11"/><path d="M0 510q240-72 480 0t480 0v90H0z" fill="#475B68" opacity=".08"/>
+ <path d="M113 393q-17-90 31-144" stroke="#475B68" stroke-width="8" opacity=".1" fill="none"/><path d="M812 367q36-76 9-150" stroke="#475B68" stroke-width="8" opacity=".11" fill="none"/>
+ <ellipse cx="482" cy="495" rx="328" ry="36" fill="#475B68" opacity=".12"/>
+ <rect x="242" y="293" width="474" height="164" rx="13" fill="#D7745E"/><path d="M263 325h432v112H263z" fill="#F6E5CC"/>
+ <path d="M205 259l69-118h417l73 118z" fill="#475B68"/><path d="M220 253h525v77q-30 33-60 0-30 33-60 0-30 33-60 0-30 33-60 0-30 33-60 0-30 33-60 0-30 33-60 0-31 33-61 0-30 33-64 0z" fill="#D7745E"/>
+ <path d="M264 254v64q30 33 60 0v-64m60 0v64q30 33 60 0v-64m60 0v64q30 33 60 0v-64m60 0v64q30 33 60 0v-64m61 0v64q30 33 60 0v-64" fill="#E9B456" stroke="#475B68" stroke-opacity=".1" stroke-width="2"/>
+ <rect x="310" y="351" width="350" height="78" rx="14" fill="#F8DDB2"/>
+ <g><rect x="331" y="353" width="40" height="57" rx="8" fill="#BB6755"/><rect x="378" y="340" width="39" height="70" rx="8" fill="#DDB976"/><rect x="424" y="356" width="39" height="54" rx="8" fill="#779E86"/><path d="M340 357v42m47-52v56" stroke="#FFF1E2" stroke-width="5"/></g>
+ <path d="M295 428h375v29H295z" fill="#475B68"/><path d="M317 457v44m329-44v44" stroke="#475B68" stroke-width="21" stroke-linecap="round"/>
+ <path d="M159 470v-67q0-34 30-34t29 34v67" fill="#C3CCA8"/><path d="M170 420q-50-18-28-76m56 61q53-46 25-90" stroke="#68896D" stroke-width="11" fill="none" stroke-linecap="round"/>
+ <path d="M786 470v-67q0-34-28-34t-28 34v67" fill="#B6C89E"/><path d="M772 426q54-43 29-98m-43 88q-53-31-46-78" stroke="#68896D" stroke-width="11" fill="none" stroke-linecap="round"/>
+ <path d="M222 530q238 30 518 0" stroke="#475B68" stroke-width="5" opacity=".13" fill="none"/></g></svg>
