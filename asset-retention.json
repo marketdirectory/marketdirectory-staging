@@ -1,7 +1,15 @@
 {
   "retentionDeployments": 8,
-  "updatedAt": "2026-10-13T20:29:53.219Z",
+  "updatedAt": "2026-10-13T20:37:59.928Z",
   "deployments": [
+    {
+      "sourceSha": "a129feb5b5ad862570112be4a6d5385a8d6bded6",
+      "deployedAt": "2026-10-13T20:37:59.928Z",
+      "assets": [
+        "assets/index--IbKNqYM.css",
+        "assets/index-D1UdErN1.js"
+      ]
+    },
     {
       "sourceSha": "e3502bf6a9a1b02ee7ebdf7b43deb4df095e0334",
       "deployedAt": "2026-10-13T20:29:53.218Z",
@@ -56,14 +64,6 @@
       "assets": [
         "assets/index-DV-q65GX.js",
         "assets/index-VELamo4Q.css"
-      ]
-    },
-    {
-      "sourceSha": "258caedc320d25668e82ba7011fe9deabd5753e7",
-      "deployedAt": "2026-10-10T15:01:50.111Z",
-      "assets": [
-        "assets/index-CWfTl-ce.css",
-        "assets/index-OmOugSsJ.js"
       ]
     }
   ]
