@@ -9,6 +9,11 @@
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
+  # Observation only. This does not block any content. Inspect browser console
+  # and hosted response headers before designing an enforcing CSP. https: is
+  # deliberately permissive for current maps, Stripe, analytics and image hosts.
+  Header always set Content-Security-Policy-Report-Only "default-src 'self' https: data: blob:; object-src 'none'; base-uri 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data: blob:; connect-src 'self' https: wss:; frame-src https:; font-src 'self' https: data:"
+
   <FilesMatch "^index\.html$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"

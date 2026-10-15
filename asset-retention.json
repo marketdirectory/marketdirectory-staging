@@ -1,7 +1,44 @@
 {
   "retentionDeployments": 8,
-  "updatedAt": "2026-10-15T01:51:46.290Z",
+  "updatedAt": "2026-10-15T14:38:29.557Z",
   "deployments": [
+    {
+      "sourceSha": "eb42c8c315a2bbe2026fa48dfe7c0dfcee728d84",
+      "deployedAt": "2026-10-15T14:38:29.555Z",
+      "assets": [
+        "assets/AccountModerationPage-C914gXFa.js",
+        "assets/AdEditor-D0AzCGo_.js",
+        "assets/AdminAnalyticsPage-DoYnoZJV.js",
+        "assets/AdminDashboard-oP0UF-l1.js",
+        "assets/AdminLayout-CdQY0esS.js",
+        "assets/AdminLogin-Cq4WDeEM.js",
+        "assets/AdminSettings-C0NCekTK.js",
+        "assets/AdminSupportPage-vSdoL5Jc.js",
+        "assets/AdsPage-DX3DGuMC.js",
+        "assets/AuditPage-C4Yckhr8.js",
+        "assets/ban-CwaENEME.js",
+        "assets/BlogAdminPage-CRkA3_gM.js",
+        "assets/circle-x-CajZR4Ru.js",
+        "assets/ClaimRequestsPage-CkdK76GU.js",
+        "assets/FeaturedPlacementsPage-D8FxXmav.js",
+        "assets/ImportPipelinePage-DyPIeso9.js",
+        "assets/index-2mwvRskD.js",
+        "assets/index-CEuqO2m3.css",
+        "assets/MarketCorrectionsPage-ja4Ff_I-.js",
+        "assets/MarketEditorScheduleSafe-_MhE2Ycs.js",
+        "assets/MarketsPage-DQIhTyEV.js",
+        "assets/PromotionRequestsPage-BwJUPSqj.js",
+        "assets/refresh-ccw-DkjTENiX.js",
+        "assets/ReviewsPage-BrQQSKxf.js",
+        "assets/SeoPage-BHfi1nPz.js",
+        "assets/SubmissionsPage-DGxP9Dkz.js",
+        "assets/TaxonomyPage-BeW14Jzg.js",
+        "assets/TrustSafetyPage-Dh4Q60di.js",
+        "assets/UsersPage-DRu8kMPt.js",
+        "assets/VerificationQueuePage-CgDFHS_u.js",
+        "assets/wand-sparkles--EYFrvZQ.js"
+      ]
+    },
     {
       "sourceSha": "739a2f9a5ce39b2620f6368bc3330f826ee5de45",
       "deployedAt": "2026-10-15T01:51:46.288Z",
@@ -55,14 +92,6 @@
       "deployedAt": "2026-10-13T23:10:18.028Z",
       "assets": [
         "assets/index-BccEzJrX.js",
-        "assets/index-DD-7xQ4o.css"
-      ]
-    },
-    {
-      "sourceSha": "cb2d95db6088004a37009bd8fea26488500c2214",
-      "deployedAt": "2026-10-13T22:50:54.778Z",
-      "assets": [
-        "assets/index-C_VACUwY.js",
         "assets/index-DD-7xQ4o.css"
       ]
     }
