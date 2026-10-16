@@ -4,6 +4,11 @@
 </IfModule>
 
 <IfModule mod_headers.c>
+  # Staging deploy manifests must not be cached across release checks.
+  <FilesMatch "^(?:deploy-info|asset-retention)\.json$">
+    Header always set Cache-Control "no-store, max-age=0"
+  </FilesMatch>
+
   # Browser security defaults; CSP/HSTS require dedicated compatibility testing.
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
@@ -25,9 +30,22 @@
   </FilesMatch>
 </IfModule>
 
+# Defence in depth for an accidentally copied configuration/metadata file.
+# Never publish .env, git internals, private keys or local QA configurations.
+<FilesMatch "^(?:\.env(?:\..*)?|\.git(?:ignore|modules|attributes)?|\.npmrc|\.htaccess|\.htpasswd|.*\.(?:pem|key|p12|pfx))$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # Deny hidden configuration and git internals before SPA fallback or
+  # the existing-file shortcut; never depend only on FilesMatch.
+  RewriteRule "(^|/)\.(?:git(?:/|$)|env(?:\.[^/]+)?$|npmrc$|htaccess$|htpasswd$)" - [F,L,NC]
+  RewriteRule "\.(?:pem|key|p12|pfx)$" - [F,L,NC]
 
   RewriteRule ^index\.html$ - [L]
 
