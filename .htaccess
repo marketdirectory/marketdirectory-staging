@@ -59,3 +59,9 @@
 
   RewriteRule . /index.html [L]
 </IfModule>
+
+# STAGING-CSP-BASELINE-BEGIN -- staging output only; do not add to shared public/.htaccess
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "upgrade-insecure-requests; object-src 'none'; base-uri 'self'"
+</IfModule>
+# STAGING-CSP-BASELINE-END
