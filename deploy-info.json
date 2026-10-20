@@ -1,8 +1,10 @@
 {
   "sourceRepository": "marketdirectory/marketdirectory",
-  "sourceSha": "4d8d366f3643d283ffae0048a28479bac527a3dd",
-  "distBundle": "assets/index-C9-msZoj.js",
-  "distCss": "assets/index-CEuqO2m3.css",
+  "sourceSha": "42dc62e70d658e820310fa4a3ee87c6ca012a40b",
+  "distBundle": "assets/index-D3QPAjTZ.js",
+  "distCss": "assets/index-CkFaObxh.css",
   "assetRetentionDeployments": 8,
-  "deployedAt": "2026-10-16T13:01:00.047Z"
+  "deployedAt": "2026-10-20T16:28:44.600Z",
+  "reviewedBuildArtifactSha256": "dfe582ddc4b0bea74aa3e9ca4c5ccd1c8cb8530769dcf8d673bd6f12846deca6",
+  "reviewedFullDistInventorySha256": "784f41c812f6941378f6236d34429ce19a3846d29c5a25da6cf0e4f4ad4269e1"
 }

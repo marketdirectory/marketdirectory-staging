@@ -65,3 +65,9 @@
   Header always set Content-Security-Policy "upgrade-insecure-requests; object-src 'none'; base-uri 'self'"
 </IfModule>
 # STAGING-CSP-BASELINE-END
+
+# STAGING-SEO-NOINDEX-BEGIN -- staging output only
+<IfModule mod_headers.c>
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+# STAGING-SEO-NOINDEX-END

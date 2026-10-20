@@ -1,7 +1,44 @@
 {
   "retentionDeployments": 8,
-  "updatedAt": "2026-10-16T13:01:00.039Z",
+  "updatedAt": "2026-10-20T16:28:44.568Z",
   "deployments": [
+    {
+      "sourceSha": "42dc62e70d658e820310fa4a3ee87c6ca012a40b",
+      "deployedAt": "2026-10-20T16:28:44.557Z",
+      "assets": [
+        "assets/AccountModerationPage-CjyL7KeD.js",
+        "assets/AdEditor-DOM9_x7n.js",
+        "assets/AdminAnalyticsPage-BLGNCam8.js",
+        "assets/AdminDashboard-B9FFI9OK.js",
+        "assets/AdminLayout-B1dgqaLT.js",
+        "assets/AdminLogin-DqdfTlnS.js",
+        "assets/AdminSettings-C3hNln_m.js",
+        "assets/AdminSupportPage-BhYJ0sgl.js",
+        "assets/AdsPage-4vo1E1cC.js",
+        "assets/AuditPage-3TU1zr3Q.js",
+        "assets/ban-CCUlXYSh.js",
+        "assets/BlogAdminPage-rSSwNN3M.js",
+        "assets/circle-x-Be7REntD.js",
+        "assets/ClaimRequestsPage-CZoNHGV7.js",
+        "assets/FeaturedPlacementsPage-DEtkxgpV.js",
+        "assets/ImportPipelinePage-CzfYOXwd.js",
+        "assets/index-CkFaObxh.css",
+        "assets/index-D3QPAjTZ.js",
+        "assets/MarketCorrectionsPage-CFKvT1bf.js",
+        "assets/MarketEditorScheduleSafe-xOtH2O98.js",
+        "assets/MarketsPage-iLC-f1Z_.js",
+        "assets/PromotionRequestsPage-Bnm0knIK.js",
+        "assets/refresh-ccw-C9533nSp.js",
+        "assets/ReviewsPage-BSEAxhI9.js",
+        "assets/SeoPage-BWP_PjZF.js",
+        "assets/SubmissionsPage-C05FGrYy.js",
+        "assets/TaxonomyPage-IWYTgQus.js",
+        "assets/TrustSafetyPage-Dwi2_7cm.js",
+        "assets/UsersPage-BLgEpIMc.js",
+        "assets/VerificationQueuePage-BP__a7D3.js",
+        "assets/wand-sparkles-BIwfVyjY.js"
+      ]
+    },
     {
       "sourceSha": "4d8d366f3643d283ffae0048a28479bac527a3dd",
       "deployedAt": "2026-10-16T13:01:00.037Z",
@@ -113,14 +150,6 @@
       "deployedAt": "2026-10-13T23:54:05.447Z",
       "assets": [
         "assets/index-B-Je6-yP.js",
-        "assets/index-FvFg39P1.css"
-      ]
-    },
-    {
-      "sourceSha": "d05740859da581ed5f1ccf2190c2bf5c067c46cc",
-      "deployedAt": "2026-10-13T23:34:35.119Z",
-      "assets": [
-        "assets/index-C8JBhZDn.js",
         "assets/index-FvFg39P1.css"
       ]
     }
