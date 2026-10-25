@@ -1,7 +1,44 @@
 {
   "retentionDeployments": 8,
-  "updatedAt": "2026-10-23T13:16:20.050Z",
+  "updatedAt": "2026-10-25T23:48:54.171Z",
   "deployments": [
+    {
+      "sourceSha": "e1a6a263091de8a44a3229014a340bd76c7052e0",
+      "deployedAt": "2026-10-25T23:48:54.168Z",
+      "assets": [
+        "assets/AccountModerationPage-6ki32sY3.js",
+        "assets/AdEditor-fAPgIgGE.js",
+        "assets/AdminAnalyticsPage-USw81jMz.js",
+        "assets/AdminDashboard-CgnE-Osj.js",
+        "assets/AdminLayout-DDmh2han.js",
+        "assets/AdminLogin-BHKHP2GT.js",
+        "assets/AdminSettings-BdpnmJJK.js",
+        "assets/AdminSupportPage-C1UcZ_6q.js",
+        "assets/AdsPage-IQ9hmymT.js",
+        "assets/AuditPage-B88Ay0Vy.js",
+        "assets/ban-kLGmO4o-.js",
+        "assets/BlogAdminPage-B5G45_Nk.js",
+        "assets/circle-x-CjCZkKjj.js",
+        "assets/ClaimRequestsPage-CEeIGvs0.js",
+        "assets/FeaturedPlacementsPage-CS5-kE1V.js",
+        "assets/ImportPipelinePage-C0ezB4FF.js",
+        "assets/index-BBQUjAvQ.css",
+        "assets/index-Do0uweeF.js",
+        "assets/MarketCorrectionsPage-D3_aWQx6.js",
+        "assets/MarketEditorScheduleSafe-CwOkDtAw.js",
+        "assets/MarketsPage-DrdrljqX.js",
+        "assets/PromotionRequestsPage-CXaBkSpM.js",
+        "assets/refresh-ccw-DKMsOX8E.js",
+        "assets/ReviewsPage-CN_yGpjd.js",
+        "assets/SeoPage-DRP-MfjM.js",
+        "assets/SubmissionsPage-BZ_5rno9.js",
+        "assets/TaxonomyPage-D-LPUvvJ.js",
+        "assets/TrustSafetyPage-Bhl5x4Ot.js",
+        "assets/UsersPage-CHc0WKdx.js",
+        "assets/VerificationQueuePage-Boo2S4ub.js",
+        "assets/wand-sparkles-SeSME9fS.js"
+      ]
+    },
     {
       "sourceSha": "855f8df6062a916d123295d1f14a2beab27d610e",
       "deployedAt": "2026-10-23T13:16:20.047Z",
@@ -172,14 +209,6 @@
       "assets": [
         "assets/index-DKK3ESMb.js",
         "assets/index-egLryW6m.css"
-      ]
-    },
-    {
-      "sourceSha": "f84449fd13a3388a89846b8df1f9eb42267e9dca",
-      "deployedAt": "2026-10-14T00:27:52.490Z",
-      "assets": [
-        "assets/index-D0AQZR_J.css",
-        "assets/index-mALNIsbV.js"
       ]
     }
   ]
