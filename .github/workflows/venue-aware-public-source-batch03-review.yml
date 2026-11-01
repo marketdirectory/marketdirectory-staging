@@ -1,0 +1,55 @@
+name: Market photos - venue-aware 62 source discovery (read only)
+on:
+  push:
+    branches:
+      - review/venue-specific-public-source-batch03-20261101
+permissions:
+  contents: read
+concurrency:
+  group: market-photo-venue-specific-batch03-20261101
+  cancel-in-progress: false
+jobs:
+  venue-specific-public-source-research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout review scripts without persistent credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate read-only 62-market scope and source
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check .github/market-photo-venue-sweep-batch03/venue-aware-source-discovery.mjs
+          node - <<'JS'
+          const d=require('./.github/market-photo-venue-sweep-batch03/targets.json');
+          if(d.targets.length!==62||d.previouslyVisualChecked38.length!==38||new Set(d.targets.map(x=>x.slug)).size!==62||d.targets.some(x=>d.previouslyVisualChecked38.includes(x.slug)))process.exit(2);
+          console.log('REVIEW_ONLY_62_MARKET_SCOPE_PASS');
+          JS
+      - name: Search public Commons primary metadata by venue or event identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          node .github/market-photo-venue-sweep-batch03/venue-aware-source-discovery.mjs
+      - name: Upload immutable source findings regardless of failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: venue-aware-62-market-source-discovery-review-only
+          path: market-photo-batch03-discovery.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Record no-acquisition boundaries
+        if: always()
+        shell: bash
+        run: |
+          echo '## Venue-aware public photo discovery (62 unreviewed markets)' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No downloaded pixels, no publication, no WebPs, no CMS, no DB, no release or historical hold waiver. Metadata candidates NOT visually vetted.' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f market-photo-batch03-discovery.json ]; then
+            node -e 'const d=require("./market-photo-batch03-discovery.json");console.log("Markets "+d.targetsAttempted+"/"+d.targetsProvided+"; requests "+d.requests+"; errors "+d.errors.length+"; high identity-score market leads "+d.targetsWithHighIdentityScore)' >> "$GITHUB_STEP_SUMMARY"
+          fi
