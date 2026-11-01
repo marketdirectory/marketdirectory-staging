@@ -1,0 +1,26 @@
+{
+  "kind": "MARKETDIRECTORY_PUBLIC_SOURCE_DISCOVERY_ONLY",
+  "queriesPerTarget": 2,
+  "targets": [
+    {
+      "slug": "bury-market",
+      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+    },
+    {
+      "slug": "bath-farmers-market",
+      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+    },
+    {
+      "slug": "wimborne-farmers-market",
+      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+    },
+    {
+      "slug": "lancaster-charter-market",
+      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+    },
+    {
+      "slug": "bedford-charter-market",
+      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+    }
+  ]
+}

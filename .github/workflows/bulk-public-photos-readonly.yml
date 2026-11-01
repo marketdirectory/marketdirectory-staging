@@ -1,0 +1,54 @@
+name: Market photos - public metadata bulk discovery (read-only)
+on:
+  push:
+    branches:
+      - review/bulk-source-sweep-20261101
+permissions:
+  contents: read
+concurrency:
+  group: market-photos-public-source-sweep-20261101
+  cancel-in-progress: false
+jobs:
+  discover-public-image-metadata:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - name: Checkout isolated review branch without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate review-only source and input
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check .github/bulk-photo-sweep/commons-source-sweep.mjs
+          node -e 'const d=require("./.github/bulk-photo-sweep/targets.json");if(d.kind!=="MARKETDIRECTORY_PUBLIC_SOURCE_DISCOVERY_ONLY"||d.targets.length>110)process.exit(1);console.log("READ_ONLY_SOURCE_INPUT_PASS targets="+d.targets.length)'
+      - name: Search public Commons file metadata only (no downloads)
+        shell: bash
+        run: |
+          set -euo pipefail
+          node .github/bulk-photo-sweep/commons-source-sweep.mjs .github/bulk-photo-sweep/targets.json public-sweep-results.json
+      - name: Upload immutable review-only source findings
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-commons-source-discovery
+          path: public-sweep-results.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Review-only summary
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo '## Public source metadata discovery'
+            echo 'Read-only Wikimedia Commons public API only; no originals downloaded, no derivative generation, no database, no deployments or public release.'
+            if [ -f public-sweep-results.json ]; then
+              node -e 'const r=require("./public-sweep-results.json");console.log(`Targets attempted ${r.targetsAttempted}/${r.targetsProvided}; API calls ${r.apiRequests}; candidate markets ${r.eligibleTargetCount}; metadata candidates ${r.metadataCandidates}; cutoff ${r.cutoff}; errors ${r.apiErrors.length}`)'
+            fi
+            echo 'Every candidate requires independent exact file rights, representative photo, venue and source currentness review before selection.'
+          } >> "$GITHUB_STEP_SUMMARY"
