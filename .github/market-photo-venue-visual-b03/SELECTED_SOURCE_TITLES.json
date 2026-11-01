@@ -1,0 +1,77 @@
+{
+  "kind": "MARKETDIRECTORY_BATCH03_VENUE_SOURCE_VISUAL_REVIEW_ONLY",
+  "date": "2026-11-01",
+  "priorSourceRun": 41268625849,
+  "priorSourceReceiptSha256": "d361d1e95cf37a55d2622fd225206e4728f8a17956d4435883123a1e792cfa8c",
+  "allUnselected": true,
+  "holdRetained": true,
+  "previousRoundsUnchanged": true,
+  "entries": [
+    {
+      "slug": "bath-farmers-market",
+      "file_title": "File:Bath - Green Park Market - geograph.org.uk - 5252958.jpg",
+      "notes": "Green Park Station is actual Bath Farmers Market venue; market day/scene check",
+      "selected": false
+    },
+    {
+      "slug": "stirling-farmers-market",
+      "file_title": "File:Stirling Farmers' Market (2886246654).jpg",
+      "notes": "Actual named market, 2008; currentness hold",
+      "selected": false
+    },
+    {
+      "slug": "carmarthen-market",
+      "file_title": "File:Carmarthen Market.jpg",
+      "notes": "2018 indoor market, exact hall/trading crop vs previous selection hold",
+      "selected": false
+    },
+    {
+      "slug": "morecambe-festival-market",
+      "file_title": "File:Festival Market, Morecambe - geograph.org.uk - 5809817.jpg",
+      "notes": "2018 named covered market, 1024 px; inherited selection hold",
+      "selected": false
+    },
+    {
+      "slug": "cirencester-farmers-market",
+      "file_title": "File:Market Stalls, Cirencester - geograph.org.uk - 8415054.jpg",
+      "notes": "2025 actual stalls in town, event/day Farmers vs Charter unknown",
+      "selected": false
+    },
+    {
+      "slug": "cirencester-farmers-market",
+      "file_title": "File:Cirencester Market - geograph.org.uk - 7242425.jpg",
+      "notes": "2022 exact town market, Farmers vs Charter market identity uncertain",
+      "selected": false
+    },
+    {
+      "slug": "wakefield-market",
+      "file_title": "File:Inside Wakefield Market- Keep in touch (geograph 5958424).jpg",
+      "notes": "2018 indoor currentness/venue check; previous false positives remain rejected",
+      "selected": false
+    },
+    {
+      "slug": "wakefield-market",
+      "file_title": "File:Inside Wakefield Market- Petticoat Lane (geograph 5958446).jpg",
+      "notes": "2018 interior alternative, distinct source",
+      "selected": false
+    },
+    {
+      "slug": "bilston-market",
+      "file_title": "File:Bilston Market entrance, Wolverhampton - geograph.org.uk - 5600323.jpg",
+      "notes": "2017 actual building entrance, may lack trading; currentness hold",
+      "selected": false
+    },
+    {
+      "slug": "walsall-market",
+      "file_title": "File:Fishmonger on Walsall Market - geograph.org.uk - 2449957.jpg",
+      "notes": "2011 actual trader, previous relocation currentness hold",
+      "selected": false
+    },
+    {
+      "slug": "wolverhampton-market",
+      "file_title": "File:Fruit and veg in Wolverhampton Market - geograph.org.uk - 5373854.jpg",
+      "notes": "2017 genuine trader but prior market relocation makes source historical",
+      "selected": false
+    }
+  ]
+}
