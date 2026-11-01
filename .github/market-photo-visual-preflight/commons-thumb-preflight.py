@@ -23,8 +23,12 @@ def get_bytes(url, limit, *, api=False):
     allowed = ("commons.wikimedia.org",) if api else ("upload.wikimedia.org", "thumb.wikimedia.org",)
     if p.scheme != "https" or p.hostname not in allowed or p.username or p.password or p.port:
         fail("STOP_UNEXPECTED_NETWORK_ORIGIN host="+str(p.hostname)+" scheme="+str(p.scheme)+" is_api="+str(api))
-    if not api and (p.query or p.fragment or not p.path.startswith("/wikipedia/commons/")):
-        fail("STOP_UNEXPECTED_THUMBNAIL_PATH")
+    if not api:
+        query_keys = [k for k, v in urllib.parse.parse_qsl(p.query, keep_blank_values=True)]
+        if p.fragment or not p.path.startswith("/wikipedia/commons/") or any(k not in ("utm_source","utm_campaign","utm_content") for k in query_keys):
+            fail("STOP_UNEXPECTED_THUMBNAIL_PATH")
+        # Commons imageinfo supplies attribution UTM parameters. Drop ONLY those inert tracking fields.
+        url = urllib.parse.urlunsplit((p.scheme,p.netloc,p.path,"",""))
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json" if api else "image/*"})
     with urllib.request.urlopen(req, timeout=30) as response:
         final = urllib.parse.urlsplit(response.geturl())
