@@ -20,7 +20,7 @@ def fail(reason):
     raise ValueError(reason)
 def get_bytes(url, limit, *, api=False):
     p = urllib.parse.urlsplit(url)
-    allowed = ("commons.wikimedia.org",) if api else ("upload.wikimedia.org",)
+    allowed = ("commons.wikimedia.org",) if api else ("upload.wikimedia.org", "thumb.wikimedia.org",)
     if p.scheme != "https" or p.hostname not in allowed or p.username or p.password or p.port:
         fail("STOP_UNEXPECTED_NETWORK_ORIGIN host="+str(p.hostname)+" scheme="+str(p.scheme)+" is_api="+str(api))
     if not api and (p.query or p.fragment or not p.path.startswith("/wikipedia/commons/")):
