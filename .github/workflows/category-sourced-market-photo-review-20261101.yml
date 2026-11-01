@@ -1,0 +1,48 @@
+name: Market photos - category source preview verification (review only)
+on:
+  push:
+    branches:
+      - review/category-source-visual-20261101
+permissions:
+  contents: read
+concurrency:
+  group: market-photo-category-source-visual-20261101
+  cancel-in-progress: false
+jobs:
+  verify-category-images:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'Pillow==11.3.0'
+      - name: Validate review input and scripts
+        run: |
+          node --check .github/market-photo-category-review-20261101/pin-category-source-info.mjs
+          python -m py_compile .github/market-photo-visual-preflight/commons-thumb-preflight.py
+      - name: Derive exact primary Commons metadata; never approve candidate
+        run: node .github/market-photo-category-review-20261101/pin-category-source-info.mjs
+      - name: Fetch Wikimedia thumb-only reviewed crop
+        run: python .github/market-photo-visual-preflight/commons-thumb-preflight.py
+      - name: Preserve review-only source receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: category-verified-source-photos-20261101
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            .github/market-photo-category-review-20261101/SOURCE_API_PIN_RECEIPT.json
+            public-photo-review-output/
+      - name: No publication statement
+        if: always()
+        run: |
+          echo '## Review only: Source category preflight' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No original image acquisition, no assets for hosting, no CMS/SQL/live actions, no prior holds overridden.' >> "$GITHUB_STEP_SUMMARY"
