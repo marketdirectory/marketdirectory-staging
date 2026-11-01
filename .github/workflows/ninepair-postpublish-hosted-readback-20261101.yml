@@ -1,0 +1,48 @@
+name: Nine-pair postpublish hosted candidate - GET ONLY
+on:
+  push:
+    branches:
+      - review/nine-pair-postpublish-hosted-readback-20261101
+permissions:
+  contents: read
+concurrency:
+  group: review-ninepair-postpublish-actual-host-readback
+  cancel-in-progress: false
+jobs:
+  candidate-http-get-only:
+    if: github.ref == 'refs/heads/review/nine-pair-postpublish-hosted-readback-20261101'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout frozen read-only checker (no persisted credentials)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify reviewed tool bytes and pinned staging Git output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object .github/ninepair-ci/verify-hosted-nine-pair.mjs)" = "0f4d04ba535c62269e805fef6aeae06b5f391637"
+          test "$(git hash-object .github/ninepair-ci/verify-hosted-nine-pair.test.mjs)" = "4bee8b7ecc6f86f10ee0bab8e69185d6dc89194c"
+          test "$(git hash-object .github/ninepair-ci/STAGING_HOSTED_READBACK_MANIFEST.json)" = "fb452638cd10385c4cff91474844f25d78d23f4d"
+          test "$(git ls-remote https://github.com/marketdirectory/marketdirectory-staging.git refs/heads/main | cut -f1)" = "b5bd2fa7869c7eca46d79e14f02bf23db8eebead"
+          node --check .github/ninepair-ci/verify-hosted-nine-pair.mjs
+          echo 'PINNED_POST_RELEASE_SOURCE_AND_MAIN_PASS'
+      - name: Native twenty offline guard regressions
+        shell: bash
+        run: node --test .github/ninepair-ci/verify-hosted-nine-pair.test.mjs
+      - name: Verify live hosted 80 WebPs by exact SHA/bytes/MIME, CSP and retention
+        shell: bash
+        run: |
+          set -euo pipefail
+          node .github/ninepair-ci/verify-hosted-nine-pair.mjs --manifest .github/ninepair-ci/STAGING_HOSTED_READBACK_MANIFEST.json --mode candidate
+          echo 'CANDIDATE_HOSTED_READBACK_PASS'
+      - name: Readback-only status
+        if: always()
+        shell: bash
+        run: |
+          echo '## Post-release read-only hosted QA' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Verifies 80 WebPs and protected application assets. Never calls SQL, Hostinger deployments, production or Git write operations.' >> "$GITHUB_STEP_SUMMARY"
