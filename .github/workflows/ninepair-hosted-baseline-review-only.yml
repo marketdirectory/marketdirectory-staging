@@ -1,0 +1,49 @@
+name: Nine-pair hosted baseline - GET ONLY
+on:
+  push:
+    branches:
+      - review/nine-pair-hosted-baseline-ci-20261101
+permissions:
+  contents: read
+concurrency:
+  group: review-ninepair-hosted-baseline-only
+  cancel-in-progress: false
+jobs:
+  hosted-baseline-read-only:
+    if: github.ref == 'refs/heads/review/nine-pair-hosted-baseline-ci-20261101'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Checkout isolated review branch (no persisted credentials)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Lock old published main and exact reviewed tool bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object .github/ninepair-ci/verify-hosted-nine-pair.mjs)" = "eb86c27703a4472a847a11ade474dd749bd97dcf"
+          test "$(git hash-object .github/ninepair-ci/STAGING_HOSTED_READBACK_MANIFEST.json)" = "fb452638cd10385c4cff91474844f25d78d23f4d"
+          test "$(git ls-remote https://github.com/marketdirectory/marketdirectory-staging.git refs/heads/main | cut -f1)" = "499c547213c5dc528397382e63da0ec69cc51b9a"
+          node --check .github/ninepair-ci/verify-hosted-nine-pair.mjs
+          echo "PINNED_SOURCE_AND_MAIN_PASS"
+      - name: Verify hosted 62 originals / 18 not yet hosted (HTTP GET only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          node .github/ninepair-ci/verify-hosted-nine-pair.mjs --manifest .github/ninepair-ci/STAGING_HOSTED_READBACK_MANIFEST.json --mode baseline
+          echo "BASELINE_HOSTED_READBACK_PASS"
+      - name: Summary (never deploys)
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Read-only nine-pair hosted baseline"
+            echo "Never executes publication, Git ref mutations, SQL or deployment hooks."
+            echo "Checked frozen staging-output main and SHA-pinned 80-photo manifest."
+            echo "A green workflow requires full hosted original-byte verification."
+          } >> "$GITHUB_STEP_SUMMARY"

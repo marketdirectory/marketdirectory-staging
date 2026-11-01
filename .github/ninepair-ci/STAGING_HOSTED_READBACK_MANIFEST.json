@@ -1,0 +1,641 @@
+{
+  "kind": "NINE_PAIR_STAGING_ASSET_ONLY_HOSTED_READBACK_REVIEW",
+  "version": 1,
+  "host": "https://cms.marketdirectory.co.uk",
+  "baseline_commit": "499c547213c5dc528397382e63da0ec69cc51b9a",
+  "baseline_tree": "bff8ef3b66750f8ec39e1d0a015fd0719569a8fe",
+  "candidate_commit": "b5bd2fa7869c7eca46d79e14f02bf23db8eebead",
+  "candidate_tree": "21676dba9620d8b39a98e3ff630081591de73947",
+  "photo_tree": "65984149251097da0af6c655362c8eefa8695d06",
+  "source_manifest_blob": "9c9d684d57c143ec1d3e444232373bec4b5689b5",
+  "preExistingFiles": 459,
+  "preExistingPhotos": 62,
+  "newPhotos": 18,
+  "resultFiles": 477,
+  "resultPhotos": 80,
+  "expectedReportOnlyCsp": "default-src 'self' https: data: blob:; object-src 'none'; base-uri 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data: blob:; connect-src 'self' https: wss:; frame-src https:; font-src 'self' https: data:",
+  "expectedDeployInfo": {
+    "sourceSha": "97f69a7f38f0680f6406c1b20e68c0b08e045021",
+    "assetRetentionDeployments": 10,
+    "distBundle": "assets/index-AM8WeFAX.js",
+    "distCss": "assets/index-D20WEbEL.css"
+  },
+  "protectedHostedFiles": [
+    {
+      "path": "index.html",
+      "blob": "640985694748f765f3fe684527136ae820df9971",
+      "bytes": 7796
+    },
+    {
+      "path": "deploy-info.json",
+      "blob": "22d297968b5f101db333abe335ed7724e58e3064",
+      "bytes": 284
+    },
+    {
+      "path": "asset-retention.json",
+      "blob": "0f177c2e656f582fc850e70d21b2ecbbeac43473",
+      "bytes": 12703
+    },
+    {
+      "path": "assets/index-AM8WeFAX.js",
+      "blob": "72dd208520c58ad9d114e39e3761b93feef206e5",
+      "bytes": 2670418
+    },
+    {
+      "path": "assets/index-D20WEbEL.css",
+      "blob": "ffc414d31aa876ce97e6a584aa9115f7a9a2dfc9",
+      "bytes": 216174
+    }
+  ],
+  "photos": [
+    {
+      "path": "market-photos/all-saints-garden-art-and-craft-market-480.webp",
+      "blob": "0a12ae3d40e5da475f61a47a1b0ba9bb3fd1cd34",
+      "bytes": 36162,
+      "history": "new",
+      "sha256": "85e5892410d94faf764d8b47d9784012228824678c7423df807c90f013bef782",
+      "credit": "Rept0n1x / Wikimedia Commons / CC BY-SA 3.0",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Art_%26_Craft_Market,_All_Saints_Garden,_Cambridge,_England_-_IMG_0671.JPG",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/all-saints-garden-art-and-craft-market-960.webp",
+      "blob": "04602d8060c6bc1a0774671df5ca8b76e5923030",
+      "bytes": 119654,
+      "history": "new",
+      "sha256": "7ab110c3c5cfd81c131dfa6c32025b3d1e7f357f26fac95ca6870888ea128868",
+      "credit": "Rept0n1x / Wikimedia Commons / CC BY-SA 3.0",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Art_%26_Craft_Market,_All_Saints_Garden,_Cambridge,_England_-_IMG_0671.JPG",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/bolton-market-480.webp",
+      "blob": "943ae15af33a44c43ddefa5d37828005512e8c21",
+      "bytes": 34940,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/bolton-market-960.webp",
+      "blob": "6aa71cbd957269264723a8e3ce6ca9c7cb664233",
+      "bytes": 106346,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/borough-market-480.webp",
+      "blob": "857ce9b30457cd9ba9f25a45d49d8b81a1a141f7",
+      "bytes": 29364,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/borough-market-960.webp",
+      "blob": "c4ace659d4b4626a1da04e35c78539bad3cf398e",
+      "bytes": 84936,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/bowhouse-market-weekend-480.webp",
+      "blob": "ec3a74fc3fa300a231880d82cc8abf1d0d52cabb",
+      "bytes": 30464,
+      "history": "new",
+      "sha256": "dd9222913294c3f87423c0c16332c73fd55e339918e4df3c10eabc3c1afac5f4",
+      "credit": "Drkirstyross / Wikimedia Commons / CC BY-SA 4.0",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:First_Bowhouse_Market_of_2024.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/bowhouse-market-weekend-960.webp",
+      "blob": "6f86370b57f8c2da60cb0742af34ae5742699733",
+      "bytes": 89220,
+      "history": "new",
+      "sha256": "f75afb11e71738553dd50896989f049639e1b962302716bfe0f53a0ce95e6522",
+      "credit": "Drkirstyross / Wikimedia Commons / CC BY-SA 4.0",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:First_Bowhouse_Market_of_2024.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/brighton-open-market-480.webp",
+      "blob": "017c76174bdb1c91a1969a1d0c4e5428f9e5be63",
+      "bytes": 34832,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/brighton-open-market-960.webp",
+      "blob": "3ba1495c7520649ee0e9ca89bc297c6d94f09ef6",
+      "bytes": 162216,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/broadway-market-480.webp",
+      "blob": "a062d8e7bb4b7e315f6875860dc85568fa8c46fc",
+      "bytes": 28852,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/broadway-market-960.webp",
+      "blob": "377e4723fceded8145beda2f7a9c3b5eaf2f4d9f",
+      "bytes": 98384,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/brockley-market-480.webp",
+      "blob": "461be181398d6e7d15c4285d396e69668aecd2a5",
+      "bytes": 40994,
+      "history": "new",
+      "sha256": "db3a4f4a81799af3658aa412d5370a313a54085df2222f02e292b26784fc926f",
+      "credit": "Robert Dimov / Wikimedia Commons / CC BY-SA 3.0",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Brockley_Market_-_panoramio.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/brockley-market-960.webp",
+      "blob": "7ebad2132178863657a0fb8eace28b98f1c887cb",
+      "bytes": 138690,
+      "history": "new",
+      "sha256": "4496b652da422d81b288f01a91171ff2f2d47a26639e6624aa9e648073581e54",
+      "credit": "Robert Dimov / Wikimedia Commons / CC BY-SA 3.0",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Brockley_Market_-_panoramio.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/cambridge-market-480.webp",
+      "blob": "febfbc77baa43f7d17089729fef9dc79f4b35d65",
+      "bytes": 31466,
+      "history": "new",
+      "sha256": "dbdb785e7ec2b75ace26d3ea25659607bcf2126f186b72bd1f51fc877700d671",
+      "credit": "bryan... / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Cambridge_Market_Square_Market_Hill_Cambridge_England_Britain_UK_United_Kingdom_United_Kingdom_of_Great_Britain_and_Northern_Ireland_(41158382152).jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/cambridge-market-960.webp",
+      "blob": "b70d7446e0ab5cbcce53fdf70aa64218c3bec3b6",
+      "bytes": 104436,
+      "history": "new",
+      "sha256": "d9c49c3f066570cd80cb3e09cd031c15514ec7ad8cb44953af5978e9cf6b877b",
+      "credit": "bryan... / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Cambridge_Market_Square_Market_Hill_Cambridge_England_Britain_UK_United_Kingdom_United_Kingdom_of_Great_Britain_and_Northern_Ireland_(41158382152).jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/chesterfield-market-hall-480.webp",
+      "blob": "029982169992c95a1af2887d4a9eb7a012dfd0f1",
+      "bytes": 28178,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/chesterfield-market-hall-960.webp",
+      "blob": "fd8ee8a8547a8f779b3c41440f97046bfca12a4a",
+      "bytes": 89402,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/derby-market-hall-480.webp",
+      "blob": "e304740fc15332dc16a8d38d3ee0cfbd439c3dd0",
+      "bytes": 23524,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/derby-market-hall-960.webp",
+      "blob": "ada02db9b2a571f465c2c4552b7e4873995fb3cd",
+      "bytes": 82748,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/doncaster-market-480.webp",
+      "blob": "827ad9cb79ebda51a511026b3acd59026f8f1618",
+      "bytes": 29210,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/doncaster-market-960.webp",
+      "blob": "48e78a975fbd61e5cd6392aba6e439812002fa28",
+      "bytes": 94856,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/durham-market-hall-480.webp",
+      "blob": "99138938e755077f863995b17a2ef921d63154c6",
+      "bytes": 23598,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/durham-market-hall-960.webp",
+      "blob": "ef2480e10e84a03c1190aba5857555138bf26e6a",
+      "bytes": 65268,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/edinburgh-farmers-market-480.webp",
+      "blob": "98cf64f441862090fec0fc132a07a5e812b155fa",
+      "bytes": 32132,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/edinburgh-farmers-market-960.webp",
+      "blob": "57e5ececf9ae03f761d1289dc2a559267258fcba",
+      "bytes": 109994,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/gloucester-green-market-480.webp",
+      "blob": "551aec5f4ea5dfc6051fc2648919231ea8da259e",
+      "bytes": 26882,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/gloucester-green-market-960.webp",
+      "blob": "c9a4dfd9a96c754db5483932eb38949df213911c",
+      "bytes": 92680,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/goodge-place-market-480.webp",
+      "blob": "b361631ecccca547b7aac135bed9174c606955b8",
+      "bytes": 26220,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/goodge-place-market-960.webp",
+      "blob": "e9783c614a64984e600ffa2ded16fc64cc515d8a",
+      "bytes": 86278,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/greenwich-market-480.webp",
+      "blob": "bc4bbe8dfbcbc14b4e634aa18100522dc86bd077",
+      "bytes": 34512,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/greenwich-market-960.webp",
+      "blob": "e292081c3f6c1ec4b96b564eb657c15deccf17ae",
+      "bytes": 108406,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/guildford-farmers-market-480.webp",
+      "blob": "7c4b6f8d4467c8b4a851de29026b4d5dad91a2ef",
+      "bytes": 32082,
+      "history": "new",
+      "sha256": "035fd16a06333c0c806e557d88b0de709bc82d44d65df46aabdf9c8aea9fa82e",
+      "credit": "Colin Smith / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Flower_Stall,_Guildford_Farmers_Market_-_geograph.org.uk_-_3071940.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/guildford-farmers-market-960.webp",
+      "blob": "b56208d41f04ddbfc847265d08b83362bff990aa",
+      "bytes": 101432,
+      "history": "new",
+      "sha256": "6facc6aef70fa3767744f2cc93e7065cb22a46871e879b2f21406512277634e9",
+      "credit": "Colin Smith / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Flower_Stall,_Guildford_Farmers_Market_-_geograph.org.uk_-_3071940.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/hexham-farmers-market-480.webp",
+      "blob": "0442e6e4bc12de2abe10d80b5498ab0045cfd0f7",
+      "bytes": 20314,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/hexham-farmers-market-960.webp",
+      "blob": "94a51724d008190e9700d8ab4461a868961fcf95",
+      "bytes": 78726,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/inverness-street-market-480.webp",
+      "blob": "06af08f13699033dd7bffd54dbae2ba68e8524fe",
+      "bytes": 30798,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/inverness-street-market-960.webp",
+      "blob": "bacb2b4c4c81b094c7b19fc0e0d03875462b11b7",
+      "bytes": 97140,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/islington-farmers-market-480.webp",
+      "blob": "f1316de5fd78628ecc2e3896c04c69bfcf6183f8",
+      "bytes": 20904,
+      "history": "new",
+      "sha256": "5d739de251d2d3ae64afe4a9e352b020ec7e70e4ef73094f318514d5c2670482",
+      "credit": "Eirian Evans / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fresh_Bread_stall_at_Islington_Farmers%27_Market_-_geograph.org.uk_-_6364026.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/islington-farmers-market-960.webp",
+      "blob": "ea6f9ce7dd8b4b18b93f8b80e8d2e45cc74f5a34",
+      "bytes": 68720,
+      "history": "new",
+      "sha256": "3eea0acde12282042ceb3e8e2d66d7cbb5e93ca4d1661ed7e70e6569f268fb3a",
+      "credit": "Eirian Evans / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fresh_Bread_stall_at_Islington_Farmers%27_Market_-_geograph.org.uk_-_6364026.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/leather-lane-market-480.webp",
+      "blob": "bf70bd58abfdb65b68ca25505e84e4a3e4daaa82",
+      "bytes": 24938,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/leather-lane-market-960.webp",
+      "blob": "1e05fac63692436f84dc5fde92c659aa67c2dfad",
+      "bytes": 76030,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/leeds-kirkgate-market-480.webp",
+      "blob": "9efbd5b7f667b91d9963a00093557ac3487b9bab",
+      "bytes": 25438,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/leeds-kirkgate-market-960.webp",
+      "blob": "3b09e3452035f7e50120d6be61b00cf58c144f33",
+      "bytes": 74036,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/norwich-market-480.webp",
+      "blob": "181830b0d39f22a2c2789b73f75b37b7c10dae1e",
+      "bytes": 27422,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/norwich-market-960.webp",
+      "blob": "a89333602046bf2b35ec53ed9ce980abfe50c61e",
+      "bytes": 91240,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/ossett-market-480.webp",
+      "blob": "a2866844b7b218566d2b266694bfe208f63c0577",
+      "bytes": 26276,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/ossett-market-960.webp",
+      "blob": "8ba333415f9c4d05f3aeeb2ef65eab37450a15b1",
+      "bytes": 81128,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/oxford-covered-market-480.webp",
+      "blob": "453f61525d80ebb1abe46c619e14efe7b5b0dfd2",
+      "bytes": 24948,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/oxford-covered-market-960.webp",
+      "blob": "ddb53836904f9c02948a56ab91ade0c0f713c8a9",
+      "bytes": 75030,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/plymouth-market-480.webp",
+      "blob": "e1d84f31fc6c6e3811afaf94b7752028e96b6190",
+      "bytes": 27408,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/plymouth-market-960.webp",
+      "blob": "dcbb976a9465e478b1632b120decd5f73369fd1b",
+      "bytes": 91468,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/pontefract-market-480.webp",
+      "blob": "2dbc3d9b29ac0073f3a445c06e1d23ea238e9e58",
+      "bytes": 15110,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/pontefract-market-960.webp",
+      "blob": "b805827da4cd470c90a88aea0fb2b0912fd180ba",
+      "bytes": 43982,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/queens-park-farmers-market-480.webp",
+      "blob": "d0a4d307f9fef34868a6d9c6dd1a289af1ac419b",
+      "bytes": 29176,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/queens-park-farmers-market-960.webp",
+      "blob": "9d287fa68f4c907100f8809ea47f9816d9ac68c9",
+      "bytes": 103692,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/ridley-road-market-480.webp",
+      "blob": "e2c0b5329b5e43fdaa36a529b4c68e1f1c083b17",
+      "bytes": 25448,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/ridley-road-market-960.webp",
+      "blob": "2f27ac56859985b5f74192eb3f16cd515909b66d",
+      "bytes": 85698,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/riverside-market-480.webp",
+      "blob": "aabbbf9a24619b92f921a9d582859af395c3a639",
+      "bytes": 28252,
+      "history": "new",
+      "sha256": "d9b9a89c590a81b4186d3a4a460581b0efcfd9f47caf4c6d12ae1fe33a07414d",
+      "credit": "Howard Dickins / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Riverside_Farmers_Market.jpg",
+      "modified": "centre approximately 16:9 crop; LANCZOS resized to exact 480x270/960x540; WebP q72/method6; metadata stripped"
+    },
+    {
+      "path": "market-photos/riverside-market-960.webp",
+      "blob": "b49a039ca9e8d266d250e4ca3d81c22d3aebe68b",
+      "bytes": 76728,
+      "history": "new",
+      "sha256": "06fc29776be0f0192857ec81389de4f340b5a8769d43c73c388b1eb8acd44190",
+      "credit": "Howard Dickins / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Riverside_Farmers_Market.jpg",
+      "modified": "centre approximately 16:9 crop; LANCZOS resized to exact 480x270/960x540; WebP q72/method6; metadata stripped"
+    },
+    {
+      "path": "market-photos/salisbury-charter-market-480.webp",
+      "blob": "42911eb57274ec8f5114bc3673d78688906297f3",
+      "bytes": 24880,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/salisbury-charter-market-960.webp",
+      "blob": "c44a74d088b242791cec51366b0746775f460daa",
+      "bytes": 69488,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/st-georges-market-480.webp",
+      "blob": "f1bfd656270e1541d223775913b3a8fcaa5e0181",
+      "bytes": 33754,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/st-georges-market-960.webp",
+      "blob": "854f62fa4be7f3343347a6fe10825875faf5d915",
+      "bytes": 115148,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/st-nicholas-indoor-market-480.webp",
+      "blob": "ae8b8231b58c67cc81d3b9467119e8e47692c925",
+      "bytes": 26600,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/st-nicholas-indoor-market-960.webp",
+      "blob": "3baa88cf3666bc20246cf6f4fea4a3ad4f64ddb6",
+      "bytes": 76892,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/stockbridge-market-480.webp",
+      "blob": "fa0f6a5a36641d2a8c92b1748868fba433c15cad",
+      "bytes": 33618,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/stockbridge-market-960.webp",
+      "blob": "ad3c2fa6750dfb8a26a6ceb000cb53ae6fa858ba",
+      "bytes": 118486,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/stockport-market-480.webp",
+      "blob": "9dd0ab6deb3072c419162f74d80b26ffd4ec077f",
+      "bytes": 24662,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/stockport-market-960.webp",
+      "blob": "6e9245f0d24ec3e713e82cf3c6488c4277cb4387",
+      "bytes": 71360,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/tavistock-pannier-market-480.webp",
+      "blob": "dfacf7ebb5b4900b4408351c014389626dcfa15b",
+      "bytes": 34184,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/tavistock-pannier-market-960.webp",
+      "blob": "5943066bcd8fcb1962ed1a9aa60f0bac807aba3a",
+      "bytes": 116868,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/the-moor-market-480.webp",
+      "blob": "0444239e35a8e601cf456112f4c06214e0cae166",
+      "bytes": 24982,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/the-moor-market-960.webp",
+      "blob": "a98b41933b78fc12d9260b98203ca89b1fe8ebf9",
+      "bytes": 84210,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/truro-farmers-market-480.webp",
+      "blob": "b569d95ab8a456d942611cb0c03f69c062838fe6",
+      "bytes": 14700,
+      "history": "new",
+      "sha256": "75a60669416b19b3cebe44e42bd6dc145b90eb270065bc7992c15130c2f1d902",
+      "credit": "Ian S / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Farmers_Market_on_Back_Quay%2C_Truro_-_geograph.org.uk_-_4429065.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/truro-farmers-market-960.webp",
+      "blob": "45fbad21567075b3d4d0a872cc52c6a8c569c417",
+      "bytes": 44822,
+      "history": "new",
+      "sha256": "31f6e8d1943bd6541dd2b9d361b0ace8f3d2031fa831f0c52efd3f937041b0a7",
+      "credit": "Ian S / Wikimedia Commons / CC BY-SA 2.0",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Farmers_Market_on_Back_Quay%2C_Truro_-_geograph.org.uk_-_4429065.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/twickenham-farmers-market-480.webp",
+      "blob": "9bedbae6746e7af832ec8af3b0837b327cf276d6",
+      "bytes": 29792,
+      "history": "new",
+      "sha256": "eb1a62b5a5ad0685acd8c2ce1a0e3c72eaecf6131efe1178298eaeec7355ade2",
+      "credit": "Daderot / Wikimedia Commons / CC0",
+      "licence": "CC0",
+      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Farmers%27_Market_-_Twickenham_-_London,_UK_-_DSC07026.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/twickenham-farmers-market-960.webp",
+      "blob": "36f4c601136f89758375fe886d604cac6de1e64e",
+      "bytes": 95860,
+      "history": "new",
+      "sha256": "e74cbbce0dcd63a54455e3718edb0c2ebd8c896ece2aa63fbf08079c2f2dcf8b",
+      "credit": "Daderot / Wikimedia Commons / CC0",
+      "licence": "CC0",
+      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "source": "https://commons.wikimedia.org/wiki/File:Farmers%27_Market_-_Twickenham_-_London,_UK_-_DSC07026.jpg",
+      "modified": "centre 16:9 crop; resized LANCZOS to 480/960 width; WebP lossy q72; metadata stripped"
+    },
+    {
+      "path": "market-photos/walthamstow-market-480.webp",
+      "blob": "03c31fb49e44348e1c51bb19cb3f65af7238548a",
+      "bytes": 26054,
+      "history": "existing"
+    },
+    {
+      "path": "market-photos/walthamstow-market-960.webp",
+      "blob": "626293eeb761337e39b035f55b554de1a38d9c74",
+      "bytes": 74608,
+      "history": "existing"
+    }
+  ],
+  "releaseAuthority": "NONE. Reader only. No publication or metadata authorization."
+}
