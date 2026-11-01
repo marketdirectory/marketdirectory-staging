@@ -1,0 +1,50 @@
+{
+  "kind": "MARKETDIRECTORY_CATEGORY_DISCOVERY_SOURCE_PREFLIGHT_REVIEW_ONLY",
+  "date": "2026-11-01",
+  "allUnselected": true,
+  "formerDriverRefusalPreserved": true,
+  "hardStopDarlingtonOutdoorExcluded": true,
+  "sourceCategoryEvidence": [
+    "https://commons.wikimedia.org/wiki/Category:Stroud_farmers%27_market",
+    "https://commons.wikimedia.org/wiki/Category:Covered_Market,_Preston",
+    "https://commons.wikimedia.org/wiki/Category:Darlington_Market_Hall",
+    "https://commons.wikimedia.org/wiki/Category:High_Street,_Dudley"
+  ],
+  "candidates": [
+    {
+      "slug": "stroud-farmers-market",
+      "title": "File:Stroud Farmers' Market ... apple selection. - Flickr - BazzaDaRambler.jpg",
+      "hold": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "note": "2012 image actual farmer's produce, licensed source needs exact check",
+      "approved": false
+    },
+    {
+      "slug": "preston-market-hall",
+      "title": "File:Stalls Inside the Covered Market - geograph.org.uk - 5779843.jpg",
+      "hold": "PRIOR_PHOTO_SELECTION_HOLD",
+      "note": "2018 interior with trading stalls, present-day identity and changes need review",
+      "approved": false
+    },
+    {
+      "slug": "preston-market-hall",
+      "title": "File:A busy market sale - geograph.org.uk - 3745257.jpg",
+      "hold": "PRIOR_PHOTO_SELECTION_HOLD",
+      "note": "Original photo in Preston covered market category, exact subject and crop need review",
+      "approved": false
+    },
+    {
+      "slug": "darlington-market-hall",
+      "title": "File:Darlington Market (21st November 2025).jpg",
+      "hold": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "note": "2025 named market, indoor versus outdoor venue and currentness to verify",
+      "approved": false
+    },
+    {
+      "slug": "dudley-market",
+      "title": "File:Dudley - The Market ^ High St with view towards Dudley Castle - geograph.org.uk - 5607644.jpg",
+      "hold": "WORK_PREFLIGHT_LOW_RESOLUTION_HOLD",
+      "note": "2017 distinct supposed 5184x2920 original, verify empty-scene and currentness before approval",
+      "approved": false
+    }
+  ]
+}
