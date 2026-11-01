@@ -1,0 +1,504 @@
+{
+  "kind": "MARKETDIRECTORY_BATCH03_TARGETED_COMMONS_SOURCE_DISCOVERY_REVIEW_ONLY",
+  "date": "2026-11-01",
+  "sourceSweepRunId": 41263223992,
+  "baseTrackerCommit": "a892d6468fd7a5a7b9abe119316e3884d54c610a",
+  "previouslyVisualChecked38": [
+    "swiss-cottage-market",
+    "upper-gardner-street-market",
+    "shrewsbury-market-hall",
+    "grainger-market",
+    "st-albans-market",
+    "swansea-market",
+    "leicester-market",
+    "treacle-market",
+    "coventry-market",
+    "wednesfield-market",
+    "castleford-market",
+    "earlham-street-market",
+    "preston-outdoor-market",
+    "crystal-palace-food-market",
+    "grassmarket-market",
+    "barnstaple-pannier-market",
+    "chesterfield-outdoor-market",
+    "beverley-saturday-market",
+    "bury-market",
+    "south-elmsall-market",
+    "ipswich-market",
+    "bull-ring-open-market",
+    "marylebone-farmers-market",
+    "eastbourne-farmers-market",
+    "northampton-market",
+    "mansfield-market",
+    "romsey-farmers-market",
+    "newbury-farmers-market",
+    "farnham-farmers-market",
+    "henley-on-thames-farmers-market",
+    "sidmouth-farmers-market",
+    "beccles-farmers-market",
+    "kempston-market",
+    "bloxwich-market",
+    "quayside-sunday-market",
+    "wimborne-farmers-market",
+    "stow-on-the-wold-farmers-market",
+    "willenhall-market"
+  ],
+  "hardStopExcluded": "darlington-outdoor-market",
+  "noApprovals": true,
+  "targets": [
+    {
+      "slug": "abbey-artisan-makers-market-rufford-abbey",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 18,
+      "queryHints": [
+        "Rufford Abbey artisan makers",
+        "Rufford Abbey Country Park market"
+      ]
+    },
+    {
+      "slug": "abingdon-guildhall-craft-and-gift-markets",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Abingdon Guildhall craft market",
+        "Abingdon Guildhall craft gift"
+      ]
+    },
+    {
+      "slug": "acomb-flourish-feast-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Acomb Flourish Feast market",
+        "Acomb York community market"
+      ]
+    },
+    {
+      "slug": "anathema-witch-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Anathema Witch Market UK"
+      ]
+    },
+    {
+      "slug": "artisan-market-at-no-7-bottle-shop-st-helens",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "No 7 Bottle Shop St Helens artisan market"
+      ]
+    },
+    {
+      "slug": "artisan-street-fayre-at-affinity-outlet-fleetwood",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Affinity Lancashire artisan street fayre"
+      ]
+    },
+    {
+      "slug": "ayr-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 12,
+      "queryHints": []
+    },
+    {
+      "slug": "banchory-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Banchory Farmers Market Scotland"
+      ]
+    },
+    {
+      "slug": "bath-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 16,
+      "queryHints": []
+    },
+    {
+      "slug": "bedford-charter-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 27,
+      "queryHints": [
+        "Bedford Charter Market High Street stalls"
+      ]
+    },
+    {
+      "slug": "bishops-stortford-farmers-and-craft-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 1,
+      "queryHints": []
+    },
+    {
+      "slug": "causeway-speciality-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Causeway Speciality Market UK"
+      ]
+    },
+    {
+      "slug": "cheltenham-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 14,
+      "queryHints": []
+    },
+    {
+      "slug": "chichester-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 20,
+      "queryHints": []
+    },
+    {
+      "slug": "cirencester-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 17,
+      "queryHints": []
+    },
+    {
+      "slug": "crediton-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 1,
+      "queryHints": []
+    },
+    {
+      "slug": "dumfries-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 4,
+      "queryHints": [
+        "Dumfries Farmers Market Scotland"
+      ]
+    },
+    {
+      "slug": "dundee-farmers-markets",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 9,
+      "queryHints": []
+    },
+    {
+      "slug": "durham-craft-and-producers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 19,
+      "queryHints": [
+        "Durham craft producers market market place"
+      ]
+    },
+    {
+      "slug": "ealing-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 2,
+      "queryHints": []
+    },
+    {
+      "slug": "hoyland-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Hoyland Market Barnsley"
+      ]
+    },
+    {
+      "slug": "llanelli-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Llanelli indoor market trading"
+      ]
+    },
+    {
+      "slug": "louth-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 21,
+      "queryHints": [
+        "Louth Farmers Market Lincolnshire",
+        "Louth farmers market Cornmarket"
+      ]
+    },
+    {
+      "slug": "macclesfield-indoor-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 9,
+      "queryHints": [
+        "Macclesfield indoor market Market Place stalls"
+      ]
+    },
+    {
+      "slug": "nest-and-nettle-artisan-vintage-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "notting-hill-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 18,
+      "queryHints": [
+        "Notting Hill Farmers Market Fox Primary School"
+      ]
+    },
+    {
+      "slug": "penrith-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 28,
+      "queryHints": []
+    },
+    {
+      "slug": "pimlico-road-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "pitlochry-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "portishead-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Portishead Farmers Market Bristol"
+      ]
+    },
+    {
+      "slug": "poundbury-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "reading-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 26,
+      "queryHints": [
+        "Reading Farmers Market Caversham",
+        "Reading Farmers market UK"
+      ]
+    },
+    {
+      "slug": "saltaire-makers-fair",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Saltaire Makers Fair market"
+      ]
+    },
+    {
+      "slug": "sherborne-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 10,
+      "queryHints": []
+    },
+    {
+      "slug": "st-andrews-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 24,
+      "queryHints": [
+        "St Andrews market stalls Fife"
+      ]
+    },
+    {
+      "slug": "stoke-newington-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Stoke Newington farmers market William Patten"
+      ]
+    },
+    {
+      "slug": "stokesley-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "stonehaven-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 12,
+      "queryHints": []
+    },
+    {
+      "slug": "walthamstow-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 15,
+      "queryHints": [
+        "Walthamstow farmers market town square"
+      ]
+    },
+    {
+      "slug": "wimbledon-farmers-market",
+      "priorHold": "SCREENED_NO_VETTED_SOURCE",
+      "previousMetadataHits": 1,
+      "queryHints": []
+    },
+    {
+      "slug": "arndale-market",
+      "priorHold": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "previousMetadataHits": 5,
+      "queryHints": [
+        "Manchester Arndale Market stalls food hall"
+      ]
+    },
+    {
+      "slug": "bedford-non-charter-market",
+      "priorHold": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "folkestone-marketplace",
+      "priorHold": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "stirling-farmers-market",
+      "priorHold": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "previousMetadataHits": 15,
+      "queryHints": [
+        "Stirling Farmers Market Port Street"
+      ]
+    },
+    {
+      "slug": "wakefield-market",
+      "priorHold": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "previousMetadataHits": 22,
+      "queryHints": []
+    },
+    {
+      "slug": "dudley-market",
+      "priorHold": "WORK_PREFLIGHT_LOW_RESOLUTION_HOLD",
+      "previousMetadataHits": 22,
+      "queryHints": []
+    },
+    {
+      "slug": "lancaster-charter-market",
+      "priorHold": "WORK_PREFLIGHT_LOW_RESOLUTION_HOLD",
+      "previousMetadataHits": 15,
+      "queryHints": [
+        "Lancaster charter market stalls 2025",
+        "Lancaster market square stalls 2024"
+      ]
+    },
+    {
+      "slug": "newry-variety-market",
+      "priorHold": "SCREENING_SOURCE_RESOLUTION_HOLD",
+      "previousMetadataHits": 4,
+      "queryHints": [
+        "Newry variety market stalls Northern Ireland"
+      ]
+    },
+    {
+      "slug": "keynsham-farmers-market",
+      "priorHold": "NONORIGINAL_PREVIEW_VISUAL_CURRENTNESS_HOLD",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "bilston-market",
+      "priorHold": "PRIOR_CURRENTNESS_HOLD",
+      "previousMetadataHits": 2,
+      "queryHints": [
+        "Bilston outdoor market trader stalls"
+      ]
+    },
+    {
+      "slug": "wrexham-butchers-market",
+      "priorHold": "PRIOR_CURRENTNESS_HOLD",
+      "previousMetadataHits": 4,
+      "queryHints": [
+        "Wrexham Butchers Market reopened 2025",
+        "Wrexham Butchers Market inside 2026"
+      ]
+    },
+    {
+      "slug": "carmarthen-market",
+      "priorHold": "PRIOR_PHOTO_SELECTION_HOLD",
+      "previousMetadataHits": 24,
+      "queryHints": [
+        "Carmarthen indoor market hall produce stalls"
+      ]
+    },
+    {
+      "slug": "morecambe-festival-market",
+      "priorHold": "PRIOR_PHOTO_SELECTION_HOLD",
+      "previousMetadataHits": 0,
+      "queryHints": [
+        "Morecambe Festival Market stalls"
+      ]
+    },
+    {
+      "slug": "preston-market-hall",
+      "priorHold": "PRIOR_PHOTO_SELECTION_HOLD",
+      "previousMetadataHits": 18,
+      "queryHints": [
+        "Preston Market Hall interior stalls Lancashire"
+      ]
+    },
+    {
+      "slug": "durham-saturday-outdoor-market",
+      "priorHold": "BYTE_COMPLETE_VISUAL_IDENTITY_HOLD",
+      "previousMetadataHits": 0,
+      "queryHints": []
+    },
+    {
+      "slug": "bury-st-edmunds-farmers-market",
+      "priorHold": "PRIOR_RESEARCH_RIGHTS_IDENTITY_CURRENTNESS_HOLD",
+      "previousMetadataHits": 25,
+      "queryHints": [
+        "Bury St Edmunds Farmers Market The Traverse",
+        "Bury St Edmunds farmers market Suffolk"
+      ]
+    },
+    {
+      "slug": "perth-farmers-market",
+      "priorHold": "PRIOR_RESEARCH_RIGHTS_IDENTITY_CURRENTNESS_HOLD",
+      "previousMetadataHits": 31,
+      "queryHints": [
+        "Perth Farmers Market King Edward Street Scotland"
+      ]
+    },
+    {
+      "slug": "darlington-market-hall",
+      "priorHold": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "previousMetadataHits": 16,
+      "queryHints": [
+        "Darlington indoor market hall stalls 2025"
+      ]
+    },
+    {
+      "slug": "northwich-market",
+      "priorHold": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "previousMetadataHits": 3,
+      "queryHints": [
+        "Northwich market barons quay indoor stalls"
+      ]
+    },
+    {
+      "slug": "walsall-market",
+      "priorHold": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "previousMetadataHits": 15,
+      "queryHints": []
+    },
+    {
+      "slug": "wolverhampton-market",
+      "priorHold": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "previousMetadataHits": 19,
+      "queryHints": [
+        "Wolverhampton City Centre Market Market Square"
+      ]
+    },
+    {
+      "slug": "stroud-farmers-market",
+      "priorHold": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "previousMetadataHits": 22,
+      "queryHints": [
+        "Stroud Farmers Market Cornhill Gloucestershire"
+      ]
+    }
+  ]
+}
