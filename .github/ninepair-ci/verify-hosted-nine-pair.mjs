@@ -50,6 +50,7 @@ export async function auditHosted(manifest,mode,{fetchImpl=globalThis.fetch,nonc
   check(Number.isInteger(concurrency)&&concurrency>=1&&concurrency<=8,'CONCURRENCY');
   const host=new URL(manifest.host);
   let count=0;
+  let pinnedIndexFallback=null;
   async function request(relative,{missing=false,expected}={}){
     const target=new URL(relative?'/'+relative:'/',host);
     target.searchParams.set('ninepair_readback',nonce+'_'+(count++));
@@ -57,7 +58,23 @@ export async function auditHosted(manifest,mode,{fetchImpl=globalThis.fetch,nonc
     try{response=await fetchImpl(target.toString(),{method:'GET',redirect:'manual',cache:'no-store',headers:{'Cache-Control':'no-cache','Pragma':'no-cache'},signal:AbortSignal.timeout(20000)});}catch(e){fail('NETWORK_OR_TIMEOUT_'+relative);}
     check(response&&typeof response.status==='number'&&typeof response.url==='string','INVALID_HTTP_RESPONSE');
     check(new URL(response.url).origin===host.origin&&new URL(response.url).pathname===target.pathname,'ORIGIN_OR_PATH_REDIRECT_'+relative);
-    if(missing){check(response.status===404||response.status===410,'UNEXPECTED_PREEXISTING_NEW_PHOTO_'+relative);return {path:relative,status:response.status};}
+    if(missing){
+      if(response.status===404||response.status===410)
+        return {path:relative,status:response.status,absence:'missing-status'};
+      // Existing .htaccess sends missing non-assets SPA routes to /index.html
+      // with HTTP 200. Count as absent ONLY if both MIME and byte-exact Git
+      // identity equal the already verified original index.html.
+      if(response.status===200&&pinnedIndexFallback){
+        const mime=(response.headers.get('content-type')||'').toLowerCase().split(';')[0].trim();
+        check(mime==='text/html','UNEXPECTED_PREEXISTING_NEW_PHOTO_'+relative);
+        const fallback=Buffer.from(await response.arrayBuffer());
+        check(fallback.length===pinnedIndexFallback.bytes &&
+          oid(fallback)===pinnedIndexFallback.blob,
+          'UNEXPECTED_PREEXISTING_NEW_PHOTO_'+relative);
+        return {path:relative,status:200,absence:'byte-exact-spa-fallback'};
+      }
+      fail('UNEXPECTED_PREEXISTING_NEW_PHOTO_'+relative);
+    }
     check(response.status===200,'HTTP_STATUS_'+relative);
     const mime=(response.headers.get('content-type')||'').toLowerCase().split(';')[0].trim();
     check(expectedMime(relative||'index.html').includes(mime),'MIME_'+relative);
@@ -71,6 +88,7 @@ export async function auditHosted(manifest,mode,{fetchImpl=globalThis.fetch,nonc
   const protectedResults=[];
   for(const entry of files)protectedResults.push(await request(entry.path,{expected:entry}));
   const index=protectedResults.find(x=>x.path==='index.html');
+  pinnedIndexFallback={blob:index.oid,bytes:index.body.length};
   const root=await request('',{expected:files.find(x=>x.path==='index.html')});
   const info=JSON.parse(protectedResults.find(x=>x.path==='deploy-info.json').body.toString('utf8'));
   const retention=JSON.parse(protectedResults.find(x=>x.path==='asset-retention.json').body.toString('utf8'));
@@ -94,7 +112,9 @@ export async function auditHosted(manifest,mode,{fetchImpl=globalThis.fetch,nonc
   if(failed)throw failed;
   return Object.freeze({result:mode==='baseline'?'BASELINE_HOSTED_READBACK_PASS':'CANDIDATE_HOSTED_READBACK_PASS',mode,
     host:manifest.host,candidate:manifest.candidate_commit,retentionDeployments:10,
-    photosVerified:photoList.length,newPhotosAbsent:missing.length,protectedFilesVerified:files.length,
+    photosVerified:photoList.length,newPhotosAbsent:missing.length,
+    newPhotoSpaFallbacks:mode==='baseline'?results.filter(x=>x.absence==='byte-exact-spa-fallback').length:0,
+    protectedFilesVerified:files.length,
     rootVerified:true,publicationExecuted:false,metadataExecuted:false});
 }
 
