@@ -55,5 +55,5 @@ jobs:
           echo '## Thumbnail-only source and centre-crop preflight' >> "$GITHUB_STEP_SUMMARY"
           echo 'All candidates UNSELECTED and under original inherited holds. No originals, hero WebPs, CMS, SQL, deployments or publication.' >> "$GITHUB_STEP_SUMMARY"
           if [ -e public-photo-review-output/ACTUAL_PREFLIGHT_RECEIPT.json ]; then
-            python -c 'import json; r=json.load(open("public-photo-review-output/ACTUAL_PREFLIGHT_RECEIPT.json"));print(f"Checked: {r[\"checked\"]}; preview generated: {r[\"preview_success\"]}; held: {r[\"preflight_held\"]}")' >> "$GITHUB_STEP_SUMMARY"
+            python -c 'import json; r=json.load(open("public-photo-review-output/ACTUAL_PREFLIGHT_RECEIPT.json")); print("Checked: {}; preview generated: {}; held: {}".format(r["checked"],r["preview_success"],r["preflight_held"]))' >> "$GITHUB_STEP_SUMMARY"
           fi

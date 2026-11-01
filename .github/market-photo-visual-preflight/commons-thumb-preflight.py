@@ -22,7 +22,7 @@ def get_bytes(url, limit, *, api=False):
     p = urllib.parse.urlsplit(url)
     allowed = ("commons.wikimedia.org",) if api else ("upload.wikimedia.org",)
     if p.scheme != "https" or p.hostname not in allowed or p.username or p.password or p.port:
-        fail("STOP_UNEXPECTED_NETWORK_ORIGIN")
+        fail("STOP_UNEXPECTED_NETWORK_ORIGIN host="+str(p.hostname)+" scheme="+str(p.scheme)+" is_api="+str(api))
     if not api and (p.query or p.fragment or not p.path.startswith("/wikipedia/commons/")):
         fail("STOP_UNEXPECTED_THUMBNAIL_PATH")
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json" if api else "image/*"})
