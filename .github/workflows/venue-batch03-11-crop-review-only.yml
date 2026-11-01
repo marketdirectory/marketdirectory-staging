@@ -1,0 +1,57 @@
+name: Market photos - 11 source venue crop review only
+on:
+  push:
+    branches:
+      - review/venue-photos-crop-cohort03-20261101
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: venue-market-image-preview-crop-b03-20261101
+  cancel-in-progress: false
+jobs:
+  source-licensed-thumbnail-only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: venue-aware-62-market-source-discovery-review-only
+          repository: marketdirectory/marketdirectory-staging
+          run-id: 41268625849
+          github-token: ${{ github.token }}
+          path: venue-discovery-original
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'Pillow==11.3.0'
+      - name: Verify exact original search receipt and candidate sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile .github/market-photo-venue-visual-b03/pin-to-source-receipt.py
+          python -m py_compile .github/market-photo-visual-preflight/commons-thumb-preflight.py
+          python .github/market-photo-venue-visual-b03/pin-to-source-receipt.py
+      - name: Check primary Commons original identity, license and thumbnail only
+        run: python .github/market-photo-visual-preflight/commons-thumb-preflight.py
+      - name: Upload immutable review artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: venue-batch03-11-source-thumbnail-preflight
+          path: |
+            .github/market-photo-venue-visual-b03/SOURCE_INPUT_RECEIPT.json
+            public-photo-review-output/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Record review status
+        if: always()
+        run: |
+          echo '## Eleven new candidate thumbnails — visual review only' >> "$GITHUB_STEP_SUMMARY"
+          echo 'No original downloads, no hero WebPs, no release, CMS, SQL, hosted or production changes; all inherited holds unchanged.' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f public-photo-review-output/ACTUAL_PREFLIGHT_RECEIPT.json ]; then
+            python -c 'import json; j=json.load(open("public-photo-review-output/ACTUAL_PREFLIGHT_RECEIPT.json")); print("Checked {} preview {} holds {}".format(j["checked"], j["preview_success"], j["preflight_held"]))' >> "$GITHUB_STEP_SUMMARY"
+          fi
