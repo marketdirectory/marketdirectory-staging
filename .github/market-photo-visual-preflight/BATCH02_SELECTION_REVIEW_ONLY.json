@@ -1,0 +1,132 @@
+{
+  "kind": "MARKETDIRECTORY_BATCH02_UNSELECTED_SOURCE_REVIEW_ONLY",
+  "date": "2026-11-01",
+  "original_sweep_action_run": 41263223992,
+  "original_sweep_artifact_id": 13066870435,
+  "original_sweep_receipt_sha256": "65153ede0c16aa7d194524a0bac33a7ba1f6e07a2e285f5c62c78c71979ab448",
+  "avoid_first_batch": true,
+  "all_unselected": true,
+  "retain_all_holds": true,
+  "source_selections": [
+    {
+      "slug": "south-elmsall-market",
+      "file_title": "File:South Elmsall Market (17th February 2024) 002.jpg",
+      "risk": "2024 exact named market — original scene and currentness hold",
+      "selected": false
+    },
+    {
+      "slug": "south-elmsall-market",
+      "file_title": "File:South Elmsall Market (17th February 2024) 001.jpg",
+      "risk": "distinct February 2024 original, compare crop",
+      "selected": false
+    },
+    {
+      "slug": "ipswich-market",
+      "file_title": "File:Ipswich market - geograph.org.uk - 6105478.jpg",
+      "risk": "2019 exact named market; October 2026 relocation/canopy means historical only",
+      "selected": false
+    },
+    {
+      "slug": "bull-ring-open-market",
+      "file_title": "File:Bull Ring Open Market, Birmingham - geograph.org.uk - 6070810.jpg",
+      "risk": "named open market 2019, prior release exclusion",
+      "selected": false
+    },
+    {
+      "slug": "marylebone-farmers-market",
+      "file_title": "File:Marylebone Farmer's Market site north, London, 6 Sept 2014.jpg",
+      "risk": "exact event old; crop and current location must be checked",
+      "selected": false
+    },
+    {
+      "slug": "eastbourne-farmers-market",
+      "file_title": "File:The market on Grand Parade, Eastbourne - geograph.org.uk - 4896457.jpg",
+      "risk": "may be distinct seafront market, not farmers",
+      "selected": false
+    },
+    {
+      "slug": "northampton-market",
+      "file_title": "File:Market Square, Northampton looking to east side - geograph.org.uk - 8322863.jpg",
+      "risk": "2026 rebuilt square, trading stalls not yet evidenced",
+      "selected": false
+    },
+    {
+      "slug": "mansfield-market",
+      "file_title": "File:Mansfield Market Place - geograph.org.uk - 8255433.jpg",
+      "risk": "relocation/currentness and trading-scene held",
+      "selected": false
+    },
+    {
+      "slug": "romsey-farmers-market",
+      "file_title": "File:Market Place, Romsey - geograph.org.uk - 8381306.jpg",
+      "risk": "town square is not proof of farmers market",
+      "selected": false
+    },
+    {
+      "slug": "newbury-farmers-market",
+      "file_title": "File:Newbury - Market Place - geograph.org.uk - 8268137.jpg",
+      "risk": "square not necessarily farmers event",
+      "selected": false
+    },
+    {
+      "slug": "farnham-farmers-market",
+      "file_title": "File:Farnham - Old Market Place - geograph.org.uk - 8161458.jpg",
+      "risk": "historical square vs active farmers event",
+      "selected": false
+    },
+    {
+      "slug": "henley-on-thames-farmers-market",
+      "file_title": "File:Market Place, Henley-on-Thames - geograph.org.uk - 8414029.jpg",
+      "risk": "town square and Monday event identity",
+      "selected": false
+    },
+    {
+      "slug": "sidmouth-farmers-market",
+      "file_title": "File:Sidmouth , Market Place - geograph.org.uk - 8392458.jpg",
+      "risk": "possible building rather than active farmers event",
+      "selected": false
+    },
+    {
+      "slug": "beccles-farmers-market",
+      "file_title": "File:Beccles, New Market - geograph.org.uk - 8158772.jpg",
+      "risk": "New Market is street name and not proof of farmers market",
+      "selected": false
+    },
+    {
+      "slug": "kempston-market",
+      "file_title": "File:Market area outside Sainsbury's, Kempston - geograph.org.uk - 6377152.jpg",
+      "risk": "2020 site and trading status unknown",
+      "selected": false
+    },
+    {
+      "slug": "bloxwich-market",
+      "file_title": "File:Bloxwich Market - geograph.org.uk - 3539403.jpg",
+      "risk": "exact market dated 2013, existing visual identity hold",
+      "selected": false
+    },
+    {
+      "slug": "quayside-sunday-market",
+      "file_title": "File:Quayside Sunday Market (geograph 1697779).jpg",
+      "risk": "named Sunday market 2010, original release exclusion",
+      "selected": false
+    },
+    {
+      "slug": "wimborne-farmers-market",
+      "file_title": "File:Corn Market, Wimborne Minster - geograph.org.uk - 7357894.jpg",
+      "risk": "street location vs actual farmers event unknown",
+      "selected": false
+    },
+    {
+      "slug": "stow-on-the-wold-farmers-market",
+      "file_title": "File:Market Square, Stow-on-the-Wold - geograph.org.uk - 7766098.jpg",
+      "risk": "market square vs actual farmers event unknown",
+      "selected": false
+    },
+    {
+      "slug": "willenhall-market",
+      "file_title": "File:Willenhall Lock Makers - Market Place, Willenhall (55192687351).jpg",
+      "risk": "2026 art location, may show object not traders",
+      "selected": false
+    }
+  ]
+}
