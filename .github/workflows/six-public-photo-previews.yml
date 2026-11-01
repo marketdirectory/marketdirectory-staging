@@ -1,0 +1,38 @@
+name: Market photos - six public thumbnails for visual preflight only
+on:
+  push:
+    branches:
+      - review/six-public-photo-previews-20261101
+permissions:
+  contents: read
+concurrency:
+  group: six-public-photo-previews-20261101
+  cancel-in-progress: false
+jobs:
+  public-visual-preflight:
+    if: github.ref == 'refs/heads/review/six-public-photo-previews-20261101'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Read-only six-source Wikimedia preview metadata and CDN thumbnail
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote https://github.com/marketdirectory/marketdirectory-staging.git refs/heads/main | cut -f1)" = '499c547213c5dc528397382e63da0ec69cc51b9a'
+          node --check .github/visual-preflight/preview_review_only.mjs
+          node .github/visual-preflight/preview_review_only.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: six-public-commons-preview-only
+          path: review-thumbnails/
+          retention-days: 21
+      - name: Describe strict review-only limit
+        if: always()
+        run: |
+          echo 'This run retrieves Wikimedia-provided low-resolution public preview thumbnails only. No original download, no image selection, no source-licence override, no site/DB/deployment mutation.' >> "$GITHUB_STEP_SUMMARY"

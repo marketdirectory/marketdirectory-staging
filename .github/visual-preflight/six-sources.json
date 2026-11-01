@@ -1,0 +1,59 @@
+{
+  "kind": "MARKETDIRECTORY_PUBLIC_THUMBNAIL_REVIEW_ONLY",
+  "files": [
+    {
+      "slug": "swiss-cottage-market",
+      "title": "File:Swiss Cottage Market, London (LRM 20240516 162055).jpg",
+      "sha1": "bbb6c78addfff77cfa6f0f19c8a62d9711898b45",
+      "licenseName": "CC BY-SA 4.0",
+      "date": "2024-05-16",
+      "hold": "SOURCE_VENUE_CURRENTNESS_PENDING",
+      "credit": "<a href=\"//commons.wikimedia.org/wiki/User:MB-one\" title=\"User:MB-one\">Matti Blume</a>"
+    },
+    {
+      "slug": "upper-gardner-street-market",
+      "title": "File:Upper Gardner Street Saturday Market Oct 2022.jpg",
+      "sha1": "462d39a3fd91a6da9015c607e2bc352d98c94016",
+      "licenseName": "CC0",
+      "date": "2022-10-08 10:37:05",
+      "hold": "SCREENING_VENUE_IDENTITY_HOLD",
+      "credit": "<a href=\"//commons.wikimedia.org/wiki/User:Onthewings\" title=\"User:Onthewings\">Andy Li</a>"
+    },
+    {
+      "slug": "shrewsbury-market-hall",
+      "title": "File:Shrewsbury Market Hall Interior.jpg",
+      "sha1": "769c42b88dbc43e753eb2ae532ed86b8bf3f23ed",
+      "licenseName": "CC0",
+      "date": "2023-12-16 13:40:42",
+      "hold": "PRIOR_PHOTO_SELECTION_HOLD",
+      "credit": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Salops&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Salops (page does not exist)\">Salops</a>"
+    },
+    {
+      "slug": "grainger-market",
+      "title": "File:Grainger Market, Newcastle upon Tyne - geograph.org.uk - 8277126.jpg",
+      "sha1": "2b7b98d7aa19fefb11e9795a747a75f9ea864790",
+      "licenseName": "CC BY-SA 2.0",
+      "date": "2026-03-23",
+      "hold": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "credit": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/9915\">Geoff Holland</a>\u00a0<span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Grainger_Market,_Newcastle_upon_Tyne_-_geograph.org.uk_-_8277126.jpg#P170\" title=\"Edit this at Structured Data on Commons\"><img alt=\""
+    },
+    {
+      "slug": "st-albans-market",
+      "title": "File:A crowded St Albans Market.jpg",
+      "sha1": "3cbfad069165019591d9a3e624483eda0974b68b",
+      "licenseName": "CC BY-SA 2.0",
+      "date": "2023-09-09 11:13:06",
+      "hold": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "credit": "James \u00d3 Nuan\u00e1in"
+    },
+    {
+      "slug": "swansea-market",
+      "title": "File:Welsh Gammon on sale in Swansea Market.jpg",
+      "sha1": "0bdc87b3defea522b7e41c921f45550bee84d021",
+      "licenseName": "CC0",
+      "date": "2023-12-02 15:09:48",
+      "hold": "PRIOR_SOURCE_INTEGRITY_HOLD",
+      "credit": "<a href=\"//commons.wikimedia.org/wiki/User:Vouliagmeni\" title=\"User:Vouliagmeni\">Vouliagmeni</a>"
+    }
+  ]
+}
