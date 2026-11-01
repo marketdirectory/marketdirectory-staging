@@ -1,26 +1,514 @@
 {
   "kind": "MARKETDIRECTORY_PUBLIC_SOURCE_DISCOVERY_ONLY",
-  "queriesPerTarget": 2,
+  "inputWorkTrackerBlob": "5b332bc9b43d3e52679bd58fc47a97566aab3940",
+  "queriesPerTarget": 3,
+  "excludedAlreadyApproved": [
+    "truro-farmers-market",
+    "riverside-market"
+  ],
+  "excludedStop": [
+    "darlington-outdoor-market"
+  ],
   "targets": [
     {
-      "slug": "bury-market",
-      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+      "slug": "abbey-artisan-makers-market-rufford-abbey",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "abingdon-guildhall-craft-and-gift-markets",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "acomb-flourish-feast-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "anathema-witch-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "artisan-market-at-no-7-bottle-shop-st-helens",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "artisan-street-fayre-at-affinity-outlet-fleetwood",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "ayr-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "banchory-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
     },
     {
       "slug": "bath-farmers-market",
-      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
     },
     {
-      "slug": "wimborne-farmers-market",
-      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
-    },
-    {
-      "slug": "lancaster-charter-market",
-      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+      "slug": "beccles-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
     },
     {
       "slug": "bedford-charter-market",
-      "action_class": "TRIAL_SOURCE_DISCOVERY_ONLY"
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "bishops-stortford-farmers-and-craft-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "causeway-speciality-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "cheltenham-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "chichester-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "cirencester-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "crediton-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "dumfries-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "dundee-farmers-markets",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "durham-craft-and-producers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "ealing-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "eastbourne-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "farnham-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "henley-on-thames-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "hoyland-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "kempston-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "llanelli-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "louth-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "macclesfield-indoor-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "nest-and-nettle-artisan-vintage-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "newbury-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "notting-hill-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "penrith-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "pimlico-road-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "pitlochry-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "portishead-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "poundbury-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "reading-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "romsey-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "saltaire-makers-fair",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "sherborne-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "sidmouth-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "st-andrews-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "stoke-newington-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "stokesley-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "stonehaven-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "stow-on-the-wold-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "walthamstow-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "wimbledon-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "wimborne-farmers-market",
+      "action_class": "SCREENED_NO_VETTED_SOURCE",
+      "original_hold": null
+    },
+    {
+      "slug": "arndale-market",
+      "action_class": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "original_hold": null
+    },
+    {
+      "slug": "bedford-non-charter-market",
+      "action_class": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "original_hold": null
+    },
+    {
+      "slug": "folkestone-marketplace",
+      "action_class": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "original_hold": null
+    },
+    {
+      "slug": "stirling-farmers-market",
+      "action_class": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "original_hold": null
+    },
+    {
+      "slug": "wakefield-market",
+      "action_class": "SCREENED_REJECTED_IDENTITY_FALSE_POSITIVE",
+      "original_hold": null
+    },
+    {
+      "slug": "dudley-market",
+      "action_class": "WORK_PREFLIGHT_LOW_RESOLUTION_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "lancaster-charter-market",
+      "action_class": "WORK_PREFLIGHT_LOW_RESOLUTION_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "newry-variety-market",
+      "action_class": "SCREENING_SOURCE_RESOLUTION_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "wednesfield-market",
+      "action_class": "SCREENING_SOURCE_RESOLUTION_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "willenhall-market",
+      "action_class": "SCREENING_SOURCE_RESOLUTION_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "keynsham-farmers-market",
+      "action_class": "NONORIGINAL_PREVIEW_VISUAL_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "preston-outdoor-market",
+      "action_class": "NONORIGINAL_PREVIEW_VISUAL_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "south-elmsall-market",
+      "action_class": "NONORIGINAL_PREVIEW_VISUAL_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "swiss-cottage-market",
+      "action_class": "SOURCE_VENUE_CURRENTNESS_PENDING",
+      "original_hold": null
+    },
+    {
+      "slug": "upper-gardner-street-market",
+      "action_class": "SCREENING_VENUE_IDENTITY_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "barnstaple-pannier-market",
+      "action_class": "PRIOR_CURRENTNESS_HOLD",
+      "original_hold": "prior currentness hold"
+    },
+    {
+      "slug": "bilston-market",
+      "action_class": "PRIOR_CURRENTNESS_HOLD",
+      "original_hold": "prior currentness hold"
+    },
+    {
+      "slug": "bury-market",
+      "action_class": "PRIOR_CURRENTNESS_HOLD",
+      "original_hold": "prior currentness hold"
+    },
+    {
+      "slug": "leicester-market",
+      "action_class": "PRIOR_CURRENTNESS_HOLD",
+      "original_hold": "prior currentness hold"
+    },
+    {
+      "slug": "northampton-market",
+      "action_class": "PRIOR_CURRENTNESS_HOLD",
+      "original_hold": "prior currentness hold"
+    },
+    {
+      "slug": "wrexham-butchers-market",
+      "action_class": "PRIOR_CURRENTNESS_HOLD",
+      "original_hold": "prior currentness hold"
+    },
+    {
+      "slug": "beverley-saturday-market",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "carmarthen-market",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "castleford-market",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "coventry-market",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "crystal-palace-food-market",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "marylebone-farmers-market",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "morecambe-festival-market",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "preston-market-hall",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "shrewsbury-market-hall",
+      "action_class": "PRIOR_PHOTO_SELECTION_HOLD",
+      "original_hold": "prior selected-photo hold"
+    },
+    {
+      "slug": "bloxwich-market",
+      "action_class": "BYTE_COMPLETE_VISUAL_IDENTITY_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "durham-saturday-outdoor-market",
+      "action_class": "BYTE_COMPLETE_VISUAL_IDENTITY_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "grassmarket-market",
+      "action_class": "BYTE_COMPLETE_VISUAL_IDENTITY_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "bury-st-edmunds-farmers-market",
+      "action_class": "PRIOR_RESEARCH_RIGHTS_IDENTITY_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "chesterfield-outdoor-market",
+      "action_class": "PRIOR_RESEARCH_RIGHTS_IDENTITY_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "earlham-street-market",
+      "action_class": "PRIOR_RESEARCH_RIGHTS_IDENTITY_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "perth-farmers-market",
+      "action_class": "PRIOR_RESEARCH_RIGHTS_IDENTITY_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "darlington-market-hall",
+      "action_class": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "mansfield-market",
+      "action_class": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "northwich-market",
+      "action_class": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "walsall-market",
+      "action_class": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "wolverhampton-market",
+      "action_class": "SCREENING_RELOCATION_CURRENTNESS_HOLD",
+      "original_hold": null
+    },
+    {
+      "slug": "bull-ring-open-market",
+      "action_class": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "original_hold": "original release exclusion"
+    },
+    {
+      "slug": "grainger-market",
+      "action_class": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "original_hold": "original release exclusion"
+    },
+    {
+      "slug": "ipswich-market",
+      "action_class": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "original_hold": "original release exclusion"
+    },
+    {
+      "slug": "quayside-sunday-market",
+      "action_class": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "original_hold": "original release exclusion"
+    },
+    {
+      "slug": "st-albans-market",
+      "action_class": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "original_hold": "original release exclusion"
+    },
+    {
+      "slug": "stroud-farmers-market",
+      "action_class": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "original_hold": "original release exclusion"
+    },
+    {
+      "slug": "treacle-market",
+      "action_class": "PRIOR_RELEASE_EXCLUSION_HOLD",
+      "original_hold": "original release exclusion"
+    },
+    {
+      "slug": "swansea-market",
+      "action_class": "PRIOR_SOURCE_INTEGRITY_HOLD",
+      "original_hold": "prior source integrity mismatch"
     }
   ]
 }

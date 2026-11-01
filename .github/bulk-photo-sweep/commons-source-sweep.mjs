@@ -23,8 +23,10 @@ async function call(params){
 function pretty(slug){return slug.replace(/-farmers-and-craft-market$/,' farmers and craft market').replace(/-farmers-market$/,' farmers market').replace(/-art-and-craft-market$/,' art and craft market').replace(/-market-hall$/,' market hall').replaceAll('-',' ')}
 function candidateSearches(t){
  const full=pretty(t.slug).replace(/\bmarket markets\b/g,'market');
- const out=[`intitle:"${full}"`, `"${full}"`];
- if(full.includes(' farmers market'))out.push(`"${full.replace(' farmers market','')}" "market"`);
+ const parts=full.split(' ');
+ const place=parts.slice(0,parts.findIndex(x=>['farmers','charter','market','artisan','craft','indoor','outdoor','makers','variety'].includes(x))>=0?parts.findIndex(x=>['farmers','charter','market','artisan','craft','indoor','outdoor','makers','variety'].includes(x)):parts.length).join(' ');
+ const focus=place.length>=3?place:parts.slice(0,2).join(' ');
+ const out=[`intitle:"${full}"`, `intitle:"${focus}" market`, `"${focus}" "market"`];
  if(t.slug==='bury-market')out.unshift('incategory:"Bury Market"');
  return [...new Set(out)];
 }
@@ -41,12 +43,12 @@ for(const [i,t] of data.targets.entries()){
  const slug=t.slug; const full=pretty(slug);const matches=new Map();let failCount=0;
  for(const query of candidateSearches(t).slice(0,data.queriesPerTarget||2)){
   if(apiErrors.some(e=>e.kind==='HTTP_403'||e.kind==='HTTP_429')){cutoff=true;break;}
-  const res=await call({action:'query',list:'search',srsearch:query,srnamespace:6,srlimit:25});
+  const res=await call({action:'query',list:'search',srsearch:query,srnamespace:6,srlimit:50});
   if(!res){failCount++;continue;}
   for(const row of res.query?.search||[]){if(row.title.startsWith('File:'))matches.set(row.title,{title:row.title,score:idScore(row.title,full),search:query});}
   await sleep(450);
  }
- const ranked=[...matches.values()].sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title)).filter(x=>x.score>=36).slice(0,8);
+ const ranked=[...matches.values()].sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title)).filter(x=>x.score>=48).slice(0,32);
  let candidates=[];
  if(ranked.length&&!cutoff){
   await sleep(400);
@@ -57,12 +59,17 @@ for(const [i,t] of data.targets.entries()){
    const licUrl=y.extmetadata?.LicenseUrl?.value||'';
    const credit=y.extmetadata?.Artist?.value||'';
    const originalOK=(y.width||0)>=960&&(y.height||0)>=540;
-   const rightsOK=/CC(?:-BY|-BY-SA|-0)|public domain/i.test(lic)&&(/^https?:\/\/creativecommons\.org\//.test(licUrl)||/public domain/i.test(lic));
+   const rightsOK=/^(?:CC[ -]BY(?:[ -]SA)?(?:\s|$)|CC0(?:\s|$)|Public domain)/i.test(lic)&&(/^(?:https?:)\/\/creativecommons\.org\/(?:licenses\/by(?:-sa)?\/|publicdomain\/)/.test(licUrl)||/^Public domain/i.test(lic));
    candidates.push({...x,width:y.width,height:y.height,bytes:y.size,sha1:y.sha1,licenseName:lic,licenseUrl:licUrl,artistHtml:credit.slice(0,350),descriptionHtml:(y.extmetadata?.ImageDescription?.value||'').slice(0,500),dateTaken:y.extmetadata?.DateTimeOriginal?.value||null,filePage:`https://commons.wikimedia.org/wiki/${encodeURIComponent(x.title.replaceAll(' ','_'))}`,originalUrl:y.url||null,sizeOK:originalOK,rightsCandidate:!!rightsOK,qualityGate:'NEEDS_HUMAN_VISUAL_AND_VENUE_REVIEW'});
   }
  }
+ candidates.sort((a,b)=>
+  (Number(b.sizeOK&&b.rightsCandidate)-Number(a.sizeOK&&a.rightsCandidate))||
+  (b.score-a.score)||
+  ((b.dateTaken||'').localeCompare(a.dateTaken||''))||
+  (b.width*b.height-a.width*a.height));
  const eligible=candidates.filter(c=>c.sizeOK&&c.rightsCandidate);
- decisions.push({slug,previousClass:t.action_class,originalHold:t.original_hold||null,queriesAttempted:candidateSearches(t).slice(0,data.queriesPerTarget||2),searchHits:matches.size,eligibleMetadataCandidates:eligible.length,candidates:candidates.slice(0,6),status:cutoff?'API_BLOCK_STOP':eligible.length?'METADATA_CANDIDATES_NEED_VISUAL_IDENTITY_REVIEW':'NO_NEW_METADATA_VETTED_CANDIDATE',queryFailures:failCount});
+ decisions.push({slug,previousClass:t.action_class,originalHold:t.original_hold||null,queriesAttempted:candidateSearches(t).slice(0,data.queriesPerTarget||2),searchHits:matches.size,eligibleMetadataCandidates:eligible.length,candidates:candidates.slice(0,8),status:cutoff?'API_BLOCK_STOP':eligible.length?'METADATA_CANDIDATES_NEED_VISUAL_IDENTITY_REVIEW':'NO_NEW_METADATA_VETTED_CANDIDATE',queryFailures:failCount});
  if(i%10===0)console.log(`SWEEP_PROGRESS ${i+1}/${data.targets.length} candidates=${decisions.reduce((n,d)=>n+d.eligibleMetadataCandidates,0)} errors=${apiErrors.length}`);
  if(cutoff)break;
  await sleep(450);
@@ -70,4 +77,5 @@ for(const [i,t] of data.targets.entries()){
 const receipt={kind:'MARKETDIRECTORY_REVIEW_ONLY_BULK_COMMONS_METADATA_SWEEP',timestamp:new Date().toISOString(),inputSHA256:crypto.createHash('sha256').update(fs.readFileSync(inputFile)).digest('hex'),targetsProvided:data.targets.length,targetsAttempted:decisions.length,queriesPerTarget:data.queriesPerTarget||2,apiRequests,apiErrors,cutoff,eligibleTargetCount:decisions.filter(x=>x.eligibleMetadataCandidates>0).length,metadataCandidates:decisions.reduce((n,x)=>n+x.eligibleMetadataCandidates,0),decisions,limitations:'Discovery and primary API metadata only. No original files fetched, no derivative generation, no visual/venue/rights approval, no publications or permissions.'};
 fs.writeFileSync(outputFile,JSON.stringify(receipt,null,2)+'\n');
 console.log('SWEEP_RESULT',JSON.stringify({targets:receipt.targetsAttempted,total:data.targets.length,apiRequests,errors:apiErrors.slice(0,4),cutoff,candidateTargets:receipt.eligibleTargetCount,candidates:receipt.metadataCandidates}));
+for(const row of decisions){if(row.eligibleMetadataCandidates)console.log('SWEEP_LEAD',JSON.stringify({slug:row.slug,oldClass:row.previousClass,count:row.eligibleMetadataCandidates,top:row.candidates.filter(x=>x.sizeOK&&x.rightsCandidate).slice(0,2).map(x=>({title:x.title,width:x.width,height:x.height,license:x.licenseName,licenseUrl:x.licenseUrl,photoDate:x.dateTaken,source:x.filePage}))}));}
 if(cutoff||apiRequests===0)process.exitCode=2;
