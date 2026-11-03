@@ -1,0 +1,52 @@
+{
+  "schema": "MarketDirectoryPhotoCompanionReleaseV2",
+  "baseVersion": "1.2.0",
+  "version": "1.2.1",
+  "scope": "review-only",
+  "productionAccess": false,
+  "changes": {
+    "version.json": {
+      "bytes": 176,
+      "sha256": "4506de64d2671a35089ce133b07040cd901f5f8d63155f0159183c24d4850dc5",
+      "base64": "ewogICJ2ZXJzaW9uIjogIjEuMi4xIiwKICAic2NvcGUiOiAicmV2aWV3LW9ubHkiLAogICJjYW5Xcml0ZU1ldGFkYXRhIjogZmFsc2UsCiAgInN0YWdpbmdQcm9qZWN0IjogImxkd2hiaHNpc3Bqem1zdGNzZ2FzIiwKICAicmVsZWFzZUNoYW5uZWwiOiAidG9vbC9waG90by1jb21wYW5pb24tdXBkYXRlcyIKfQo="
+    }
+  },
+  "finalFiles": {
+    "app.js": {
+      "bytes": 12540,
+      "sha256": "04bb95a7e54658e593c6adef88d9018204383292cf20c8d69904017a73c80a20"
+    },
+    "index.html": {
+      "bytes": 8245,
+      "sha256": "88ae665976944b443a2a46488a2815c0c23ce798d29ab9d25992fe328e69b8f8"
+    },
+    "style.css": {
+      "bytes": 10232,
+      "sha256": "7528ba76e3ba9fdc55a18138a9e02366ed930cd2fcbbf5e5b603c9665ead3891"
+    },
+    "manifest.json": {
+      "bytes": 19973,
+      "sha256": "4a1f423401ab7a2653fc9e24e36a960cb2ca2326df52e815ad197a5d0fba3812"
+    },
+    "server.mjs": {
+      "bytes": 7118,
+      "sha256": "d7928995db51d1630b90a69236a93af47b134498dfb32adf9b1a582f4d326101"
+    },
+    "probe.mjs": {
+      "bytes": 6097,
+      "sha256": "0552f18473a5ffbb95ffdd26ea9f19adf35a3f4044fc153d117104f6c306d267"
+    },
+    "tests.mjs": {
+      "bytes": 3953,
+      "sha256": "20948e42fe684c1fc45106aeda2d5800fa7708780ec798776eb2d2926bec19d7"
+    },
+    "probe.test.mjs": {
+      "bytes": 4205,
+      "sha256": "bd2e8cb7041b791d2ce45adeb18d9cffb7ecaa0395243e4d24f156f185c1b4ec"
+    },
+    "version.json": {
+      "bytes": 176,
+      "sha256": "4506de64d2671a35089ce133b07040cd901f5f8d63155f0159183c24d4850dc5"
+    }
+  }
+}
