@@ -1,6 +1,6 @@
 {
   "schema": "MarketDirectoryPhotoCompanionChannelV2",
-  "latestVersion": "1.2.2",
+  "latestVersion": "1.2.3",
   "scope": "review-only",
   "productionAccess": false,
   "releases": [
@@ -13,6 +13,11 @@
       "version": "1.2.2",
       "bytes": 9910,
       "sha256": "69b71024491c4ca503041533d47df508966ec38eec8af22d08270821469d21c3"
+    },
+    {
+      "version": "1.2.3",
+      "bytes": 7458,
+      "sha256": "9a562bce9e902a6264b36386f14e8e7cd05f7e75bfd7c5a3808f05330523af70"
     }
   ]
 }
