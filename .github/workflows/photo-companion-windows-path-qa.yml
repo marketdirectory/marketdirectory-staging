@@ -1,0 +1,36 @@
+name: Photo Companion - native Windows URL path regression
+on:
+  push:
+    branches:
+      - tool/photo-companion-updates
+    paths:
+      - photo-companion/qa/windows-url-regression.mjs
+      - photo-companion/releases/1.2.3.json
+      - .github/workflows/photo-companion-windows-path-qa.yml
+permissions:
+  contents: read
+concurrency:
+  group: photo-companion-native-windows-url-qa
+  cancel-in-progress: false
+jobs:
+  verify-windows-space-path:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout update branch without saved credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the same Node major version as owner's Windows machine
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Native Windows paths with spaces and exact published fix
+        shell: pwsh
+        run: |
+          node --version
+          node --test photo-companion/qa/windows-url-regression.mjs
+      - name: Read-only verification scope
+        shell: pwsh
+        run: |
+          Write-Output 'No Supabase data access, SQL, deployment, or staging-main ref change.'
