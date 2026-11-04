@@ -129,7 +129,7 @@ final.style.transform=`translateY(${mix(18,0,finalOpacity).toFixed(1)}px)`;
 const ready=p>.92||reduced.matches;
 final.style.pointerEvents=ready?'auto':'none';final.inert=!ready;
 float.classList.toggle('ready',p>.98&&!reduced.matches);
-skip.hidden=p>.965||reduced.matches;
+skip.hidden=p>.86||reduced.matches;
 scrollCue.style.opacity=(1-bt(.04,.15,p)).toFixed(3);
 progress.style.width=(p*100).toFixed(1)+'%';
 const i=p<.10?0:p<.34?1:p<.765?2:3;
