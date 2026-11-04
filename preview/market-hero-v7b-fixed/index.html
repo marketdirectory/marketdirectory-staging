@@ -93,7 +93,7 @@ let frame=0;
 function render(){
  const r=story.getBoundingClientRect();const travel=Math.max(1,story.offsetHeight-stage.offsetHeight);
  const p=reduced.matches?1:clamp(-r.top/travel);
- const reveal=tween(.06,.32,p),extras=tween(.16,.40,p),fade=tween(.28,.70,p);
+ const reveal=tween(.03,.22,p),extras=tween(.12,.32,p),fade=tween(.26,.70,p);
  form.style.opacity=reveal.toFixed(3);
  form.style.transform=`translateY(${(24*(1-reveal)).toFixed(2)}px) scale(${(.975+.025*reveal).toFixed(4)})`;
  form.style.pointerEvents=(reveal>.83||reduced.matches)?'auto':'none';
