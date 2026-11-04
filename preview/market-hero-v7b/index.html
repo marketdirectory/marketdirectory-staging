@@ -245,7 +245,7 @@ function tick(){queued=false;current=target;render(current)}function schedule(){
   function resize(){
     const r=canvas.getBoundingClientRect();W=Math.max(300,r.width);H=Math.max(360,r.height);dpr=Math.min(1.75,window.devicePixelRatio||1);
     const rw=Math.round(W*dpr),rh=Math.round(H*dpr);if(canvas.width!==rw||canvas.height!==rh){canvas.width=rw;canvas.height=rh;}
-    render(performance.now());
+    if(progress>.48||motion.matches)render(performance.now());
   }
   function setCamera(p){
     const travel=phase(.57,.85,p),m=W<690;
@@ -452,6 +452,6 @@ function tick(){queued=false;current=target;render(current)}function schedule(){
   window.addEventListener('scroll',()=>{progress=getProgress();if(motion.matches)render();else start();},{passive:true});
   motion.addEventListener('change',()=>{progress=getProgress();render();if(!motion.matches)start();});
   if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)start();else if(raf){cancelAnimationFrame(raf);raf=0;}},{rootMargin:'30% 0px 30% 0px'});io.observe(stage);}
-  resize();progress=getProgress();render();start();
+  resize();progress=getProgress();if(progress>.48||motion.matches)render();start();
 })();
 </script></body></html>
