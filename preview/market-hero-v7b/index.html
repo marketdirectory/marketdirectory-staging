@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>MarketDirectory — White Morph Discovery V7B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#e85d04;--dark:#0f172a;--cream:#f6e5d6}*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;font-family:Inter,Arial,sans-serif;background:#fff9f2;color:#0f172a;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.nav{height:62px;position:relative;z-index:30;display:flex;align-items:center;justify-content:center;background:white;border-bottom:1px solid #edf0f1}.nav-inner{width:min(1280px,calc(100% - 44px));display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:8px;font-family:Outfit,Inter,sans-serif;font-size:20px;letter-spacing:-.045em;font-weight:800}.brand-icon{width:33px;height:33px;display:grid;place-items:center;border-radius:9px;background:var(--orange);color:white}.brand strong{color:var(--orange)}.nav-links{display:flex;gap:26px;font-size:13px;font-weight:600;color:#5e6573}.nav-links .active{color:var(--orange)}.preview-tag{margin-left:24px;border-radius:100px;background:#fff0e4;padding:7px 12px;color:#b34f1a;font-size:11px;font-weight:800;white-space:nowrap}
+.story{height:355svh;min-height:2050px;position:relative}.stage{position:sticky;top:0;height:100svh;min-height:540px;width:100%;overflow:hidden;background:#eed9c8;isolation:isolate}.scene{position:absolute;inset:0;overflow:hidden}.ambient{position:absolute;inset:0;background:radial-gradient(ellipse 850px 570px at 47% 43%,#ffede0 0%,#f3dece 62%,#e7cbb9 100%)}.ambient:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.55) 1px,transparent 1px);background-size:33px 33px;opacity:.13}.map-viewport,.market-viewport{position:absolute;inset:0;pointer-events:none;transform:translateZ(0);will-change:transform,opacity}.art{width:100%;height:100%;position:absolute;inset:0;display:block}.map-viewport svg,.market-viewport svg{width:100%;height:100%;display:block;overflow:visible}.orbital{fill:none;stroke:#fff7ec;stroke-width:1.5;opacity:.48}.watermark{font:800 12px Inter,Arial,sans-serif;letter-spacing:5px;fill:#bb906f;opacity:.7}.coast-depth{fill:#b49c88;opacity:.4;stroke:#b49c88;stroke-width:5;stroke-linejoin:round;filter:url(#map-shadow)}.coast-body{fill:url(#landfill);stroke:#fffaf2;stroke-width:3.5;stroke-linejoin:round;filter:url(#map-ridge)}.coast-inner{fill:none;stroke:#e2cabb;stroke-width:1.5;opacity:.6;stroke-linejoin:round}.map-dot{fill:#ed780a;stroke:#fff5e6;stroke-width:3;filter:url(#pin-glow)}.map-pin-ring{fill:none;stroke:#f68c1b;stroke-width:2}.map-pin-ring.r1{animation:pinpulse 2.6s ease-out infinite}.map-pin-ring.r2{animation:pinpulse 2.6s ease-out infinite .8s}.map-connection{fill:none;stroke:#ef9b45;stroke-width:1.5;stroke-dasharray:4 9;stroke-linecap:round;opacity:.4}.location-label{font:700 13px Inter,Arial,sans-serif;fill:#a46432;letter-spacing:.02em;opacity:.82}.pin-core{filter:url(#pin-glow)}.map-lines{stroke:#fffaf2;opacity:.13;stroke-width:2}
+.lens{position:absolute;z-index:5;left:58%;top:35%;width:clamp(165px,18vw,275px);aspect-ratio:1;border-radius:50%;border:9px solid #513e34;box-shadow:0 0 0 3px #d4b18b,0 0 0 5px #f8dfb6,inset 0 0 25px rgba(255,255,255,.8),0 18px 43px rgba(53,30,18,.26);background:radial-gradient(circle at 38% 24%,rgba(255,255,255,.67),transparent 46%),rgba(255,232,202,.25);opacity:0;transform:translate(-50%,-50%) scale(.8);transform-origin:center;will-change:left,top,opacity,transform}.lens:after{content:"";position:absolute;left:81%;top:81%;width:82%;height:17px;border:3px solid #5a3827;background:linear-gradient(180deg,#e4b074,#935c35 47%,#593e2e);border-radius:20px;transform:rotate(45deg);transform-origin:left center;box-shadow:0 6px 14px rgba(66,37,23,.3)}.lens:before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(255,255,255,.75);box-shadow:inset 0 0 30px rgba(252,171,80,.12)}.lens-location{position:absolute;left:50%;top:48%;width:34px;height:47px;transform:translate(-50%,-56%);filter:drop-shadow(0 5px 7px rgba(135,74,13,.35));opacity:0}.lens-grid{position:absolute;inset:0;border-radius:50%;overflow:hidden;background-image:linear-gradient(23deg,transparent 46%,rgba(229,133,28,.16) 47%,transparent 49%),linear-gradient(90deg,transparent 47%,rgba(229,133,28,.15) 49%,transparent 50%);background-size:48px 35px}.lens-grid:after{content:"";position:absolute;inset:21%;border:1px solid rgba(233,132,31,.35);border-radius:50%;box-shadow:0 0 0 16px rgba(237,150,56,.07),0 0 0 37px rgba(237,150,56,.06)}.sweep{position:absolute;left:50%;top:50%;height:3px;width:0;background:linear-gradient(90deg,#fff9e7,#ff9a25);box-shadow:0 0 22px #f89b38;transform:translate(-50%,-50%);opacity:0;will-change:width,opacity}
+.market-viewport{opacity:0;background:#f6d9b7;transform-origin:50% 53%;will-change:transform,opacity}.market-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,30,26,.12),rgba(12,21,21,.12) 35%,rgba(12,22,20,.56) 100%);pointer-events:none}.market-foreground{filter:url(#market-foreground-blur)}.market-ambient-light{mix-blend-mode:screen;opacity:.7}.market-people{will-change:transform}.market-left,.market-right,.market-center{will-change:transform}.heading-screen{position:absolute;inset:0;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;text-align:center;padding:48px 18px 66px;opacity:0;transform:translateY(25px);pointer-events:none;will-change:opacity,transform}.heading-screen:before{content:"";position:absolute;inset:-70px;background:radial-gradient(ellipse 700px 440px at 50% 54%,rgba(5,13,17,.47),transparent 83%);z-index:-1}.heading-screen h1{font-family:Outfit,Inter,sans-serif;font-size:clamp(48px,5.7vw,84px);font-weight:800;letter-spacing:-.035em;line-height:.98;max-width:760px;margin:0;text-shadow:0 6px 20px rgba(8,20,28,.16)}.heading-screen .subtitle{font-size:clamp(15px,1.2vw,18px);line-height:1.77;max-width:600px;margin:17px auto 0;color:#f1f5f9}.search-float{width:min(896px,100%);margin-top:32px}.search-float.ready:not(:focus-within){animation:floating 5.3s ease-in-out infinite}.search-form{position:relative;display:flex;align-items:center;gap:8px;width:100%;padding:10px;border:1px solid rgba(255,255,255,.25);background:#fff;border-radius:30px;box-shadow:0 17px 49px rgba(6,19,21,.19);color:#1f2937;text-align:left}.search-field{display:flex;align-items:center;flex:1;min-width:0;border-radius:99px;padding:0 20px}.search-field svg{width:22px;height:22px;color:#9ca3af;margin-right:13px;flex-shrink:0}.search-field input{width:100%;min-width:0;border:0;outline:0;background:transparent;padding:13px 0;color:#1f2937;font-size:18px}.search-field input::placeholder{color:#9ca3af;opacity:1}.search-actions{display:flex;align-items:center;gap:9px;padding-right:4px}.near-me{border:1px solid #e5e7eb;background:#fff;color:#374151;border-radius:999px;padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:500;white-space:nowrap}.near-me svg{width:16px;height:16px;flex-shrink:0}.near-me:hover{border-color:#f4b48a;color:#cf5103}.submit{background:#e85d04;border:0;color:#fff;font-size:16px;font-weight:750;border-radius:999px;padding:12px 28px;white-space:nowrap}.submit:hover{background:#d65504}.quick-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;margin-top:24px;max-width:960px}.chip{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;border-radius:99px;padding:11px 20px;font-size:14px;font-weight:650;transition:transform .24s,background .2s}.chip:hover{transform:translateY(-2px)}.chip.primary{background:#fff;border:1px solid rgba(255,255,255,.8);color:#0f172a;box-shadow:0 12px 28px rgba(15,23,42,.15)}.chip.primary svg{height:14px;width:14px;color:#e85d04}.chip.secondary{border:1px solid rgba(255,255,255,.34);background:rgba(255,255,255,.1);color:#fff;backdrop-filter:blur(10px);font-weight:500}.chip.secondary:hover{background:rgba(255,255,255,.18)}
+.stage-bottom{position:absolute;left:clamp(18px,4vw,70px);right:clamp(18px,4vw,70px);bottom:28px;z-index:12;display:flex;align-items:center;justify-content:space-between;pointer-events:none}.scene-counter{display:flex;align-items:center;gap:10px;color:#8d5b3d;font:800 10px Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}.scene-counter .bar{width:42px;height:2px;background:#e85d04}.scene-counter.invert{color:#fff}.stage-progress{width:130px;height:3px;border-radius:5px;background:rgba(95,77,63,.18);overflow:hidden}.stage-progress span{display:block;height:100%;width:0;background:#e85d04}.scroll-cue{position:absolute;bottom:70px;left:50%;transform:translateX(-50%);font:800 10px Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.19em;color:#ab7452;z-index:11;white-space:nowrap}.scroll-cue:after{content:"";display:block;height:23px;width:1px;margin:10px auto 0;background:#e85d04;animation:cue 1.5s ease-in-out infinite alternate}.skip{position:absolute;z-index:15;top:25px;right:clamp(18px,4vw,70px);border:1px solid rgba(181,128,88,.16);border-radius:100px;background:rgba(255,255,255,.91);color:#7c4c2e;padding:11px 16px;font-size:12px;font-weight:750;box-shadow:0 4px 15px rgba(60,29,12,.07)}.skip:hover{background:white}.after-story{padding:45px max(22px,calc((100% - 1280px)/2)) 70px;background:#fffaf4}.region-box{max-width:1280px;margin:auto;border:1px solid #e7e3dc;background:white;border-radius:28px;padding:26px 32px;box-shadow:0 14px 35px rgba(15,23,42,.045)}.region-box h2{font-family:Outfit,sans-serif;letter-spacing:-.035em;font-size:23px;margin:0 0 12px}.region-links{display:flex;flex-wrap:wrap;gap:10px}.region-links a{border:1px solid #e5e7eb;border-radius:50px;padding:10px 16px;color:#374151;font-size:13px}.meta-note{font-size:12px;color:#867a6c;line-height:1.7;margin-top:18px}.debug{position:absolute;right:18px;top:83px;z-index:30;background:#fff9;color:#111;border-radius:10px;font:12px monospace;padding:8px;display:none}
+@keyframes floating{50%{transform:translateY(-5px)}}@keyframes cue{to{opacity:.5;transform:scaleY(.5)}}@keyframes pinpulse{0%{opacity:.6;transform:scale(.72)}85%,100%{opacity:0;transform:scale(1.65)}}
+@media(max-width:760px){.nav{height:54px}.nav-inner{width:calc(100% - 28px)}.brand{font-size:17px}.brand-icon{width:29px;height:29px}.nav-links{display:none}.preview-tag{font-size:10px}.story{height:290svh;min-height:1690px}.stage{min-height:460px}.heading-screen{padding:30px 16px 43px}.heading-screen h1{font-size:clamp(42px,10.6vw,60px)}.heading-screen .subtitle{font-size:14px;line-height:1.55;margin-top:13px}.search-float{margin-top:23px}.search-form{flex-wrap:wrap;gap:4px;border-radius:25px;padding:8px}.search-field{flex-basis:100%;padding:0 10px}.search-field input{font-size:14px;padding:11px 0}.search-actions{flex:1;padding:0;width:100%}.near-me,.submit{flex:1;font-size:13px;padding:12px 10px}.quick-links{margin-top:16px;gap:7px}.chip{font-size:11px;padding:9px 11px}.chip.secondary{backdrop-filter:none}.stage-bottom{bottom:20px;left:16px;right:16px}.scene-counter{font-size:8px;gap:5px}.scene-counter .bar{width:17px}.stage-progress{width:64px}.scroll-cue{font-size:9px;bottom:64px}.skip{top:16px;right:15px;font-size:11px;padding:9px 12px}.lens{width:170px;border-width:6px}.after-story{padding:22px 15px 50px}.region-box{padding:18px;border-radius:20px}.region-links a{padding:8px 12px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.story{height:100svh;min-height:570px}.map-viewport,.lens,.sweep,.scroll-cue,.skip,.stage-bottom{display:none!important}.market-viewport,.heading-screen{opacity:1!important;transform:none!important;clip-path:none!important}.heading-screen{pointer-events:auto!important}}
+/* CINEMATIC V5: lens, zoom portal, light, atmosphere. No reference image assets. */
+.map-viewport{transform-origin:55% 52%;filter:drop-shadow(0 12px 23px rgba(123,68,29,.04));}
+.lens{border-width:10px;border-color:#563b28;box-shadow:0 0 0 3px #dca762,0 0 0 5px rgba(255,247,219,.85),inset 0 0 40px rgba(255,255,255,.62),0 20px 40px rgba(57,34,19,.22);}
+.lens::before{background:conic-gradient(from 215deg at 43% 34%,transparent 0deg,rgba(255,255,255,.48) 43deg,transparent 85deg,transparent 360deg);}
+.portal{position:absolute;z-index:5;width:115px;height:115px;border-radius:50%;left:55%;top:53%;transform:translate(-50%,-50%) scale(.2);opacity:0;pointer-events:none;will-change:transform,opacity;box-shadow:0 0 0 3px rgba(255,148,35,.75),0 0 0 12px rgba(255,148,35,.10),0 0 0 35px rgba(255,148,35,.06),0 0 85px 35px rgba(250,159,48,.48),inset 0 0 45px rgba(255,253,225,.9);}
+.portal::before,.portal::after{content:"";position:absolute;inset:-40px;border:1.5px solid rgba(255,178,74,.46);border-radius:50%;}
+.portal::after{inset:-88px;border-color:rgba(255,187,80,.23);}
+.transition-flare{position:absolute;inset:0;z-index:6;opacity:0;pointer-events:none;background:radial-gradient(circle at 55% 53%,rgba(255,254,229,.96) 0%,rgba(255,225,169,.7) 10%,rgba(251,173,75,.2) 24%,transparent 64%);mix-blend-mode:screen;will-change:opacity;}
+.market-cinema{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden;}
+.sunbeams{position:absolute;inset:0;mix-blend-mode:screen;opacity:.35;background:conic-gradient(from 221deg at 74% -4%,transparent 0deg,rgba(255,238,171,.12) 12deg,transparent 23deg,rgba(255,237,181,.11) 31deg,transparent 43deg,rgba(255,246,206,.16) 56deg,transparent 66deg);transform-origin:74% 0;animation:daylight 14s ease-in-out infinite alternate;}
+.market-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 89% 78% at 50% 44%,transparent 26%,rgba(30,26,20,.07) 65%,rgba(25,21,18,.17) 100%);}
+.atmosphere-grain{position:absolute;inset:0;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.77' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E");mix-blend-mode:soft-light;}
+.dust{position:absolute;width:6px;height:6px;border-radius:50%;background:rgba(255,241,183,.7);box-shadow:0 0 18px 3px rgba(255,222,154,.48);opacity:.68;animation:drift var(--dur) ease-in-out infinite alternate;}
+@keyframes drift{to{transform:translate3d(var(--dx),-22px,0);opacity:.2}}
+@keyframes daylight{to{transform:rotate(-6deg);opacity:.65}}
+@media(prefers-reduced-motion:reduce){.portal,.transition-flare{display:none!important}.sunbeams,.dust{animation:none!important}}
+
+.atmosphere-grain{display:none}
+/* V6 custom 3D-perspective canvas and optical scanning layers. */
+#market-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;pointer-events:none}
+.market-viewport>svg{display:none!important}
+.market-viewport .market-wash{z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(46,36,27,.02),rgba(51,39,29,.11) 43%,rgba(28,28,23,.50) 100%)}
+.market-cinema{z-index:3;opacity:.5;pointer-events:none}
+.lens{overflow:visible;backdrop-filter:none;background:radial-gradient(circle at 31% 18%,rgba(255,255,255,.55),rgba(255,242,218,.23) 55%,rgba(228,166,121,.12));border-width:7px;box-shadow:0 0 0 2px #e4b982,0 0 0 5px rgba(255,252,240,.8),inset 0 0 0 4px rgba(255,255,255,.32),inset 0 0 21px rgba(90,61,44,.11),0 24px 48px rgba(55,39,29,.22)}
+.lens-optic{position:absolute;inset:0;overflow:hidden;border-radius:50%;background:#efd7c2;z-index:0}
+.lens-optic svg{position:absolute;inset:0;width:100%;height:100%;filter:saturate(1.13) contrast(1.1)}
+.lens-grid{z-index:1;pointer-events:none;opacity:.4}
+.lens-location{z-index:2}
+.heading-screen:before{background:linear-gradient(180deg,rgba(25,28,25,.49),rgba(29,31,26,.26) 45%,rgba(18,23,23,.46));}
+.stage{background:#edd5c3}
+.portal,.transition-flare{pointer-events:none}
+@media (max-width:650px){.lens{width:clamp(140px,39vw,190px)}.story{min-height:1310px}}
+@media (prefers-reduced-motion:reduce){.market-viewport{opacity:1!important;transform:none!important}#market-canvas{opacity:1!important}}
+.intro-brand{display:flex;align-items:center;gap:11px;font:800 clamp(20px,1.9vw,27px) Outfit,Inter,sans-serif;letter-spacing:-.048em;white-space:nowrap}
+.intro-brand strong{font-weight:800;color:#e85d04}.intro-logo{display:grid;place-items:center;flex-shrink:0;color:#fff;background:#e85d04;border-radius:14px;width:47px;height:47px;box-shadow:0 11px 27px #e85d0431}.intro-logo svg{width:27px;height:27px}
+.category-rotator{display:inline-flex;align-items:center;gap:10px;background:#fffdfa;border:1px solid #f2d6c2;border-radius:100px;padding:11px 18px;box-shadow:0 13px 35px #a8673218;font:600 14px Inter,sans-serif;color:#51453c}
+.category-dot{width:7px;height:7px;flex-shrink:0;border-radius:50%;background:#e85d04;box-shadow:0 0 0 4px #e85d0414}
+.category-prefix{color:#9a8779}.category-word{color:#d9560b;display:inline-block;min-width:123px;text-align:left;animation:category-breathe 2.7s ease-in-out infinite}
+@keyframes category-breathe{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.72;transform:translateY(-2px)}}
+
+/* OPTION B — warm-white design-gallery entrance. CSS 3D object; no stock or reference images */
+.opening-b{position:absolute;inset:0;z-index:8;background:#fffdfa;color:#131923;overflow:hidden;will-change:opacity,transform;pointer-events:none}
+.opening-b-glow{position:absolute;inset:0;background:radial-gradient(ellipse 430px 400px at 75% 49%,#f9e6d9 0%,#fff7ee 57%,transparent 91%)}
+.opening-b-copy{position:absolute;left:clamp(40px,8.2vw,165px);width:min(46vw,730px);top:50%;transform:translateY(-50%);z-index:2}
+.opening-b .intro-brand{font-size:clamp(23px,2.25vw,34px);gap:12px}.opening-b .intro-logo{width:52px;height:52px}
+.opening-b-kicker{font:800 11px Inter,sans-serif;letter-spacing:.23em;color:#bc754b;margin:42px 0 19px}
+.opening-b h1{font:800 clamp(53px,5vw,93px)/1.02 Outfit,Inter,sans-serif;letter-spacing:-.061em;margin:0;white-space:nowrap}
+.opening-b h1 span{color:#e85d04}.opening-b p{color:#74685f;font:400 clamp(15px,1.1vw,18px)/1.8 Inter,sans-serif;max-width:500px;margin:25px 0 29px}
+.opening-b .category-rotator{background:#fff;border:1px solid #eddfd5;color:#6d635b}
+.opening-b-note{position:absolute;left:clamp(38px,8.2vw,165px);bottom:43px;font:800 10px Inter,sans-serif;letter-spacing:.15em;color:#b78970;display:flex;align-items:center;gap:15px}.opening-b-note span{width:37px;height:1px;background:#d1ac96}
+.sculpture-position{position:absolute;width:min(37vw,520px);aspect-ratio:1;left:71%;top:49%;transform:translate(-50%,-50%) perspective(850px);transform-style:preserve-3d;will-change:transform,opacity}
+.sculpture-shadow{position:absolute;left:14%;right:14%;height:44px;bottom:-2%;border-radius:50%;background:radial-gradient(ellipse,#a7683f4a,transparent 70%);filter:blur(12px)}
+.sculpture-rotator{position:absolute;inset:9%;transform-style:preserve-3d;animation:sculpture-turn 13s cubic-bezier(.42,0,.58,1) infinite;filter:drop-shadow(14px 20px 18px rgba(125,73,43,.16))}
+.object-rim-back,.object-rim-front,.object-glass,.object-shine{position:absolute;left:12%;top:8%;width:74%;height:74%;border-radius:50%;transform-style:preserve-3d}
+.object-rim-back{transform:translateZ(-20px);background:linear-gradient(125deg,#b96d2f,#fdd9a2,#c77d3c);box-shadow:0 0 0 3px #b7703e,0 21px 35px #c18b6455}
+.object-glass{transform:translateZ(3px);border:17px solid #f1ad63;background:radial-gradient(circle at 33% 26%,#fffefd 1%,#fff0e7 45%,#f9decb 100%);box-shadow:inset 7px 9px 20px #bd7e4533,0 0 0 4px #d07834,0 0 0 9px #f7d3a3,0 0 0 12px #bd723e,0 22px 24px #b47d5038;display:grid;place-items:center;overflow:hidden}
+.object-rim-front{transform:translateZ(9px);border:5px solid rgba(255,248,214,.76);box-shadow:inset -14px -12px 20px #f5b86d30;pointer-events:none}
+.object-shine{transform:translateZ(12px);background:linear-gradient(128deg,transparent 14%,#ffffffaa 20%,transparent 31%);opacity:.67;pointer-events:none}
+.mini-market{width:87%;height:87%;filter:drop-shadow(0 12px 11px rgba(117,73,44,.19));transform:translateZ(13px)}
+.object-handle{position:absolute;width:14%;height:39%;left:73%;top:67%;border-radius:15px 15px 28px 28px;background:linear-gradient(90deg,#8e4d26,#df944c 18%,#f7c07b 48%,#bd7134 82%,#7c3e20);box-shadow:10px 13px 19px #a56b3e44;transform:rotate(-44deg) translateZ(-13px);transform-origin:50% 6%}
+.object-handle-tip{position:absolute;width:12%;height:5%;left:89%;top:98%;border-radius:18px;background:#9d5229;transform:rotate(-44deg) translateZ(-11px);opacity:.0}
+.object-orbit{position:absolute;border:1px solid rgba(223,146,80,.26);border-radius:50%;inset:0;transform:rotateX(70deg) rotateZ(-24deg)}.orbit-two{inset:9%;transform:rotateX(64deg) rotateZ(55deg);border-style:dashed;opacity:.55}
+@keyframes sculpture-turn{0%{transform:rotateX(-10deg) rotateY(-23deg) rotateZ(-8deg)}50%{transform:rotateX(10deg) rotateY(30deg) rotateZ(5deg)}100%{transform:rotateX(-10deg) rotateY(-23deg) rotateZ(-8deg)}}
+.morph-search{position:absolute;z-index:11;left:50%;top:52%;display:flex;align-items:center;gap:16px;height:76px;max-width:88vw;border-radius:999px;background:#fff;box-shadow:0 30px 70px #a87c5630,0 3px 12px #a87c5618;border:1px solid #e4d7cf;padding:10px 12px 10px 25px;overflow:hidden;white-space:nowrap;opacity:0;transform:translate(-50%,-50%) scale(.2);transform-origin:center;pointer-events:none;will-change:width,transform,opacity}
+.morph-search-icon{display:grid;place-items:center;width:27px;height:27px;flex-shrink:0;color:#e85d04}.morph-search-icon svg{width:25px}.morph-placeholder{color:#9ca3af;font-size:16px;flex:1;text-align:left;overflow:hidden;text-overflow:ellipsis}.morph-submit{background:#e85d04;color:white;border-radius:99px;padding:14px 27px;font:700 16px Inter,sans-serif}
+#scene-counter{display:none!important}.stage-bottom{justify-content:flex-end}
+@media(max-width:1050px){.opening-b-copy{left:6vw;width:52vw}.opening-b h1{font-size:clamp(48px,6vw,70px)}.sculpture-position{left:76%;width:40vw}}
+@media(max-width:650px){.opening-b-copy{left:16px;width:calc(100% - 32px);top:12%;transform:none;text-align:center}.opening-b .intro-brand{justify-content:center;font-size:21px}.opening-b .intro-logo{width:39px;height:39px}.opening-b-kicker{margin:23px 0 13px;font-size:9px}.opening-b h1{font-size:clamp(38px,10vw,57px);white-space:normal}.opening-b p{font-size:12px;line-height:1.55;margin:16px auto 16px;max-width:310px}.opening-b .category-rotator{font-size:11px;padding:9px 12px}.sculpture-position{left:50%;top:73%;width:min(79vw,360px)}.opening-b-note{display:none}.morph-search{top:54%;height:65px;gap:6px;padding:8px 9px 8px 14px}.morph-search-icon{width:19px}.morph-search-icon svg{width:19px}.morph-placeholder{font-size:11px}.morph-submit{padding:12px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){.opening-b,.morph-search{display:none!important}.sculpture-rotator{animation:none!important}}
+</style></head><body>
+<header class="nav"><div class="nav-inner"><a class="brand" href="/" aria-label="MarketDirectory home"><span class="brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"><path d="M3 9h18l-2-5H5L3 9Zm2 0v11h14V9M9 20v-8h6v8"/></svg></span><span>Market</span><strong>Directory</strong></a><nav class="nav-links"><a href="/">Home</a><a class="active" href="/directory">Directory</a><a href="/traders">Traders</a><a href="/blog">Blog</a></nav><span class="preview-tag">White morph · Option B</span></div></header>
+<main><div id="story" class="story"><section id="stage" class="stage" aria-label="Animated market discovery journey"><div class="scene ambient"></div><div class="map-viewport" id="map-viewport"><svg id="map-svg" class="art" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="landfill" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#fffdfa"/><stop offset=".42" stop-color="#fff0df"/><stop offset="1" stop-color="#ecd4be"/></linearGradient><filter id="map-shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="11"/></filter><filter id="map-ridge" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="4" flood-color="#b98969" flood-opacity=".3"/></filter><filter id="pin-glow" x="-300%" y="-300%" width="700%" height="700%"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ef8b16" flood-opacity=".85"/></filter></defs><g id="map-ambient"></g><g id="geography" transform="translate(430 125) scale(.94)"></g></svg></div>
+<div id="sweep" class="sweep"></div><div id="lens" class="lens" aria-hidden="true"><div class="lens-optic"><svg id="magnified-geography" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1600 900"><use href="#geography"></use></svg></div><div class="lens-grid"></div><svg class="lens-location" viewBox="0 0 34 46"><path d="M17 2 C6 2 1 10 1 20 C1 31 17 45 17 45 S33 31 33 20 C33 10 27 2 17 2Z" fill="#e85d04" stroke="white" stroke-width="2"/><circle cx="17" cy="19" r="6.2" fill="white"/></svg></div>
+<div id="market-viewport" class="market-viewport"><canvas id="market-canvas" role="presentation" aria-hidden="true"></canvas><svg id="market-svg" class="art" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff2d6"/><stop offset=".55" stop-color="#e9c9ab"/><stop offset="1" stop-color="#bba28e"/></linearGradient><linearGradient id="road" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#c5aa8c"/><stop offset=".65" stop-color="#b59c80"/><stop offset="1" stop-color="#8d7c6e"/></linearGradient><linearGradient id="canvasStripe" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7b36b"/><stop offset="1" stop-color="#c96d31"/></linearGradient><linearGradient id="awningCream" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff3de"/><stop offset="1" stop-color="#edd8bd"/></linearGradient><linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9d6846"/><stop offset="1" stop-color="#69452f"/></linearGradient><radialGradient id="marketSun"><stop stop-color="#fff3b5" stop-opacity=".9"/><stop offset="1" stop-color="#fff3b5" stop-opacity="0"/></radialGradient><filter id="far-blur"><feGaussianBlur stdDeviation="1.6"/></filter><filter id="market-foreground-blur"><feGaussianBlur stdDeviation="1.5"/></filter><filter id="light-glow" x="-400%" y="-400%" width="900%" height="900%"><feGaussianBlur stdDeviation="6"/></filter></defs><g id="market-background"></g><g id="market-architecture"></g><g id="market-center" class="market-center"></g><g id="market-people" class="market-people"></g><g id="market-left" class="market-left"></g><g id="market-right" class="market-right"></g><g id="market-details"></g></svg><div class="market-wash"></div><div class="market-cinema" aria-hidden="true"><div class="sunbeams"></div><div class="market-vignette"></div><div class="atmosphere-grain"></div></div></div>
+<div id="portal" class="portal" aria-hidden="true"></div><div id="transition-flare" class="transition-flare" aria-hidden="true"></div><div class="opening-b" id="opening-b">
+  <div class="opening-b-glow"></div>
+  <div class="opening-b-copy" id="opening-b-copy"><div class="intro-brand"><span class="intro-logo"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 9h18l-2-5H5L3 9Zm2 0v11h14V9M9 20v-8h6v8"/></svg></span><span>Market<strong>Directory</strong></span></div>
+    <div class="opening-b-kicker">A WORLD OF LOCAL DISCOVERIES</div>
+    <h1>Discover standout<br><span>local markets.</span></h1>
+    <p>Search farmers' markets, flea markets, street food and more across the UK.</p>
+    <div class="category-rotator"><span class="category-dot"></span><span class="category-prefix">Explore</span><span class="category-word" id="category-b">Farmers' markets</span></div>
+  </div>
+  <div class="sculpture-position" id="sculpture-position" aria-hidden="true">
+   <div class="sculpture-shadow"></div>
+   <div class="sculpture-rotator">
+    <div class="object-rim-back"></div>
+    <div class="object-glass"><svg viewBox="0 0 240 240" class="mini-market" aria-hidden="true">
+<defs><linearGradient id="miniRoof" x1="0" x2=".1" y1="0" y2="1"><stop stop-color="#fff6ed"/><stop offset="1" stop-color="#edd1b8"/></linearGradient><linearGradient id="miniCoral" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f89133"/><stop offset="1" stop-color="#ca4902"/></linearGradient></defs>
+<ellipse cx="122" cy="187" rx="79" ry="10" fill="#bd764b" opacity=".13"/><rect x="55" y="104" width="130" height="82" rx="8" fill="#d29d73"/><path d="M62 100h117v17H62z" fill="#8e5d44"/>
+<path d="M44 90l18-32h115l19 32-8 18H53z" fill="url(#miniRoof)"/><path d="M58 65h24l-5 36H52zM105 65h25l1 36h-31zM154 65h22l15 36h-30z" fill="url(#miniCoral)"/>
+<path d="M44 91h152v8q-11 19-22 0-14 19-26 0-14 19-26 0-14 19-25 0-14 19-26 0-16 19-27 0z" fill="#fff2df"/><path d="M57 123v64M183 123v64" stroke="#996c54" stroke-width="10" stroke-linecap="round"/>
+<rect x="80" y="141" width="84" height="31" rx="7" fill="#a66b46"/><path d="M87 143q7-18 14-3 8-17 15 1 7-18 17 0 12-15 19 1" stroke="#6f9a5f" stroke-width="10" fill="none" stroke-linecap="round"/><circle cx="95" cy="151" r="8" fill="#e88927"/><circle cx="117" cy="155" r="9" fill="#d75a18"/><circle cx="145" cy="151" r="9" fill="#e9b248"/></svg></div>
+    <div class="object-rim-front"></div>
+    <div class="object-shine"></div>
+    <div class="object-handle"></div>
+    <div class="object-handle-tip"></div>
+   </div>
+   <div class="object-orbit orbit-one"></div><div class="object-orbit orbit-two"></div>
+  </div>
+  <div class="opening-b-note">DISCOVER YOUR NEXT LOCAL FIND <span></span> SCROLL TO EXPLORE</div>
+</div>
+<div id="morph-search" class="morph-search" aria-hidden="true"><span class="morph-search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></span><span class="morph-placeholder">Search by market name, city, region, or type...</span><span class="morph-submit">Search</span></div>
+<div id="final" class="heading-screen"><h1>Discover standout<br>local markets.</h1><p class="subtitle">Search farmers' markets, flea markets, street food and more across the UK.</p><div class="search-float" id="search-float"><form class="search-form" id="search-form" action="/directory" method="get" role="search"><div class="search-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/></svg><input type="search" id="query" name="query" placeholder="Search by market name, city, region, or type..." aria-label="Search markets" autocomplete="off"></div><div class="search-actions"><button class="near-me" type="button" id="near-me"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3L13 21l-3.5-7.5L2 10l19-7Z"/></svg>Near Me</button><button class="submit" type="submit">Search</button></div></form></div><div class="quick-links"><a class="chip primary" href="/markets/open-today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 11h18"/></svg>Open Today</a><a class="chip primary" href="/markets/this-weekend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 11h18"/></svg>This Weekend</a><a class="chip secondary" href="/markets/types/car-boot-sale">Car Boot Sales</a><a class="chip secondary" href="/markets/types/flea-and-bric-a-brac">Flea Markets</a><a class="chip secondary" href="/markets/types/farmers-and-produce">Farmers Markets</a></div></div>
+<button id="skip" class="skip" type="button">Skip to search ↓</button><div id="scroll-cue" class="scroll-cue">Scroll to discover</div><div class="stage-bottom"><div class="scene-counter" id="scene-counter"><span id="scene-index">01 / 04</span><span class="bar"></span><span id="scene-caption">MARKETS ACROSS THE UK</span></div><div class="stage-progress"><span id="progress-fill"></span></div></div><div class="debug" id="debug"></div>
+</section></div><section class="after-story"><div class="region-box"><h2>Browse by region</h2><div class="region-links"><a href="/markets/regions/london">London</a><a href="/markets/regions/north-east">North East</a><a href="/markets/regions/north-west">North West</a><a href="/markets/regions/south-east">South East</a><a href="/markets/regions/south-west">South West</a><a href="/markets/regions/wales">Wales</a><a href="/markets/regions/scotland">Scotland</a></div></div><p class="meta-note">Option B isolated design preview. The original homepage and its live search controls have not been modified. The UK map and lens are scalable vectors; the market is a live-drawn perspective scene with camera, depth, light and motion. No third-party stock footage or storyboard images. Map pins are illustrative, not live market locations. The real homepage has not been changed.</p></section></main>
+
+<!-- Map geometry attribution: jhellingsdata/map-data, Copyright (c) 2024 jhellingsdata.
+MIT License: Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+<script>
+(()=>{'use strict';
+const NS='http://www.w3.org/2000/svg';const $=x=>document.getElementById(x);const el=(tag,attrs={},parent)=>{const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,String(v)));parent?.append(e);return e};const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));const ease=t=>{t=clamp(t);return t*t*(3-2*t)};const bt=(a,b,p)=>ease((p-a)/(b-a));const mix=(a,b,t)=>a+(b-a)*t;let seed=1997;const rand=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);const pick=a=>a[Math.floor(rand()*a.length)];
+const ambient=$('map-ambient'),geo=$('geography');for(let i=0;i<5;i++)el('ellipse',{cx:795,cy:470,rx:230+i*135,ry:160+i*115,class:'orbital'},ambient);/* Removed old anonymous background watermark; opening now uses actual brand. */
+// Lightweight geographic coordinates, reprojected to a scalable vector; the map is never rasterised.
+const xy=(lon,lat)=>[(lon+10.8)*53,(59.55-lat)*84];
+
+const land=el('g',{id:'map-land'},geo);const irelandOutline=[[-6.19,53.86],[-6.03,53.15],[-6.79,52.26],[-8.56,51.67],[-9.98,51.82],[-9.17,52.86],[-9.69,53.88],[-8.33,54.66],[-7.57,55.13],[-7.36,54.6],[-7.57,54.06],[-6.95,54.07],[-6.19,53.86]].map(v=>xy(...v));const irelandD='M'+irelandOutline.map(v=>v.map(n=>Math.round(n)).join(',')).join('L')+'Z';el('path',{d:irelandD,fill:'#f0dbc8',stroke:'#fff6eb','stroke-width':3,'stroke-linejoin':'round',opacity:.83,filter:'url(#map-ridge)'},land);const landPaths=["M618,552L643,557L662,573L665,585L663,582L660,584L664,584L666,594L659,612L656,627L654,628L657,622L654,621L657,622L655,626L646,635L643,628L646,635L642,640L640,635L634,632L640,638L629,638L641,639L636,644L641,646L636,651L628,654L624,650L618,656L609,657L617,658L622,655L623,657L622,665L610,664L618,667L615,669L617,672L614,674L601,672L594,680L587,679L579,675L574,676L579,675L587,680L594,681L598,677L609,678L610,682L606,681L602,685L609,686L609,683L613,688L620,689L649,686L648,690L645,691L647,698L646,706L627,714L624,718L624,726L614,724L608,729L592,733L585,740L558,733L531,738L531,742L524,737L529,734L526,734L525,732L524,735L523,731L511,732L512,737L496,726L503,734L501,736L491,739L489,742L483,740L470,744L467,740L466,742L463,742L463,744L469,746L468,753L463,754L459,751L446,749L441,753L434,747L444,755L442,759L443,755L440,752L425,742L418,741L401,745L393,751L389,745L390,752L387,756L384,756L387,757L387,763L384,764L384,768L387,769L385,774L381,769L384,774L380,777L379,784L370,784L367,778L354,775L354,772L350,769L351,764L346,771L350,770L350,776L340,771L332,775L324,775L324,773L320,775L318,783L310,785L307,790L304,786L304,790L301,794L304,799L297,806L292,796L283,792L279,792L277,798L271,799L270,797L272,789L279,784L284,786L286,782L295,778L299,773L300,768L304,766L306,757L310,755L313,758L312,753L318,752L320,746L330,737L333,716L342,719L348,713L351,714L352,711L349,712L347,706L349,706L350,701L372,698L387,699L392,703L412,701L415,686L427,677L441,657L446,654L443,652L445,653L431,665L432,648L426,647L420,640L415,642L407,628L406,623L410,621L407,620L408,617L411,613L415,612L413,610L416,605L410,605L401,597L413,591L413,586L406,590L406,585L410,581L412,574L415,574L413,570L405,568L406,559L415,554L422,555L424,559L428,556L428,552L422,550L420,540L414,538L418,534L408,528L403,518L411,513L417,524L420,526L427,524L426,521L421,523L415,519L408,504L417,489L410,486L411,473L413,472L415,478L414,472L421,469L422,466L419,467L418,463L424,455L421,451L424,447L416,454L414,453L412,447L408,456L405,459L401,458L400,452L403,446L402,445L400,450L396,450L391,443L391,437L380,423L383,418L383,411L390,402L394,391L398,393L400,390L397,389L401,386L406,388L411,382L411,378L416,378L423,371L429,368L432,360L440,353L446,353L449,348L456,345L457,343L449,329L454,328L462,316L465,314L475,328L478,328L479,332L483,331L486,335L489,346L487,350L493,367L491,371L500,385L503,401L510,408L511,413L509,414L511,415L509,417L513,413L531,419L542,426L553,446L558,448L560,453L568,457L562,460L561,465L564,475L580,498L574,496L567,497L558,488L544,491L540,489L536,492L540,490L545,493L557,490L574,507L581,510L590,530L591,541L575,557L582,561L584,565L591,566L596,563L601,552L618,552Z","M465,314L454,328L449,329L457,343L456,345L449,348L446,353L440,353L432,360L429,368L423,371L416,378L411,378L410,383L399,385L391,383L386,385L382,382L384,390L382,393L377,392L372,395L370,393L371,395L368,395L370,397L361,402L357,401L357,397L356,401L352,401L349,397L350,393L346,396L339,391L339,397L342,399L342,407L340,409L316,394L309,399L314,409L314,413L312,412L307,401L300,394L298,384L302,381L304,389L308,390L304,380L308,371L315,364L315,355L319,352L320,347L326,345L328,340L325,333L312,323L315,319L314,303L319,301L332,305L325,302L317,292L320,298L315,299L314,293L319,283L315,290L312,284L314,291L312,294L313,299L309,299L312,301L309,310L305,309L301,298L303,307L297,301L295,307L297,313L291,310L289,299L297,287L311,277L305,277L289,296L287,298L284,295L285,307L291,316L285,321L282,328L283,333L276,347L278,347L280,352L275,356L265,357L265,349L269,346L272,325L283,312L275,318L272,314L277,304L271,308L271,306L277,296L270,301L276,290L279,290L277,289L281,283L275,287L281,276L276,277L277,270L283,261L293,260L295,261L301,257L303,251L296,260L286,260L283,256L294,252L288,254L286,251L291,243L296,241L302,241L294,239L303,228L290,226L301,229L295,234L295,238L281,246L278,252L271,256L258,251L254,244L261,244L268,239L272,241L277,240L273,241L269,238L263,242L256,242L245,240L242,238L248,234L256,232L262,236L260,232L267,232L262,230L269,227L266,226L268,223L258,223L262,223L261,221L263,214L269,213L274,216L280,215L275,216L272,212L267,211L265,209L269,204L276,204L280,207L285,204L279,206L271,201L274,196L274,193L280,192L284,196L287,195L280,191L285,188L276,191L269,189L271,186L279,185L284,178L278,184L274,183L275,181L269,184L264,184L264,177L262,177L261,172L263,166L270,167L272,171L272,169L280,169L278,168L272,168L264,161L266,156L272,155L264,151L264,142L271,142L274,150L277,148L277,144L273,140L275,137L278,138L280,142L283,143L285,138L296,144L287,138L288,135L296,138L304,145L297,137L297,134L291,132L283,124L285,121L291,125L292,119L295,118L291,117L286,110L287,108L291,111L301,108L310,111L309,109L301,107L298,100L300,96L306,97L301,95L304,91L301,89L307,82L307,78L316,80L317,86L319,84L318,80L326,84L321,93L329,85L329,82L334,82L339,86L335,93L342,85L349,86L359,80L360,83L365,83L374,82L378,78L394,80L395,78L392,76L393,74L397,76L403,75L405,77L412,76L406,88L411,92L402,104L393,107L386,116L371,125L360,136L357,134L360,136L359,142L354,143L341,140L358,146L372,143L362,156L358,156L359,152L357,153L352,157L346,157L339,163L339,166L348,158L361,157L355,165L348,168L350,169L348,172L338,172L340,174L351,173L358,168L357,165L367,165L379,158L382,161L380,159L395,153L412,158L421,155L440,158L466,156L476,163L478,175L467,187L466,185L467,189L462,199L464,203L455,217L454,225L445,233L442,239L439,237L439,240L443,239L440,243L439,249L428,259L409,260L398,269L418,260L423,261L423,265L420,268L431,271L434,276L423,283L415,281L405,289L404,293L398,293L393,298L383,293L377,294L369,288L378,297L404,299L410,303L419,300L423,293L432,293L435,298L439,298L449,304L459,305L465,314Z","M408,528L418,534L414,538L420,540L422,550L428,552L428,556L424,559L422,555L415,554L406,559L405,568L413,570L415,574L412,574L410,581L406,585L406,590L413,586L413,591L401,597L410,605L416,605L413,610L415,612L411,613L408,617L407,620L410,621L406,623L407,628L415,642L420,640L426,647L432,648L431,667L418,673L414,672L407,677L403,685L392,686L384,684L379,678L375,678L368,666L362,667L361,671L348,673L344,667L347,664L352,666L357,660L353,663L350,661L344,662L340,657L343,656L337,653L338,656L325,657L322,663L315,664L311,668L304,666L304,662L301,661L309,662L311,659L302,657L298,661L294,656L301,654L301,648L300,646L291,646L291,642L303,637L304,632L308,632L308,634L312,631L316,632L322,624L324,626L324,623L333,623L349,612L355,601L357,590L363,588L357,589L354,583L361,572L357,574L352,566L354,563L353,559L357,557L339,559L332,569L329,565L320,568L322,563L342,547L342,541L350,533L368,525L370,528L368,521L381,526L397,520L409,530L408,528Z","M230,361L243,365L247,363L253,368L252,377L256,378L255,383L271,399L270,404L259,412L262,413L268,409L274,409L279,411L284,425L281,438L272,447L263,444L260,449L260,458L251,464L249,461L239,457L238,459L235,457L233,461L229,460L221,463L219,460L220,451L212,448L209,444L208,437L200,431L196,436L192,438L190,441L194,447L188,449L187,456L186,452L183,454L184,457L181,456L180,453L171,456L165,449L156,448L155,442L145,435L139,427L146,425L148,420L156,421L164,415L156,413L153,407L157,404L162,407L168,403L173,403L172,400L178,393L181,380L188,377L188,378L198,378L203,366L214,368L230,361Z","M241,87L246,94L243,99L245,101L235,111L239,113L246,108L246,112L242,115L234,114L235,119L230,119L230,121L226,122L234,121L235,124L233,130L225,130L230,131L229,135L224,137L220,134L222,137L219,136L217,130L219,126L222,126L219,126L214,130L219,140L213,139L212,141L215,145L209,146L204,152L202,152L194,144L199,145L206,141L204,140L206,138L210,138L208,136L197,133L197,129L200,128L194,120L196,115L199,115L200,110L206,112L204,114L212,114L216,116L210,106L225,100L241,87Z","M236,155L238,155L247,165L247,178L244,181L248,181L249,187L252,188L251,192L253,190L261,194L267,191L273,193L272,197L254,213L252,210L255,204L261,200L255,200L253,197L250,204L249,198L245,198L245,200L238,201L239,197L235,198L235,194L232,194L229,190L231,186L236,189L234,186L226,180L224,186L216,183L213,178L213,176L216,176L215,172L216,171L220,177L223,176L221,172L225,172L220,168L221,163L230,172L234,170L238,174L233,168L235,165L233,165L232,160L236,155Z","M503,-91L503,-83L500,-82L502,-76L499,-71L505,-75L504,-79L507,-79L511,-75L506,-72L511,-72L517,-75L512,-70L515,-70L515,-68L510,-67L515,-63L511,-61L513,-61L511,-58L509,-60L507,-57L510,-56L508,-52L511,-55L511,-50L507,-46L507,-37L505,-37L505,-26L499,-31L505,-47L504,-53L502,-52L503,-57L501,-55L500,-58L498,-58L500,-56L495,-51L490,-53L492,-56L486,-55L483,-57L482,-62L487,-64L489,-62L493,-65L494,-61L495,-64L500,-63L500,-66L503,-68L495,-73L495,-79L493,-76L490,-79L486,-78L490,-84L493,-82L496,-88L503,-91Z","M248,243L257,255L265,255L273,261L273,263L271,266L269,263L267,267L271,267L263,272L260,271L263,269L261,268L252,274L237,276L235,269L241,271L241,270L249,269L255,266L244,268L248,261L255,257L248,259L242,254L236,253L239,249L237,247L243,247L242,245L248,243Z","M338,514L346,516L349,525L357,524L355,529L341,539L338,536L340,534L338,537L334,534L330,527L330,516L338,514Z","M403,33L413,40L412,43L410,42L407,46L413,45L415,47L418,45L418,49L424,47L421,50L424,53L424,51L429,49L429,53L422,56L419,55L417,69L414,67L413,63L413,61L418,60L415,59L419,55L415,50L403,54L400,48L397,50L395,49L394,38L397,35L403,33Z","M248,304L249,314L253,325L246,330L243,329L239,333L237,329L241,327L236,322L241,316L236,316L229,326L229,315L230,311L237,308L237,313L238,309L248,304Z","M296,323L300,328L299,334L303,336L301,338L303,343L301,345L291,343L286,331L291,323L296,323Z","M270,286L256,316L251,314L249,309L251,305L261,301L255,300L256,296L270,286Z","M515,744L510,752L504,754L494,746L489,746L492,743L504,738L504,741L505,738L515,744Z","M193,153L192,160L198,160L196,163L190,160L193,165L196,165L195,167L186,168L194,168L194,171L183,170L182,172L181,169L183,168L172,163L176,159L181,161L184,158L187,160L191,153L193,153Z","M184,180L191,188L187,195L182,195L188,199L188,201L183,202L188,203L189,206L182,205L180,202L178,194L180,186L179,182L184,180Z","M516,-99L519,-98L520,-92L517,-92L518,-90L516,-89L519,-85L517,-79L512,-78L509,-88L512,-92L513,-99L516,-99Z","M395,52L402,56L404,61L400,64L405,62L405,64L398,65L393,57L390,57L395,52Z","M526,-108L526,-106L528,-108L531,-105L528,-102L528,-95L521,-95L522,-104L525,-108L526,-108Z","M298,304L306,311L306,322L301,317L301,311L296,308L298,304Z","M238,210L242,214L238,220L231,213L238,210Z","M619,688L613,687L611,684L612,681L620,683L623,687L619,688Z","M216,253L212,254L211,257L208,257L207,261L202,260L204,254L216,253Z","M184,174L190,175L187,177L190,179L181,179L180,175L184,174Z","M230,240L228,246L218,251L222,245L230,240Z","M178,212L181,216L172,222L172,217L179,210L178,212Z","M256,173L253,178L255,184L252,187L250,177L256,173Z","M444,22L429,29L437,21L436,24L444,20L444,22Z","M416,16L415,19L422,25L417,22L414,24L412,23L411,19L416,16Z","M410,30L415,30L415,35L408,34L407,32L410,30Z","M527,-91L532,-88L525,-87L527,-86L525,-85L522,-90L527,-91Z","M247,288L244,295L240,295L241,291L247,288Z","M433,33L435,36L438,36L438,39L434,40L433,37L430,40L433,37L433,33Z"];for(const path of landPaths){el('path',{d:path,class:'coast-depth',transform:'translate(0 15)'},land);el('path',{d:path,class:'coast-body'},land);el('path',{d:path,class:'coast-inner',transform:'translate(0 -1)'},land)}
+// Separate islands soften the recognisable western Scottish shoreline.
+const pinLayer=el('g',{id:'pin-layer'},geo);const cities=[['Glasgow',-4.25,55.86],['Edinburgh',-3.19,55.95],['Aberdeen',-2.1,57.14],['Newcastle',-1.61,54.98],['Leeds',-1.55,53.8],['Manchester',-2.25,53.48],['Liverpool',-2.98,53.4],['Birmingham',-1.89,52.48],['Cardiff',-3.18,51.48],['Bristol',-2.59,51.45],['London',-.13,51.51],['Brighton',-.14,50.82],['Norwich',1.3,52.63],['Exeter',-3.53,50.72],['Nottingham',-1.16,52.95],['York',-1.08,53.96],['Cambridge',.12,52.2],['Southampton',-1.4,50.91],['Belfast',-5.93,54.60],['Dundee',-2.97,56.47],['Durham',-1.57,54.78]];const coords=cities.map(c=>xy(c[1],c[2]));for(let i=0;i<coords.length;i++){const [x,y]=coords[i];if(i%3===0){let [x2,y2]=coords[(i+7)%coords.length];el('path',{d:`M${x},${y} Q${(x+x2)/2+30},${(y+y2)/2-30} ${x2},${y2}`,class:'map-connection'},pinLayer)} }coords.forEach(([x,y],i)=>{let g=el('g',{transform:`translate(${x} ${y})`},pinLayer);el('circle',{r:i===7?7:4.3,class:'map-dot'},g);if(i===7){let c=el('circle',{r:17,class:'map-pin-ring r1'},g);el('circle',{r:17,class:'map-pin-ring r2'},g)}});
+const mapSvg=$('map-viewport'),market=$('market-viewport');const B=$('market-background'),A=$('market-architecture'),C=$('market-center'),P=$('market-people'),L=$('market-left'),R=$('market-right'),D=$('market-details');el('rect',{width:1600,height:900,fill:'url(#sky)'},B);el('ellipse',{cx:930,cy:140,rx:430,ry:290,fill:'url(#marketSun)'},B);
+// Distant stone town and church towers constructed from paths.
+for(let i=0;i<19;i++){const x=i*104-40,w=72+rand()*86,y=320+rand()*90;el('path',{d:`M${x},${y+180}V${y+34}Q${x+5},${y+9} ${x+w*.4},${y+15}L${x+w},${y+42}V${y+180}Z`,fill:pick(['#ccb69d','#c2ad95','#dfc6ab','#a99583']),opacity:.64},A);for(let z=0;z<3;z++)el('rect',{x:x+18+z*23,y:y+56,width:9,height:25,rx:4,fill:'#9c806f',opacity:.4},A)}
+const church=el('g',{transform:'translate(882 140)',opacity:.72,filter:'none'},A);el('path',{d:'M-105 380V213L-83 203V180L-64 160L-47 203V267H-25V102L-18 91V65L0 5L18 65V91L27 102V265H48V203L65 160L82 202L105 214V380Z',fill:'#9d877b'},church);el('path',{d:'M-6 5L0 -55L6 5M-66 155L-64 104L-60 159M63 159L66 104L69 160',stroke:'#9d877b','stroke-width':5,fill:'none'},church);for(let xx of [-69,0,68])for(let yy of [226,266,310])el('path',{d:`M${xx-7} ${yy+25}V${yy+6}Q${xx} ${yy-4} ${xx+7} ${yy+6}V${yy+25}Z`,fill:'#6e706a',opacity:.6},church);
+// Perspective street paving.
+el('path',{d:'M748 407H863L1308 900H266Z',fill:'url(#road)'},C);el('path',{d:'M748 407L266 900M863 407L1308 900',stroke:'#ead8bb','stroke-width':6,opacity:.42},C);for(let i=0;i<13;i++){const t=(i+1)/14,y=413+Math.pow(t,1.7)*490,a=748-(y-407)*.98,b=863+(y-407)*.90;el('path',{d:`M${a} ${y} Q800 ${y+5} ${b} ${y}`,stroke:'#eee0cb','stroke-width':1.6,opacity:.2+.25*t,fill:'none'},C)}for(let i=-12;i<=12;i++){el('path',{d:`M${807+i*7} 406L${807+i*55} 900`,stroke:'#f7e6ce','stroke-width':1.1,opacity:.12},C)}
+// Trees and individual leaves, generated as real vectors.
+function tree(cx,cy,scale,side){let g=el('g',{transform:`translate(${cx} ${cy}) scale(${scale})`},A);el('path',{d:'M0 0L-12 -185M0 -73L55 -152M-8 -112L-67 -167',stroke:'#685441','stroke-width':12,fill:'none','stroke-linecap':'round'},g);for(let j=0;j<110;j++){let x=(rand()-.5)*205+(side<0?-19:19),y=-175+(rand()-.5)*135;let c=pick(['#73834c','#687b46','#8d9855','#a5a467','#b2a16a','#c7ad68']);el('ellipse',{cx:x,cy:y,rx:7+rand()*15,ry:3+rand()*7,fill:c,opacity:.6+rand()*.35,transform:`rotate(${rand()*180} ${x} ${y})`},g)}}tree(150,455,1.42,-1);tree(1465,463,1.55,1);tree(440,410,.65,-1);tree(1240,417,.65,1);
+function human(x,y,s,coat='#5b5d58',pose=0,parent=P){let g=el('g',{transform:`translate(${x} ${y}) scale(${s})`},parent);el('ellipse',{cx:0,cy:4,rx:18,ry:5,fill:'#504c45',opacity:.20},g);el('path',{d:'M-5 -33L-8 -5M5 -33L8 -5',stroke:'#4c4944','stroke-width':7,'stroke-linecap':'round'},g);el('path',{d:`M-12 -75Q0 -83 12 -75L16 -35L-16 -35Z`,fill:coat},g);el('circle',{cx:0,cy:-91,r:12,fill:pick(['#b9896e','#c9a389','#d9ad83','#987a65','#e0ba98'])},g);el('path',{d:pose? 'M-13 -70L-25 -50M13 -70L24 -47':'M-13 -70L-19 -42M13 -70L20 -42',stroke:coat,'stroke-width':7,'stroke-linecap':'round'},g);return g}for(let i=0;i<30;i++){const z=.32+rand()*.8,y=430+(z-.3)*365,spread=(y-400)*.75,x=804+(rand()-.5)*spread;human(x,y,z,pick(['#434f4d','#998472','#bd996f','#655a51','#657069','#afada0','#5a5551']),i%4===0)}
+function stall(parent,x,y,w,s,side,id){let g=el('g',{transform:`translate(${x} ${y}) scale(${s})`},parent);const ht=205,bottom=162;el('path',{d:`M${8} 0L${w-2} -2L${w+28} 45L-12 45Z`,fill:'#7c523e',opacity:.46},g);el('path',{d:`M18 -36L${w-10} -37L${w+28} 29L-12 29Z`,fill:'#fcecd2',stroke:'#dfbb8a','stroke-width':2},g);const roof=el('g',{},g);for(let j=0;j<10;j++){const sw=(w+40)/10,xx=-11+j*sw,topx=20+j*(w-28)/10;el('path',{d:`M${topx} -37L${topx+(w-28)/10+1} -37L${xx+sw+1} 30L${xx} 30Z`,fill:j%2?'#f7ebd7':'#da9150',opacity:.96},roof)}for(let j=0;j<10;j++){let sx=-12+j*(w+40)/10;el('path',{d:`M${sx} 29h${(w+40)/10+1}v9q-${(w+40)/20} 13 -${(w+40)/10} 0Z`,fill:j%2?'#f7e7cf':'#d48a50'},g)}el('path',{d:`M-12 29H${w+28}`,stroke:'#b76c3a','stroke-width':3},g);for(let [postX,bias] of [[9,-1],[w-1,1]]){el('path',{d:`M${postX} 32V${ht+20}`,stroke:'#73523a','stroke-width':5},g);el('path',{d:`M${postX+3} 34V${ht+20}`,stroke:'#d9b589','stroke-width':2},g)}el('path',{d:`M-13 ${bottom}L${w+28} ${bottom-5}L${w+15} ${bottom+28}L-16 ${bottom+32}Z`,fill:'url(#wood)'},g);el('path',{d:`M-13 ${bottom}L${w+28} ${bottom-5}`,stroke:'#c79a67','stroke-width':9},g);for(let j=0;j<5;j++){const bx=22+j*(w-45)/5,by=bottom-10-j%2*8;if(j%2===0){el('path',{d:`M${bx-16} ${by-8}h35l-4 23h-29Z`,fill:'#b88a5d',stroke:'#835b40','stroke-width':2},g);for(let k=0;k<10;k++){el('circle',{cx:bx-13+rand()*28,cy:by-7-rand()*12,r:6+rand()*3,fill:pick(['#d8633c','#f2b643','#8da052','#e09148','#d7bd69'])},g)}}else{for(let k=0;k<16;k++){const fx=bx+(rand()-.5)*35,fy=by-8-rand()*38;el('path',{d:`M${bx} ${bottom}L${fx} ${fy}`,stroke:'#728348','stroke-width':1.7},g);el('circle',{cx:fx,cy:fy,r:3+rand()*3,fill:pick(['#c68fa1','#f1c0aa','#8c90ad','#efc65c','#faf0b1'])},g)}}}for(let i=0;i<3;i++){const bx=30+i*(w-35)/3;el('circle',{cx:bx,cy:41,r:3.5,fill:'#ffeda1',filter:'url(#light-glow)'},g);el('circle',{cx:bx,cy:41,r:3,fill:'#fff2bd'},g)}el('path',{d:`M11 36Q${w/2} 55 ${w-1} 36`,fill:'none',stroke:'#7b5e42','stroke-width':1.5},g);return g}
+// Far rows first, larger stalls in foreground keep their own transform layers.
+for(let i=0;i<3;i++){const w=95+i*28,s=.45+i*.18,y=424+i*26;stall(L,605-i*124,y,w,s,-1,'l'+i);stall(R,890+i*127,y,w,s,1,'r'+i)}stall(L,78,308,470,1.42,-1,'L');stall(R,1265,288,420,1.48,1,'R');
+// Warm bulbs and leafy foreground boughs.
+for(let side of [-1,1]){let ox=side<0?-15:1615;let g=el('g',{transform:`translate(${ox} -15)`,opacity:.92},D);for(let i=0;i<22;i++){let x=side<0?i*23:-i*23,y=20+i*i*.13;el('path',{d:`M${x} 0L${x+side*7} ${y}`,stroke:'#6f6b4d','stroke-width':2},g);for(let j=0;j<3;j++){let lx=x+side*(20+j*13),ly=y-20+j*7;el('ellipse',{cx:lx,cy:ly,rx:15+rand()*7,ry:6+rand()*6,fill:pick(['#627644','#8a9254','#a7a367','#c3ae76']),transform:`rotate(${i%2?28:-18} ${lx} ${ly})`},g)}}}
+for(let i=0;i<19;i++){let x=80+i*78,y=90+Math.sin(i/19*Math.PI)*80;el('circle',{cx:x,cy:y,r:4.8,fill:'#fff5bb',filter:'url(#light-glow)'},D);el('circle',{cx:x,cy:y,r:3.4,fill:'#fff5c4'},D)}el('path',{d:'M40 80Q780 250 1590 75',fill:'none',stroke:'#806a50','stroke-width':1.4,opacity:.55},D);
+const atmosphere=market.querySelector('.market-cinema');for(let i=0;i<14;i++){const dust=document.createElement('i');dust.className='dust';dust.style.left=(4+(i*37)%92)+'%';dust.style.top=(11+(i*29)%76)+'%';dust.style.setProperty('--dur',(5+i%5*1.3)+'s');dust.style.setProperty('--dx',(i%2?14:-17)+'px');dust.style.animationDelay=-(i*.73)+'s';dust.style.width=dust.style.height=(i%4+2)+'px';atmosphere.appendChild(dust)}
+const rotatingCopy=["Farmers' markets",'Flea markets','Street food','Craft fairs','Car boot sales'];
+let activeCopy=0;
+const copyEl=$('category-b');
+if(copyEl){setInterval(()=>{if(document.hidden||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;activeCopy=(activeCopy+1)%rotatingCopy.length;copyEl.textContent=rotatingCopy[activeCopy];},2700);}
+const story=$('story'),stage=$('stage'),lens=$('lens'),final=$('final'),float=$('search-float'),scrollCue=$('scroll-cue'),skip=$('skip'),sweep=$('sweep'),portal=$('portal'),flare=$('transition-flare'),sceneCount=$('scene-counter'),progress=$('progress-fill');let target=0,current=-1,queued=false;const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');function getTarget(){const rect=story.getBoundingClientRect();const travel=Math.max(1,story.offsetHeight-stage.clientHeight);return reduced.matches?1:clamp(-rect.top/travel)}function render(p){
+const fullP=p,opening=$('opening-b'),object=$('sculpture-position'),morph=$('morph-search');
+const introVisibility=1-bt(.275,.41,fullP);
+const copy=$('opening-b-copy');copy.style.opacity=(1-bt(.175,.27,fullP)).toFixed(3);
+opening.style.opacity=introVisibility.toFixed(3);
+opening.inert=fullP>.44;
+const objectDepart=bt(.185,.325,fullP);
+object.style.opacity=(1-bt(.22,.32,fullP)).toFixed(3);
+object.style.transform=`translate(-50%,-50%) perspective(850px) translateY(${mix(0,-42,objectDepart).toFixed(1)}px) scale(${mix(1,.27,objectDepart).toFixed(3)})`;
+const expand=bt(.21,.325,fullP),contract=bt(.325,.435,fullP);
+const width=mix(82,Math.min(856,innerWidth*.88),expand)*(1-.91*contract);
+morph.style.width=width.toFixed(1)+'px';
+morph.style.opacity=(bt(.20,.265,fullP)*(1-bt(.40,.475,fullP))).toFixed(3);
+morph.style.transform=`translate(-50%,-50%) scale(${mix(.80,1,expand).toFixed(3)})`;
+morph.style.borderRadius=(mix(999,34,expand)*(1-contract)+999*contract).toFixed(0)+'px';
+const revealMap=bt(.355,.47,fullP);
+p=clamp((fullP-.39)/.61);
+
+const mobile=stage.clientWidth<700;
+const focusX=mobile?50:55,focusY=mobile?58:55;
+const scan=bt(.085,.13,p)*(1-bt(.29,.34,p));
+const zoom=bt(.345,.685,p);
+const crossing=bt(.42,.70,p);
+const daylight=bt(.52,.755,p);
+const settle=bt(.61,.89,p);
+const finalOpacity=bt(.785,.925,p);
+// An uninterrupted brief UK scan: Highlands -> Welsh coast -> southern England -> anonymous target.
+function lensPoint(q){
+ const nodes=mobile?[[50,18],[40,45],[62,71],[50,58]]:[[53,19],[42,50],[65,73],[55,55]];
+ const stops=[0,.35,.73,1];
+ for(let i=0;i<3;i++){if(q<=stops[i+1]){let t=bt(stops[i],stops[i+1],q);return [mix(nodes[i][0],nodes[i+1][0],t),mix(nodes[i][1],nodes[i+1][1],t)]}}
+ return nodes[3];
+}
+const moving=bt(.10,.305,p),point=lensPoint(moving);
+lens.style.left=point[0].toFixed(2)+'%';lens.style.top=point[1].toFixed(2)+'%';
+lens.style.opacity=scan.toFixed(3);
+lens.style.transform=`translate(-50%,-50%) rotate(${mix(-11,0,moving).toFixed(2)}deg) scale(${mix(.75,.96,bt(.09,.20,p)).toFixed(3)})`;
+// Optical area really contains a second, enlarged vector map, not a static white lens.
+const lensMap=$('magnified-geography');if(lensMap){
+ const cx=point[0]*16,cy=point[1]*9;
+ lensMap.setAttribute('viewBox',`${(cx-84).toFixed(1)} ${(cy-84).toFixed(1)} 168 168`);
+}
+lens.querySelector('.lens-location').style.opacity=bt(.265,.32,p).toFixed(3);
+portal.style.left=focusX+'%';portal.style.top=focusY+'%';
+const ring=bt(.305,.425,p)*(1-bt(.485,.62,p));
+portal.style.opacity=ring.toFixed(3);
+portal.style.transform=`translate(-50%,-50%) scale(${mix(.35,4.8,bt(.36,.69,p)).toFixed(3)})`;
+flare.style.background=`radial-gradient(circle at ${focusX}% ${focusY}%,rgba(255,252,240,.98),rgba(255,222,161,.75) 12%,rgba(255,171,95,.21) 29%,transparent 68%)`;
+flare.style.opacity=(bt(.445,.56,p)*(1-bt(.685,.77,p))*.92).toFixed(3);
+sweep.style.left=focusX+'%';sweep.style.top=focusY+'%';
+sweep.style.opacity=(bt(.29,.36,p)*(1-bt(.49,.57,p))*.64).toFixed(3);
+sweep.style.width=(92+mix(0,480,bt(.34,.62,p))).toFixed(1)+'px';
+mapSvg.style.transformOrigin=`${focusX}% ${focusY}%`;
+// A continuous optical push towards the chosen map point; then the 3D market camera advances.
+mapSvg.style.transform=`translate3d(0,0,0) scale(${mix(1,6.1,zoom).toFixed(3)})`;
+mapSvg.style.opacity=((1-bt(.625,.76,p))*revealMap).toFixed(3);
+market.style.maskImage='none';market.style.webkitMaskImage='none';market.style.clipPath='none';
+market.style.opacity=daylight.toFixed(3);
+market.style.transform=`translate3d(0,${mix(12,0,settle).toFixed(2)}px,0) scale(${mix(1.085,1,settle).toFixed(4)})`;
+L.style.transform='none';R.style.transform='none';P.style.transform='none';
+final.style.opacity=finalOpacity.toFixed(3);
+final.style.transform=`translateY(${mix(18,0,finalOpacity).toFixed(1)}px)`;
+const ready=p>.92||reduced.matches;
+final.style.pointerEvents=ready?'auto':'none';final.inert=!ready;
+float.classList.toggle('ready',p>.98&&!reduced.matches);
+skip.hidden=p>.86||reduced.matches;
+scrollCue.style.opacity=(1-bt(.04,.15,p)).toFixed(3);
+progress.style.width=(fullP*100).toFixed(1)+'%';
+const i=p<.10?0:p<.34?1:p<.765?2:3;
+$('scene-index').textContent=`0${i+1} / 04`;
+$('scene-caption').textContent=['MARKETS ACROSS THE UK','SEARCHING THE UK','STEP INSIDE THE MARKET','YOUR SEARCH BEGINS'][i];
+sceneCount.classList.toggle('invert',p>.72);
+}
+
+function tick(){queued=false;current=target;render(current)}function schedule(){if(!queued){queued=true;requestAnimationFrame(tick)}}function onScroll(){target=getTarget();schedule()}window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll,{passive:true});reduced.addEventListener('change',onScroll);skip.addEventListener('click',()=>{let rect=story.getBoundingClientRect();window.scrollTo({top:window.scrollY+rect.top+story.offsetHeight-stage.clientHeight,behavior:reduced.matches?'instant':'smooth'})});$('search-form').addEventListener('submit',e=>{e.preventDefault();const q=$('query').value.trim();location.href='/directory'+(q?'?query='+encodeURIComponent(q):'')});$('near-me').addEventListener('click',()=>{location.href='/directory?loc=me'});target=getTarget();render(reduced.matches?1:0);schedule();})();
+</script><script>
+/* MarketDirectory V6 standalone procedural perspective scene. No stock images or reference-frame sprites. */
+(() => {
+  'use strict';
+  const canvas = document.getElementById('market-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d', { alpha: false, desynchronized: true });
+  if (!ctx) return;
+  const stage = document.getElementById('stage');
+  const story = document.getElementById('story');
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let W = 0, H = 0, dpr = 1, progress = 0, lastRender = 0, visible = true;
+  let camera = { x:0, y:3.9, z:12, fx:0, fy:-.072, fz:-.997, ux:0, uy:.997, uz:-.072, f:730, squeeze:1 };
+  function ease(x) {x = Math.min(1,Math.max(0,x));return x*x*(3-2*x);}
+  function phase(a,b,p){return ease((p-a)/(b-a));}
+  function mix(a,b,t){return a+(b-a)*t;}
+  function rand(i){let x=Math.sin(i*183.54+13.92)*43758.5453;return x-Math.floor(x);}
+  function pick(a,i){return a[Math.floor(rand(i)*a.length)];}
+  function resize(){
+    const r=canvas.getBoundingClientRect();W=Math.max(300,r.width);H=Math.max(360,r.height);dpr=Math.min(1.75,window.devicePixelRatio||1);
+    const rw=Math.round(W*dpr),rh=Math.round(H*dpr);if(canvas.width!==rw||canvas.height!==rh){canvas.width=rw;canvas.height=rh;}
+    render(performance.now());
+  }
+  function setCamera(p){
+    const travel=phase(.57,.85,p),m=W<690;
+    const z=m?17.0:13.2;
+    camera.x=mix(-.35,.32,travel);
+    camera.y=mix(m?4.0:3.8,m?3.5:3.5,travel);
+    camera.z=z-3.3*travel;
+    const ty=mix(1.45,1.65,travel),tz=-28;
+    const dy=ty-camera.y,dz=tz-camera.z;
+    const n=Math.hypot(dy,dz);
+    camera.fy=dy/n;camera.fz=dz/n;
+    camera.uy=-camera.fz;camera.uz=camera.fy;
+    camera.f=(H/(2*Math.tan((m?70:54)*Math.PI/360)));
+    camera.squeeze=m?.77:1;
+  }
+  function project(x,y,z){
+    const dx=x-camera.x,dy=y-camera.y,dz=z-camera.z;
+    const dep=dy*camera.fy+dz*camera.fz;
+    if(dep<.1)return {x:-9999,y:-9999,d:dep,k:0};
+    const k=camera.f/dep;
+    return {x:W/2+dx*k*camera.squeeze,y:H*.53-(dy*camera.uy+dz*camera.uz)*k,d:dep,k};
+  }
+  function poly(points,fill,stroke=null,width=1){const ps=points.map(p=>project(...p));if(ps.some(p=>p.d<.1))return;ctx.beginPath();ctx.moveTo(ps[0].x,ps[0].y);for(let i=1;i<ps.length;i++)ctx.lineTo(ps[i].x,ps[i].y);ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=width;ctx.stroke();}}
+  function line(points,color,width=1){const ps=points.map(p=>project(...p));if(ps.some(p=>p.d<.1))return;ctx.beginPath();ctx.moveTo(ps[0].x,ps[0].y);for(let i=1;i<ps.length;i++)ctx.lineTo(ps[i].x,ps[i].y);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();}
+  function circleAt(x,y,z,r,color,shadow=null){const p=project(x,y,z);if(p.d<=0)return;const rr=Math.max(.5,r*p.k);ctx.beginPath();ctx.arc(p.x,p.y,rr,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();if(shadow){ctx.strokeStyle=shadow;ctx.lineWidth=Math.max(1,p.k*.025);ctx.stroke();}}
+  function ellipse(x,y,rx,ry,color){ctx.beginPath();ctx.ellipse(x,y,Math.max(.2,rx),Math.max(.2,ry),0,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();}
+  function shadow3(x,z,sx,sz,opacity=.3){const p=project(x,.02,z),a=project(x+sx,.02,z),b=project(x,.02,z+sz);if(p.d<=0)return;const rx=Math.max(1,Math.abs(a.x-p.x)*1.4),ry=Math.max(1,Math.abs(b.y-p.y)*1.35);ctx.save();ctx.translate(p.x,p.y);ctx.scale(rx,ry);const g=ctx.createRadialGradient(0,0,.05,0,0,1);g.addColorStop(0,`rgba(78,50,30,${opacity})`);g.addColorStop(1,'rgba(78,50,30,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(0,0,1,0,Math.PI*2);ctx.fill();ctx.restore();}
+  function drawSky(){
+    const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#fbe8d7');g.addColorStop(.36,'#efd1b5');g.addColorStop(.74,'#dfbda1');g.addColorStop(1,'#b69a81');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    const glow=ctx.createRadialGradient(W*.72,H*.20,0,W*.72,H*.20,H*.8);glow.addColorStop(0,'rgba(255,248,199,.92)');glow.addColorStop(.16,'rgba(255,220,150,.5)');glow.addColorStop(.64,'rgba(255,229,186,.15)');glow.addColorStop(1,'rgba(255,229,186,0)');ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
+    // Distant soft horizon haze, composited behind the architecture.
+    ctx.fillStyle='rgba(255,241,217,.23)';ctx.beginPath();ctx.moveTo(0,H*.50);ctx.bezierCurveTo(W*.2,H*.41,W*.48,H*.51,W*.72,H*.44);ctx.quadraticCurveTo(W*.89,H*.40,W,H*.49);ctx.lineTo(W,H*.72);ctx.lineTo(0,H*.72);ctx.fill();
+  }
+  function drawBuildings(){
+    // Stone façades are true projected quadrilaterals with windows and recessed arches.
+    const facade=['#bea590','#d0b39a','#c7aa8f','#dcc0a2','#c4aa95','#d6b89b'];
+    for(let z=-99,i=0;z<=-41;z+=7.5,i++){
+      for(const side of [-1,1]){
+        const inner=side*(8+rand(i*9+side+2)*1.5),outer=inner+side*(10+rand(i*31+side+5)*5);
+        const front=z+6,top=10+rand(i*10+side+3)*6.2;
+        const x0=Math.min(inner,outer),x1=Math.max(inner,outer);
+        poly([[x0,0,front],[x1,0,front],[x1,top,front],[x0,top,front]],pick(facade,i*3+side+3),'rgba(117,86,66,.15)',1);
+        poly([[x0,top,front],[x1,top,front],[x1+1,top+1,front-3],[x0+1,top+1,front-3]],'#927762');
+        for(let row=0;row<3;row++)for(let col=0;col<3;col++){
+          const x=x0+(col+1)*(x1-x0)/4,y=3.4+row*3.15;
+          poly([[x-.46,y-.95,front+.07],[x+.46,y-.95,front+.07],[x+.46,y+.65,front+.07],[x-.46,y+.65,front+.07]],'#987d6a');
+          poly([[x-.30,y-.82,front+.09],[x+.30,y-.82,front+.09],[x+.30,y+.47,front+.09],[x-.30,y+.47,front+.09]],'#e7d4b8');
+        }
+      }
+    }
+    // Stone clock/church tower silhouette, fully drawn not a photograph.
+    const x=0,z=-115;
+    poly([[-7,0,z],[7,0,z],[7,22,z],[-7,22,z]],'#a99785');
+    poly([[-7,22,z],[7,22,z],[6,24,z],[0,30,z],[-6,24,z]],'#917967');
+    poly([[-3,22,z],[3,22,z],[3,40,z],[-3,40,z]],'#9e8776');
+    poly([[-4,40,z],[4,40,z],[0,52,z]],'#887361');
+    for(let i=-2;i<=2;i+=2){poly([[i-1,3,z+.1],[i+1,3,z+.1],[i+1,15,z+.1],[i-1,15,z+.1]],'#776455');circleAt(i,15,z+.15,1.0,'#e4ceb1');}
+    circleAt(0,27,z+.2,2.0,'#e8d4b3');circleAt(0,27,z+.25,1.4,'#826d5f');
+  }
+  function drawGround(){
+    poly([[-80,-.08,-145],[80,-.08,-145],[80,-.08,25],[-80,-.08,25]],'#bba28b');
+    poly([[-4.15,0,-140],[4.15,0,-140],[4.15,0,20],[-4.15,0,20]],'#c6ac91');
+    // Irregular warmly lit cobblestone grid, perspective converges naturally.
+    for(let z=-85;z<18;z+=2.1){line([[-4.15,.02,z],[4.15,.02,z]],'rgba(255,244,224,.31)',Math.max(.55,project(0,0,z).k*.035));}
+    for(let x=-4.15;x<=4.15;x+=1.05){line([[x,.02,-90],[x,.02,19]],'rgba(116,89,69,.22)',1)}
+    line([[-4.23,.04,19],[-4.23,.04,-90]],'rgba(255,245,217,.66)',2);line([[4.23,.04,19],[4.23,.04,-90]],'rgba(255,245,217,.66)',2);
+    const g=ctx.createLinearGradient(0,H*.4,0,H);g.addColorStop(0,'rgba(255,242,212,.1)');g.addColorStop(1,'rgba(72,50,41,.22)');ctx.fillStyle=g;ctx.fillRect(0,H*.38,W,H);
+  }
+  function drawWoodPost(x,z,height=3.8){const w=.095;poly([[x-w,0,z-w],[x+w,0,z-w],[x+w,height,z-w],[x-w,height,z-w]],'#76543d');poly([[x+w,0,z-w],[x+w,0,z+w],[x+w,height,z+w],[x+w,height,z-w]],'#533b30');}
+  function fruitCrate(x,y,z,size=1,type=0,seed=0){
+    shadow3(x,z,.7,.7,.12);
+    const w=size*.7;poly([[x-w,y,z+.4],[x+w,y,z+.4],[x+w,y+.45,z+.4],[x-w,y+.45,z+.4]],'#b47e55');
+    poly([[x-w,y+.45,z+.4],[x+w,y+.45,z+.4],[x+w,y+.45,z-.4],[x-w,y+.45,z-.4]],'#d6ad7d');
+    for(let j=0;j<8;j++){
+      let xx=x+(rand(seed*80+j)-.5)*size,zz=z+(rand(seed*91+j)-.5)*.65,yy=y+.48+rand(seed*21+j)*.28;
+      const colors=[['#ef9c41','#f9c15d','#d87732'],['#c4ac58','#96aa5a','#dfbd73'],['#b85d42','#dc7b52','#d4a149'],['#d6b998','#f1dcaf','#e8c99e']][type%4];
+      circleAt(xx,yy,zz,.14+rand(j+seed)*.10,pick(colors,seed*9+j));
+    }
+    line([[x-w,y+.24,z+.42],[x+w,y+.24,z+.42]],'rgba(92,58,34,.45)',1.4);
+  }
+  function flowers(x,y,z,seed){
+    for(let k=0;k<8;k++){
+      const a=(k*2.399+seed),length=.52+rand(seed*11+k)*.6;
+      const bx=x+Math.cos(a)*.08,ez=x+Math.sin(a)*.27,ey=y+length,ezd=z+Math.cos(a)*.2;
+      line([[bx,y,z],[ez,ey,ezd]],'#60754b',1.3);
+      circleAt(ez,ey,ezd,.09+rand(k+seed)*.06,pick(['#e5a1b2','#b88ab3','#cbb0d8','#f1d07a','#e19b79','#fff0d8'],k+seed));
+    }
+    poly([[x-.30,y-.12,z+.25],[x+.30,y-.12,z+.25],[x+.22,y+.27,z+.25],[x-.22,y+.27,z+.25]],'#a68466');
+  }
+  function drawStall(side,z,seed){
+    const inner=side*4.5,outer=side*(10.8),x0=Math.min(inner,outer),x1=Math.max(inner,outer),front=z+2.0,back=z-4.75;
+    shadow3((x0+x1)/2,z-.6,3.8,4.8,.29);
+    // Real depth and back-to-front occlusion, canopies do not animate separately.
+    poly([[x0,3.70,front],[x1,3.70,front],[x1,4.48,back],[x0,4.48,back]],'#bb6b3a');
+    for(let i=0;i<12;i++){
+      const xa=mix(x0,x1,i/12),xb=mix(x0,x1,(i+1)/12),orange=(i%2===0);
+      const color=orange?'#d8874d':'#fff0d5',color2=orange?'#e6a46e':'#fff8e8';
+      poly([[xa,3.72,front+.02],[xb,3.72,front+.02],[xb,4.51,back],[xa,4.51,back]],color);
+      line([[xa,3.74,front+.025],[xa,4.52,back]],orange?'rgba(154,83,38,.20)':'rgba(184,151,116,.21)',1);
+      poly([[xa,3.72,front+.035],[xb,3.72,front+.035],[xb,3.30,front+.035],[xa,3.30,front+.035]],color2);
+      circleAt((xa+xb)/2,3.31,front+.038,(xb-xa)*.5,color2);
+    }
+    // Slight fabric wave accent at front hem.
+    line([[x0,3.74,front+.03],[x1,3.74,front+.03]],'rgba(255,250,220,.75)',2);
+    for(let x of [x0+.12,x1-.12]){drawWoodPost(x,front-.2,3.74);drawWoodPost(x,back+.15,4.45);}
+    // Wooden trestle and striped table cover.
+    poly([[x0+.22,1.32,front+.18],[x1-.22,1.32,front+.18],[x1-.22,1.32,front-2.15],[x0+.22,1.32,front-2.15]],'#ba855c');
+    poly([[x0+.22,.78,front+.18],[x1-.22,.78,front+.18],[x1-.22,1.32,front+.18],[x0+.22,1.32,front+.18]],'#9d6e4e');
+    line([[x0+.2,.92,front+.2],[x1-.2,.92,front+.2]],'rgba(65,44,30,.42)',1.5);
+    const xa=x0+1.0,xb=x1-1.0;
+    for(let j=0;j<4;j++)fruitCrate(mix(xa,xb,j/3),1.35,front-.65,.8,j,seed*13+j);
+    flowers(inner+side*1.05,1.36,front-.11,seed+3);
+    // Small hung bulbs underneath canopy, with bloom.
+    for(let j=1;j<=3;j++){
+      const x=mix(x0,x1,j/4);
+      line([[x,3.65,front-.5],[x,3.3,front-.5]],'#745a42',1.1);
+      const pt=project(x,3.27,front-.5),rr=Math.max(4,pt.k*.48);
+      const glow=ctx.createRadialGradient(pt.x,pt.y,0,pt.x,pt.y,rr*3.0);
+      glow.addColorStop(0,'rgba(255,242,171,.9)');glow.addColorStop(.25,'rgba(255,220,134,.35)');glow.addColorStop(1,'rgba(255,220,134,0)');ctx.fillStyle=glow;ctx.fillRect(pt.x-rr*3,pt.y-rr*3,rr*6,rr*6);
+      circleAt(x,3.27,front-.5,.09,'#fff0bc');
+    }
+  }
+  function drawPerson(x,z,seed,time,behind=false){
+    const age=rand(seed*11),radius=.24+age*.035;
+    const gait=Math.sin(time*.0011+seed*1.63)*.08;
+    const bob=Math.abs(Math.sin(time*.0011+seed*1.63))*.025;
+    shadow3(x,z,.34,.21,.25);
+    const height=1.65+rand(seed*47)*.28;
+    // Hair/head, subtly shaded shoulders and coats. Vector realism without photo assets.
+    circleAt(x,height-.09+bob,z,.23+radius*.1,'#d4a383');
+    circleAt(x,height+.025+bob,z-.015,.215, pick(['#6e4f3d','#534a45','#8a634a','#554639'],seed));
+    const coat=pick(['#607166','#a66f57','#c4a078','#676d63','#94765a','#64837b','#a7827c'],seed+4);
+    poly([[x-.31,.64,z+.12],[x+.31,.64,z+.12],[x+.32,height-.43+bob,z+.12],[x-.32,height-.43+bob,z+.12]],coat);
+    const leg='#4d5654';
+    line([[x-.12,.64,z+.17],[x-.12-gait*.5,.03,z+.15]],leg,Math.max(2,project(x,1,z).k*.13));
+    line([[x+.12,.64,z+.17],[x+.12+gait*.5,.03,z+.15]],'#534f4a',Math.max(2,project(x,1,z).k*.13));
+    line([[x-.29,height-.42,z+.10],[x-.4,.90,z+.13]],coat,Math.max(2,project(x,1,z).k*.13));
+    line([[x+.29,height-.42,z+.10],[x+.39,.96,z+.13]],coat,Math.max(2,project(x,1,z).k*.13));
+  }
+  function drawPeople(time){const people=[[-1.95,-6,1],[1.62,-9,2],[-.7,-16,3],[2,-22,4],[-2.0,-27,5],[.12,-14,6],[1.2,-32,7],[-1.1,-34,8],[.5,-42,9],[-2.8,-21,10],[2.8,-17,11],[.35,-5,12]];
+    people.sort((a,b)=>a[1]-b[1]);for(let [x,z,seed] of people){const drift=Math.sin(time*.0003+seed)*.12;drawPerson(x+drift,z+Math.sin(time*.00017+seed)*.7,seed,time);}
+  }
+  function drawTrees(time){
+    for(const side of [-1,1]){
+      const x=side*13.2,z=-4.5;
+      line([[x,0,z],[x,12,z]],'#80634a',Math.max(2,project(x,4,z).k*.24));
+      for(let j=0;j<28;j++){
+        const a=rand(j+side*25+31)*Math.PI*2;
+        const r=rand(j+side*59+7)*4.0,yy=9+rand(j+side*21+14)*5.4;
+        const xx=x+Math.cos(a)*r,zz=z+Math.sin(a)*2.2;
+        const col=pick(['#73815a','#89956c','#ac9c68','#7e8c5f','#bec191','#71835b'],j+side*17);
+        circleAt(xx,yy,zz,.95+rand(j*15+side)*.85,col);
+      }
+      for(let i=0;i<8;i++){
+        const j=i+Math.round(time/1600)%8;
+        const x2=x+Math.sin(j*1.7+side)*2.5,z2=z+(rand(i*12+side)*3-1.5);
+        circleAt(x2,10+Math.cos(j)*2.0,z2,.6,pick(['#718156','#9ba36a','#c2aa75'],i+side));
+      }
+    }
+  }
+  function drawLights(time){
+    for(let z of [-9,-25]){
+      const positions=[];for(let i=0;i<=14;i++){let x=mix(-9.6,9.6,i/14),y=7.1-.72*Math.sin(Math.PI*i/14);positions.push([x,y,z]);}
+      line(positions,'rgba(93,70,55,.6)',1.25);
+      for(let i=1;i<14;i++){
+        const [x,y]=positions[i],p=project(x,y-.15,z);if(p.d<0)continue;
+        const radius=Math.max(3.5,p.k*.34),g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,radius*3);
+        g.addColorStop(0,'rgba(255,240,175,.78)');g.addColorStop(.3,'rgba(255,220,136,.25)');g.addColorStop(1,'rgba(255,220,136,0)');ctx.fillStyle=g;ctx.fillRect(p.x-radius*3,p.y-radius*3,radius*6,radius*6);circleAt(x,y-.17,z,.08,'#fff4be');
+      }
+    }
+  }
+  function render(now=performance.now()){
+    if(!W||!H)return;
+    lastRender=now;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,W,H);
+    setCamera(progress);
+    drawSky();
+    drawBuildings();
+    drawGround();
+    const m=motion.matches?0:now;
+    // Distant stalls first. No individual stalls enter or slide when scrolling.
+    for(const z of [-27,-14,-1]){
+      drawStall(-1,z,Math.abs(z)+4);
+      drawStall(1,z,Math.abs(z)+17);
+    }
+    drawPeople(m);
+    drawLights(m);
+    drawTrees(m);
+    // Warm lens bloom, depth haze and foreground vignette give the scene cinematic finish.
+    const haze=ctx.createLinearGradient(0,H*.20,0,H);haze.addColorStop(0,'rgba(255,245,215,.25)');haze.addColorStop(.5,'rgba(255,231,197,.035)');haze.addColorStop(1,'rgba(63,44,35,.22)');ctx.fillStyle=haze;ctx.fillRect(0,0,W,H);
+    const vignette=ctx.createRadialGradient(W*.5,H*.48,H*.16,W*.5,H*.52,Math.max(W,H)*.77);vignette.addColorStop(0,'rgba(29,21,17,0)');vignette.addColorStop(.73,'rgba(30,21,18,.035)');vignette.addColorStop(1,'rgba(31,22,18,.30)');ctx.fillStyle=vignette;ctx.fillRect(0,0,W,H);
+  }
+  function getProgress(){const rect=story.getBoundingClientRect(),travel=Math.max(1,story.offsetHeight-stage.clientHeight);const raw=Math.min(1,Math.max(0,-rect.top/travel));return motion.matches?1:Math.min(1,Math.max(0,(raw-.39)/.61));}
+  let raf=0,lastFrame=0;
+  function frame(now){raf=0; if(!visible)return; const next=getProgress();const moving=Math.abs(progress-next)>.0005;if(Math.abs(progress-next)>.0001)progress=next;
+    const active=next>.48;
+    if(active&&now-lastFrame>(moving?55:145)){render(now);lastFrame=now;}
+    // Lower idle frame rate; continue scheduled frames only while the market scene is showing.
+    if(active&&!motion.matches)raf=requestAnimationFrame(frame);
+  }
+  function start(){if(!raf)raf=requestAnimationFrame(frame);}
+  window.addEventListener('resize',resize,{passive:true});
+  window.addEventListener('scroll',()=>{progress=getProgress();if(motion.matches)render();else start();},{passive:true});
+  motion.addEventListener('change',()=>{progress=getProgress();render();if(!motion.matches)start();});
+  if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)start();else if(raf){cancelAnimationFrame(raf);raf=0;}},{rootMargin:'30% 0px 30% 0px'});io.observe(stage);}
+  resize();progress=getProgress();render();start();
+})();
+</script></body></html>
