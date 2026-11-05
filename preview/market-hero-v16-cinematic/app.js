@@ -24,7 +24,8 @@ if(!draw(tier,hi,n)&&!draw('proxy',low,n)){load('proxy',low);load(tier,hi)}
 load(tier,hi);load('proxy',low);
 if(state.pending.size<4)load(tier,hi+(state.p<.5?1:-1));
 if(state.pending.size<4)load('proxy',low+(state.p<.5?1:-1))}
-function update(){state.raf=0;state.p=reduced.matches?state.p:progress();document.documentElement.style.setProperty('--film-p',state.p.toFixed(4));$('.progress-fill').style.width=(state.p*100).toFixed(1)+'%';if(!reduced.matches)select(roleFrom(state.p));paint()}
+function showStory(p){const css=document.documentElement.style,fade=(n)=>Math.max(0,Math.min(1,n)).toFixed(3);css.setProperty('--poster-shopper',fade((.46-p)/.13));css.setProperty('--poster-trader',fade((p-.30)/.12)*fade((.86-p)/.12));css.setProperty('--poster-organiser',fade((p-.70)/.14));}
+function update(){state.raf=0;state.p=reduced.matches?state.p:progress();document.documentElement.style.setProperty('--film-p',state.p.toFixed(4));showStory(state.p);$('.progress-fill').style.width=(state.p*100).toFixed(1)+'%';if(!reduced.matches)select(roleFrom(state.p));paint()}
 function requestUpdate(){if(!state.raf)state.raf=requestAnimationFrame(update)}
 function jump(i){state.p=targets[i];select(i);if(!reduced.matches){const top=journey.getBoundingClientRect().top+scrollY;scrollTo({top:top+span()*targets[i],behavior:'instant'})}requestUpdate()}
 chapters.forEach((b,i)=>b.addEventListener('click',()=>jump(i)));
