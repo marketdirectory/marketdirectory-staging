@@ -6,7 +6,7 @@ const scenes=[
  {key:'organiser',role:'ORGANISER',number:'03',eyebrow:'BRING PEOPLE TOGETHER',title:'Make your market<br>the destination.',description:'Connect your event with the people who will love it.',detail:'PLAN · PROMOTE · FILL',src:'https://images.unsplash.com/photo-1719934113502-d2968bc999d7?auto=format&fit=crop&w=1200&q=82'}
 ];
 const journey=$('#journey'),stage=$('.stage'),rotor=$('#flip-scene'),front=$('.card-front'),back=$('.card-back'),roleButtons=$$('.role-button'),chapter=$('#chapter-current'),fill=$('#chapter-progress'),rail=$('#rail-fill'),announce=$('.scene-announcement'),reduce=matchMedia('(prefers-reduced-motion: reduce)');
-let current=0,desired=0,running=false,animation=null,lastScroll=scrollY,raf=0,initialised=false,progress=0;
+let current=0,desired=0,running=false,animation=null,transitionTarget=0,manualUntil=0,lastScroll=scrollY,raf=0,progress=0;
 const clamp=n=>Math.min(1,Math.max(0,n));
 function paint(face,index){
  const x=scenes[index];face.dataset.role=x.key;
@@ -33,13 +33,23 @@ function finish(n){
  announce.textContent=scenes[n].role.toLowerCase()+' market experience';
  if(desired!==current)start(desired);
 }
-function start(n){
- desired=n;
- if(n===current&&!running){updateIndicators(n);return;}
- updateIndicators(n);
- if(running)return; // last requested role is delivered after the current flip
+function start(n,manual=false){
+ if(manual)manualUntil=performance.now()+1300;
+ desired=n;updateIndicators(n);
+ if(running){
+  // The latest request takes priority. Continue from the face currently on-screen
+  // instead of queueing another full turn behind an obsolete request.
+  const t=animation&&typeof animation.currentTime==='number'?animation.currentTime/760:0;
+  const visible=t>=.5?transitionTarget:current;
+  if(animation){const old=animation;old.onfinish=null;old.oncancel=null;old.cancel();}
+  running=false;animation=null;current=visible;paint(front,visible);
+  rotor.style.transform='rotateY(0deg)';
+  front.setAttribute('aria-hidden','false');back.setAttribute('aria-hidden','true');
+ }
+ if(n===current){updateIndicators(n);return;}
  if(reduce.matches){finish(n);return;}
- running=true;paint(back,n);back.setAttribute('aria-hidden','false');front.setAttribute('aria-hidden','true');
+ running=true;transitionTarget=n;paint(back,n);
+ back.setAttribute('aria-hidden','false');front.setAttribute('aria-hidden','true');
  const angle=n>current?180:-180;
  rotor.style.transform='rotateY(0deg)';
  animation=rotor.animate([
@@ -58,11 +68,14 @@ function progressNow(){
 function updateScroll(){
  raf=0;progress=progressNow();rail.style.width=(progress*100).toFixed(1)+'%';
  const n=progress<.32?0:progress<.65?1:2;
- if(!reduce.matches && Math.abs(scrollY-lastScroll)>3){desired=n;if(n!==current)start(n);}
+ if(!reduce.matches && performance.now()>manualUntil && Math.abs(scrollY-lastScroll)>3){desired=n;if(n!==current)start(n);}
  lastScroll=scrollY;
 }
 function onScroll(){if(!raf)raf=requestAnimationFrame(updateScroll);}
-roleButtons.forEach((button,i)=>button.addEventListener('click',()=>start(i)));
+roleButtons.forEach((button,i)=>button.addEventListener('click',()=>start(i,true)));
+addEventListener('wheel',()=>{manualUntil=0;},{passive:true});
+addEventListener('touchstart',()=>{manualUntil=0;},{passive:true});
+addEventListener('keydown',event=>{if(['PageUp','PageDown','ArrowUp','ArrowDown','Home','End',' '].includes(event.key))manualUntil=0;});
 $('.near-me').addEventListener('click',()=>{
  if(!navigator.geolocation){alert('Location is unavailable. Search for your town instead.');return;}
  navigator.geolocation.getCurrentPosition(pos=>{
@@ -74,7 +87,7 @@ reduce.addEventListener?.('change',()=>{if(reduce.matches&&animation){animation.
 document.addEventListener('visibilitychange',()=>{if(animation){document.hidden?animation.pause():animation.play();}});
 paint(front,0);paint(back,1);updateIndicators(0);
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll,{passive:true});
-updateScroll();initialised=true;
+updateScroll();
 // Load the next scene only after first paint; browser owns responsive decoding.
 const prefetch=()=>{scenes.slice(1).forEach(s=>{const img=new Image();img.decoding='async';img.src=s.src;});};
 if('requestIdleCallback' in window)requestIdleCallback(prefetch,{timeout:2300});else setTimeout(prefetch,1000);
