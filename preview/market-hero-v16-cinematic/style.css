@@ -24,7 +24,7 @@
 .copy .search-form{box-shadow:0 17px 54px rgba(72,47,25,.15)}
 .cinema{position:absolute;inset:0;z-index:0;overflow:hidden;background:radial-gradient(ellipse at 76% 25%,#f5d2a2,#f7ebe0 60%,#fffbf6)}
 .cinema-backplate,.film,.film-light,.film-scrim{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.cinema-backplate{background:url("../market-hero-v14c-flip/assets/market.webp") center 46%/cover no-repeat;filter:saturate(.83) contrast(1.03);opacity:.78;transform:scale(calc(1.015 + var(--film-p,0) * .12)) translateX(calc(var(--film-p,0) * -3%))}
+.cinema-backplate{background:url("./assets/market-fallback.webp") center 46%/cover no-repeat;filter:saturate(.83) contrast(1.03);opacity:.78;transform:scale(calc(1.015 + var(--film-p,0) * .12)) translateX(calc(var(--film-p,0) * -3%))}
 .film{z-index:2;opacity:0;transition:opacity .17s}
 .film.ready{opacity:1}
 .film-light{z-index:3;background:radial-gradient(ellipse 40% 55% at 77% 18%,rgba(255,223,157,.45),transparent 90%);mix-blend-mode:screen}
@@ -75,3 +75,13 @@
 .journey{height:155svh!important;min-height:0!important}.stage{height:calc(100svh - 70px)!important;min-height:0!important}.film{object-fit:cover;object-position:55% center}
 @media(max-width:720px){.journey{height:154svh!important;min-height:0!important}.stage{height:calc(100svh - 60px)!important;min-height:0!important}.copy .search-wrap{position:relative;top:auto;left:auto;right:auto;margin-top:18px;width:100%}.chapter{top:51%}}
 @media(prefers-reduced-motion:reduce){.journey{height:100svh!important;min-height:0!important}.film{display:none}}
+
+/* V16 scene posters: zero-video-seek instant visual story while atlas images stream. */
+.cinema-backplate{background:radial-gradient(circle at 73% 28%,#dcbf8c,#9f7357 47%,#332e2b)!important;filter:none!important;opacity:1!important;transform:none!important}
+.scene-posters{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.scene-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;will-change:opacity;transition:opacity .10s linear}
+.scene-poster-0{opacity:var(--poster-shopper,1);transform:translate3d(calc(var(--film-p,0) * -6%),0,0) scale(calc(1.025 + var(--film-p,0) * .08))}
+.scene-poster-1{opacity:var(--poster-trader,0);transform:scale(1.055)}
+.scene-poster-2{opacity:var(--poster-organiser,0);transform:scale(1.035)}
+@media(max-width:720px){.scene-poster{object-position:59% center}}
+@media(prefers-reduced-motion:reduce){.scene-poster-0{opacity:1!important;transform:none!important}.scene-poster-1,.scene-poster-2{opacity:0!important}.scene-poster{transition:none!important}}
