@@ -1,0 +1,47 @@
+{
+  "version": "v12",
+  "isolated_design_preview": true,
+  "files": {
+    "index.html": {
+      "bytes": 49412,
+      "sha256": "509d7d24c52b68159ae83e307bfcc9f4af68c044298f0c3873c34a7f317a41b6"
+    },
+    "style.css": {
+      "bytes": 14468,
+      "sha256": "815f243cfc936054e4eb940fb772e8099048b572973c2b42e72e75e3c0a11579"
+    },
+    "main.js": {
+      "bytes": 11264,
+      "sha256": "6e5243d864d2cb95a01b22f8ffcda16dfd1ca157934f9188ff05a472fd7b3a2d"
+    },
+    "magnifier.js": {
+      "bytes": 2672,
+      "sha256": "ad51d45fb2b6272f40eb1e333d2a0f5ba750e1a3faf6d31100de9648fd0b2b8b"
+    },
+    "worlds.js": {
+      "bytes": 6316,
+      "sha256": "27ca61c470b610b5e4ab0fc0f6e9327c80e92a6cb3095a84a90d92a4d6d58848"
+    },
+    "fallback.js": {
+      "bytes": 3022,
+      "sha256": "764f014ca970facb8eb853b9419a7a459ff65981e8a2619795bff1fdf12bf904"
+    },
+    "README.md": {
+      "bytes": 5242,
+      "sha256": "c283dec13863abedcec738d9559abbda66bc7a640492ec6f478a745f13258a64"
+    },
+    "assets/market-photo.webp": {
+      "bytes": 99584,
+      "sha256": "3e6bba4f2e4cfd25e47b246a3ccdeff14e6c486b9cdfcb61d2b856196b01a795"
+    },
+    "assets/lens-poster.webp": {
+      "bytes": 45886,
+      "sha256": "eb914bae9c9ea64e5951d280de2c7106484d189909d00409e0fdf3c0ed87e519"
+    }
+  },
+  "qa": {
+    "static_viewports": 5,
+    "fallback_scroll_stages": 24,
+    "gpu_qa_passed": false
+  }
+}
