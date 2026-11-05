@@ -1,0 +1,92 @@
+/* V17 REAL TIME MARKET WORLD — all visual objects are WebGL geometry.
+   V14/16 HTML typography and search palette are intentionally preserved. */
+:root{--v17-p:0;--v17-search-opacity:.8;--v17-search-y:24px;--v17-search-scale:.96;--v17-title-y:8px}
+.journey{height:163svh!important;min-height:0!important}
+.stage{height:calc(100svh - 70px)!important;min-height:0!important;top:70px!important;background:#f0e3cd!important}
+.stage-inner{width:100%!important;max-width:none!important;padding:0!important}
+.cinema{background:radial-gradient(ellipse at 64% 29%,#ecd2ae 0%,#ead7b8 58%,#f8f4ee 100%)!important}
+.cinema-backplate{background:none!important;filter:none!important;transform:none!important;opacity:0!important}
+.gl-world{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1;opacity:0;transition:opacity .45s ease;pointer-events:none}
+.gl-world.ready{opacity:1}
+.film-scrim{z-index:2!important;background:linear-gradient(90deg,#fffaf4 0%,rgba(255,250,244,.97) 12%,rgba(255,250,244,.89) 27%,rgba(255,250,244,.45) 41%,rgba(255,250,244,.04) 63%,transparent 100%),linear-gradient(0deg,rgba(36,30,23,.38),transparent 34%)!important}
+.film-light,.film-particles{display:none!important}
+.copy{top:48%!important;transform:translateY(-50%)!important;left:max(5.5vw,calc((100vw - 1410px)/2 + 65px))!important;width:min(590px,45%)!important;z-index:14!important}
+.copy .hero-title{font-size:clamp(43px,4.35vw,68px)!important}
+.copy .hero-subtitle{max-width:460px}
+.copy .search-wrap{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;top:auto!important;width:100%!important;max-width:580px!important;margin-top:27px!important;z-index:25!important;opacity:var(--v17-search-opacity)!important;transform:translate3d(0,var(--v17-search-y),0) scale(var(--v17-search-scale))!important;transform-origin:left center!important;pointer-events:auto!important;will-change:transform,opacity!important}
+.copy .search-form{box-shadow:0 20px 65px rgba(61,42,27,.2)!important;background:#fff}
+.title-row{transform:translate3d(0,var(--v17-title-y),0)}
+.chapter{z-index:17;bottom:146px;right:4%;text-shadow:0 3px 20px rgba(20,18,17,.53)}
+.chapter-heading{font-size:clamp(48px,7vw,108px)!important}
+.chapters{z-index:23;bottom:44px;right:4%}
+.chapters button{background:rgba(29,28,25,.46);border-color:rgba(255,255,255,.5)}
+.chapters button:hover{transform:translateY(-3px)}
+.film-state{position:absolute;top:24px;right:3%;z-index:22;font:800 10px Inter,sans-serif;letter-spacing:.10em;color:#fff1dd;background:rgba(43,49,41,.54);border:1px solid rgba(255,255,255,.2);padding:10px 14px;backdrop-filter:blur(12px)}
+.film-state.ready{display:block;opacity:.84}
+.market-orbit-label{position:absolute;right:5%;top:14%;color:#fff5e3;z-index:11;font:800 10px Inter,sans-serif;letter-spacing:.18em;text-shadow:0 3px 15px rgba(0,0,0,.55);display:flex;align-items:center;gap:12px;opacity:.8}
+.orbit-pulse{height:8px;width:8px;border-radius:50%;background:#ec8652;box-shadow:0 0 0 7px rgba(235,134,82,.2);animation:living-pulse 2.2s ease-in-out infinite}
+@keyframes living-pulse{50%{box-shadow:0 0 0 13px rgba(235,134,82,.035)}}
+.render-orbit{display:none}
+.progress-track{position:absolute;bottom:0;left:0;right:0;z-index:26;width:100%;height:3px;border-radius:0}
+.skip{display:none}
+.preview-badge{font-size:10px}
+@media(max-width:1150px){
+ .copy{left:4%!important;width:50%!important}
+ .copy .hero-title{font-size:clamp(39px,5vw,60px)!important}
+ .chapter{max-width:46%}
+ .chapter-heading{font-size:clamp(42px,7vw,80px)!important}
+}
+@media(max-width:720px){
+ .journey{height:152svh!important;min-height:0!important}
+ .stage{height:calc(100svh - 60px)!important;top:60px!important;min-height:0!important}
+ .copy{top:18px!important;transform:none!important;left:16px!important;width:calc(100% - 32px)!important}
+ .copy .hero-title{font-size:clamp(34px,9vw,49px)!important;line-height:1.03}
+ .copy .hero-subtitle{font-size:12px!important;max-width:335px;margin-top:14px}
+ .copy .search-wrap{position:relative!important;top:auto!important;bottom:auto!important;left:0!important;right:0!important;width:100%!important;margin-top:16px!important}
+ .copy .search-form{min-height:0!important;flex-wrap:wrap;padding:8px!important;gap:7px;border-radius:19px}
+ .copy .search-field{flex-basis:100%;min-height:34px}
+ .copy .search-field input{font-size:12px}
+ .copy .near-me,.copy .search-submit{flex:1;min-height:36px;font-size:12px}
+ .copy .quick-links{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;justify-content:flex-start}
+ .film-scrim{background:linear-gradient(180deg,#fffaf5 0%,rgba(255,250,245,.95) 29%,rgba(255,250,245,.23) 49%,rgba(20,24,21,.03) 67%,rgba(20,24,21,.67) 100%)!important}
+ .chapter{top:auto;bottom:125px!important;left:16px!important;right:16px!important;text-align:left;max-width:90%}
+ .chapter-heading{font-size:clamp(42px,11vw,67px)!important}
+ .chapter p{font-size:12px}
+ .chapters{bottom:14px!important;left:12px;right:12px;gap:5px;justify-content:space-between}
+ .chapters button{flex:1;padding:12px 6px;font-size:11px}
+ .market-orbit-label{top:53%;right:14px;font-size:8px}
+ .film-state{top:auto;bottom:82px;right:15px;font-size:8px;max-width:200px}
+}
+@media(max-width:375px){
+ .copy .hero-title{font-size:clamp(30px,8.5vw,37px)!important}
+ .copy .hero-subtitle{margin-top:8px;font-size:11px!important}
+ .copy .search-wrap{margin-top:11px!important}
+ .chapter{bottom:112px!important}
+ .market-orbit-label{display:none}
+ .chapters button{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .journey{height:100svh!important}
+ .gl-world{transition:none}
+ .market-orbit-label{display:none}
+ .copy .search-wrap{opacity:1!important;transform:none!important}
+ .title-row{transform:none!important}
+ .orbit-pulse{animation:none}
+}
+
+
+/* Animations belong to real crisp HTML elements, never baked into the film. */
+.copy .search-wrap{filter:drop-shadow(0 14px 35px rgba(99,53,19,calc(.12 + var(--v17-p) * .14)))}
+.copy .search-form{transition:box-shadow .2s ease,border-color .2s ease}
+.copy .search-form:focus-within{box-shadow:0 23px 70px rgba(232,93,4,.26)!important;outline:2px solid rgba(232,93,4,.25)}
+.copy .search-field svg{transform:translateX(calc((1 - var(--v17-p)) * -4px)) rotate(calc((1 - var(--v17-p)) * -7deg));transition:transform .08s linear}
+.copy .quick-links{opacity:var(--v17-quick-opacity,1);transform:translateY(var(--v17-quick-y,0px));transition:transform .10s linear,opacity .10s linear}
+.copy .title-row{transform:translate3d(0,var(--v17-title-y,0px),0)}
+.copy .underline path{stroke-dasharray:570;stroke-dashoffset:var(--v17-underline-offset,0);transition:stroke-dashoffset .10s linear}
+.chapter.role-enter .chapter-heading{animation:v17RoleIn .55s cubic-bezier(.18,.8,.19,1) both}
+.chapter.role-enter p{animation:v17RoleIn .7s cubic-bezier(.18,.8,.19,1) both}
+@keyframes v17RoleIn{from{opacity:.38;transform:translate3d(25px,13px,0) rotateX(-8deg);filter:blur(3px)}to{opacity:1;transform:translateZ(0);filter:blur(0)}}
+.chapters button.active{transform:translateY(-4px) scale(1.035);box-shadow:0 12px 30px rgba(229,96,19,.24)}
+.gl-world.ready{filter:saturate(1.11) contrast(1.06)}
+@media(prefers-reduced-motion:reduce){.chapter.role-enter .chapter-heading,.chapter.role-enter p{animation:none!important}.copy .search-wrap{transform:none!important}.copy .quick-links{transform:none!important}.copy .underline path{stroke-dashoffset:0!important}}
+
