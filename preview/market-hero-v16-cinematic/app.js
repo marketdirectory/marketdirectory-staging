@@ -3,7 +3,8 @@ const $=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)],cl
 const journey=$('.journey'),stage=$('.stage'),canvas=$('#film'),ctx=canvas.getContext('2d',{alpha:false}),status=$('#film-state'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
 const chapters=all('[data-chapter]'),heading=$('#chapter-heading'),subtitle=$('#chapter-subheading'),counter=$('#chapter-number');
 const roles=[['SHOPPER','Find your next favourite place.'],['TRADER','Your next pitch starts here.'],['ORGANISER','Make your market the destination.']];
-const targets=[.02,.50,.98],state={p:0,role:0,raf:0,manifest:null,cache:new Map(),pending:new Set(),errors:0,frame:0,drawn:-1,shown:false,paused:false,tier:'desktop',drawnTier:null,requests:0};
+const targets=[.02,.50,.98],state={p:0,role:0,raf:0,manifest:null,cache:new Map(),pending:new Set(),errors:0,frame:0,drawn:-1,shown:false,paused:false,tier:'desktop',drawnTier:null,requests:0,forceMotion:false};
+function motionReduced(){return reduced.matches&&!state.forceMotion}
 function span(){return Math.max(1,journey.offsetHeight-stage.offsetHeight)}
 function progress(){return clamp(-journey.getBoundingClientRect().top/span())}
 function roleFrom(p){return p<.35?0:p<.78?1:2}
@@ -18,23 +19,24 @@ function draw(t,idx,n){const m=state.manifest,im=state.cache.get(key(t,idx));if(
 const sc=Math.max(canvas.width/w,canvas.height/h),dw=w*sc,dh=h*sc;
 ctx.drawImage(im,(nLocal%cols)*w,Math.floor(nLocal/cols)*h,w,h,(canvas.width-dw)/2,(canvas.height-dh)/2,dw,dh);
 state.drawn=n;state.drawnTier=t;canvas.classList.add('ready');state.shown=true;status.classList.add('ready');return true}
-function paint(){if(!state.manifest||reduced.matches||state.paused||!ctx)return;const m=state.manifest;resize();const n=Math.min(m.count-1,Math.max(0,Math.round(state.p*(m.count-1))));state.frame=n;
+function paint(){if(!state.manifest||motionReduced()||state.paused||!ctx)return;const m=state.manifest;resize();const n=Math.min(m.count-1,Math.max(0,Math.round(state.p*(m.count-1))));state.frame=n;
 const tier=innerWidth<=720?'mobile':'desktop';state.tier=tier;const hi=at(tier,n),low=at('proxy',n);
 if(!draw(tier,hi,n)&&!draw('proxy',low,n)){canvas.classList.remove('ready');state.drawn=-1;state.drawnTier=null;load('proxy',low);load(tier,hi)}
 load(tier,hi);load('proxy',low);
 if(state.pending.size<4)load(tier,hi+(state.p<.5?1:-1));
 if(state.pending.size<4)load('proxy',low+(state.p<.5?1:-1))}
 function showStory(p){const css=document.documentElement.style,fade=(n)=>Math.max(0,Math.min(1,n)).toFixed(3);css.setProperty('--poster-shopper',fade((.46-p)/.13));css.setProperty('--poster-trader',fade((p-.30)/.12)*fade((.86-p)/.12));css.setProperty('--poster-organiser',fade((p-.70)/.14));}
-function update(){state.raf=0;state.p=reduced.matches?state.p:progress();document.documentElement.style.setProperty('--film-p',state.p.toFixed(4));showStory(state.p);$('.progress-fill').style.width=(state.p*100).toFixed(1)+'%';if(!reduced.matches)select(roleFrom(state.p));paint()}
+function update(){state.raf=0;state.p=motionReduced()?state.p:progress();document.documentElement.style.setProperty('--film-p',state.p.toFixed(4));showStory(state.p);$('.progress-fill').style.width=(state.p*100).toFixed(1)+'%';if(!motionReduced())select(roleFrom(state.p));paint()}
 function requestUpdate(){if(!state.raf)state.raf=requestAnimationFrame(update)}
-function jump(i){state.p=targets[i];select(i);if(!reduced.matches){const top=journey.getBoundingClientRect().top+scrollY;scrollTo({top:top+span()*targets[i],behavior:'instant'})}requestUpdate()}
+function jump(i){state.p=targets[i];select(i);if(!motionReduced()){const top=journey.getBoundingClientRect().top+scrollY;scrollTo({top:top+span()*targets[i],behavior:'instant'})}requestUpdate()}
 chapters.forEach((b,i)=>b.addEventListener('click',()=>jump(i)));
 $('.skip').addEventListener('click',()=>$('.search-field input').focus({preventScroll:true}));
 $('.near-me').addEventListener('click',()=>{if(!navigator.geolocation){alert('Location unavailable. Search a town instead.');return}navigator.geolocation.getCurrentPosition(pos=>{const u=new URL('https://marketdirectory.co.uk/directory');u.searchParams.set('lat',pos.coords.latitude.toFixed(5));u.searchParams.set('lng',pos.coords.longitude.toFixed(5));location.assign(u.href)},()=>alert('Location was not granted. Search for a town or postcode instead.'),{timeout:9000,enableHighAccuracy:false})});
 const search=$('.search-wrap');search.classList.add('ready');search.style.opacity='1';search.style.transform='none';search.inert=false;
-addEventListener('scroll',requestUpdate,{passive:true});addEventListener('resize',()=>{resize();requestUpdate()},{passive:true});reduced.addEventListener?.('change',()=>{state.p=0;select(0);requestUpdate()});
+addEventListener('scroll',requestUpdate,{passive:true});addEventListener('resize',()=>{resize();requestUpdate()},{passive:true});const motionButton=$('#motion-override');if(motionButton){motionButton.hidden=!reduced.matches;if(reduced.matches)status.textContent='MOTION PAUSED BY DEVICE SETTING';motionButton.addEventListener('click',()=>{state.forceMotion=true;document.documentElement.classList.add('motion-opt-in');motionButton.hidden=true;state.p=0;select(0);status.textContent='EXPLORE THREE MARKET WORLDS';const top=journey.getBoundingClientRect().top+scrollY;scrollTo({top,behavior:'instant'});start();requestUpdate()})}
+reduced.addEventListener?.('change',()=>{if(motionButton&&!state.forceMotion){motionButton.hidden=!reduced.matches;status.textContent=reduced.matches?'MOTION PAUSED BY DEVICE SETTING':'EXPLORE THREE MARKET WORLDS'}state.p=0;select(0);requestUpdate();if(!motionReduced())start()});
 document.addEventListener('visibilitychange',()=>{state.paused=document.hidden;if(!state.paused)requestUpdate()});
-window.__MDPreview={version:'v16-atlas',get:()=>({role:roles[state.role][0].toLowerCase(),progress:state.p,forms:all('form').length,scrollSpan:span(),frames:state.manifest?.count||0,frame:state.frame,renderedFrame:state.drawn,filmReady:state.shown,mediaErrors:state.errors,searchVisible:getComputedStyle(search).opacity,quality:state.drawnTier,atlasesLoaded:state.cache.size,pending:state.pending.size,requests:state.requests}),select:jump};
-async function start(){if(reduced.matches)return;try{const resp=await fetch('./film-atlas.json');if(!resp.ok)throw Error('Atlas manifest missing');const m=await resp.json();if(!m.ready||m.count!==94||!m.urls?.proxy||!m.urls?.desktop||!m.urls?.mobile)throw Error('Invalid atlas');state.manifest=m;resize();load('proxy',0);load('proxy',1);load('proxy',2);load(innerWidth<=720?'mobile':'desktop',0);update()}catch(e){status.textContent='FILM ASSET UNAVAILABLE · PHOTO FALLBACK';state.errors++}}
+window.__MDPreview={version:'v16-atlas',get:()=>({role:roles[state.role][0].toLowerCase(),progress:state.p,forms:all('form').length,scrollSpan:span(),frames:state.manifest?.count||0,frame:state.frame,renderedFrame:state.drawn,filmReady:state.shown,reducedMotion:motionReduced(),motionOverride:state.forceMotion,mediaErrors:state.errors,searchVisible:getComputedStyle(search).opacity,quality:state.drawnTier,atlasesLoaded:state.cache.size,pending:state.pending.size,requests:state.requests}),select:jump};
+async function start(){if(motionReduced())return;try{const resp=await fetch('./film-atlas.json');if(!resp.ok)throw Error('Atlas manifest missing');const m=await resp.json();if(!m.ready||m.count!==94||!m.urls?.proxy||!m.urls?.desktop||!m.urls?.mobile)throw Error('Invalid atlas');state.manifest=m;resize();load('proxy',0);load('proxy',1);load('proxy',2);load(innerWidth<=720?'mobile':'desktop',0);update()}catch(e){status.textContent='FILM ASSET UNAVAILABLE · PHOTO FALLBACK';state.errors++}}
 resize();update();start();
 })();
