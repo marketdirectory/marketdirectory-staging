@@ -20,7 +20,7 @@ ctx.drawImage(im,(nLocal%cols)*w,Math.floor(nLocal/cols)*h,w,h,(canvas.width-dw)
 state.drawn=n;state.drawnTier=t;canvas.classList.add('ready');state.shown=true;status.classList.add('ready');return true}
 function paint(){if(!state.manifest||reduced.matches||state.paused||!ctx)return;const m=state.manifest;resize();const n=Math.min(m.count-1,Math.max(0,Math.round(state.p*(m.count-1))));state.frame=n;
 const tier=innerWidth<=720?'mobile':'desktop';state.tier=tier;const hi=at(tier,n),low=at('proxy',n);
-if(!draw(tier,hi,n)&&!draw('proxy',low,n)){load('proxy',low);load(tier,hi)}
+if(!draw(tier,hi,n)&&!draw('proxy',low,n)){canvas.classList.remove('ready');state.drawn=-1;state.drawnTier=null;load('proxy',low);load(tier,hi)}
 load(tier,hi);load('proxy',low);
 if(state.pending.size<4)load(tier,hi+(state.p<.5?1:-1));
 if(state.pending.size<4)load('proxy',low+(state.p<.5?1:-1))}
