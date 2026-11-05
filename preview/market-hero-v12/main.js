@@ -182,8 +182,8 @@ function initObserver(){
 }
 function boot(){
  markReady();
- animateIntro();initScroll();initCategories();initObserver();
  $('search-zone').inert=true;
+ animateIntro();initScroll();initCategories();initObserver();
  if(reduced.matches){document.body.classList.add('three-failed')}else void initThree();
  window.__v12State=()=>({progress,activeRole,role:roleNames[activeRole],ready:rendererAvailable,entryDone,searchForms:document.querySelectorAll('form').length});
 }
