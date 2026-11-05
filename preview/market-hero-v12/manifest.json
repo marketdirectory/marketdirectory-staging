@@ -4,7 +4,7 @@
   "files": {
     "index.html": {
       "bytes": 49412,
-      "sha256": "4da05defc00a665968689c328d77affc2b3bc6082495b0e82e39069e13e2f5d3"
+      "sha256": "509d7d24c52b68159ae83e307bfcc9f4af68c044298f0c3873c34a7f317a41b6"
     },
     "style.css": {
       "bytes": 14468,
@@ -12,7 +12,7 @@
     },
     "main.js": {
       "bytes": 11264,
-      "sha256": "60dc1f95f561a7a56afe8f33a6036acff0af1d6da15eff1bc3053512bcf779e3"
+      "sha256": "6e5243d864d2cb95a01b22f8ffcda16dfd1ca157934f9188ff05a472fd7b3a2d"
     },
     "magnifier.js": {
       "bytes": 2672,
