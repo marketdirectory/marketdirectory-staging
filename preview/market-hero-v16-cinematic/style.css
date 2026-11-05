@@ -85,3 +85,9 @@
 .scene-poster-2{opacity:var(--poster-organiser,0);transform:scale(1.035)}
 @media(max-width:720px){.scene-poster{object-position:59% center}}
 @media(prefers-reduced-motion:reduce){.scene-poster-0{opacity:1!important;transform:none!important}.scene-poster-1,.scene-poster-2{opacity:0!important}.scene-poster{transition:none!important}}
+
+/* Bring the paid cinematic imagery forward instead of washing it away. */
+.film-scrim{background:linear-gradient(90deg,#fffbf6 0%,rgba(255,251,246,.96) 17%,rgba(255,251,246,.70) 34%,rgba(255,251,246,.09) 55%,rgba(18,20,19,.15) 100%),linear-gradient(0deg,rgba(16,18,17,.24),transparent 35%)}
+.film-light{opacity:.35}
+.scene-poster,.film{filter:saturate(1.09) contrast(1.035)}
+@media(max-width:720px){.film-scrim{background:linear-gradient(180deg,#fffbf6 0%,rgba(255,251,246,.94) 19%,rgba(255,251,246,.06) 43%,rgba(18,24,23,.17) 73%,rgba(18,24,23,.58) 100%)}}
