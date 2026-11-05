@@ -91,3 +91,14 @@
 .film-light{opacity:.35}
 .scene-poster,.film{filter:saturate(1.09) contrast(1.035)}
 @media(max-width:720px){.film-scrim{background:linear-gradient(180deg,#fffbf6 0%,rgba(255,251,246,.94) 19%,rgba(255,251,246,.06) 43%,rgba(18,24,23,.17) 73%,rgba(18,24,23,.58) 100%)}}
+
+/* Respect system reduced motion, but offer explicit opt-in for cinematic previews. */
+.motion-override{display:none;position:absolute;z-index:45;right:4%;top:69px;background:#e65a00;color:#fff;border:1px solid #fff2e7;border-radius:999px;font-size:12px;font-weight:850;letter-spacing:.02em;padding:12px 20px;box-shadow:0 8px 30px rgba(35,19,10,.30);cursor:pointer}
+.motion-override[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.motion-override:not([hidden]){display:block}}
+html.motion-opt-in .film{display:block!important}
+html.motion-opt-in .journey{height:155svh!important;min-height:0!important}
+html.motion-opt-in .scene-poster-0{opacity:var(--poster-shopper,1)!important;transform:translate3d(calc(var(--film-p,0) * -6%),0,0) scale(calc(1.025 + var(--film-p,0) * .08))!important}
+html.motion-opt-in .scene-poster-1{opacity:var(--poster-trader,0)!important}
+html.motion-opt-in .scene-poster-2{opacity:var(--poster-organiser,0)!important}
+@media(max-width:720px){.motion-override{right:14px;top:auto;bottom:105px;font-size:11px;padding:10px 14px}html.motion-opt-in .journey{height:154svh!important}}
