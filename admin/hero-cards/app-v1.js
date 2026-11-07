@@ -1,8 +1,8 @@
 "use strict";
 const DB="https://ldwhbhsispjzmstcsgas.supabase.co", KEY="sb_publishable_oemv1UCnnNgVKORSMhRuKQ_NSXXFo63", STORE="market-images", PREVIEW="https://marketdirectory-v14c-glass-review.marketdirectory-review.workers.dev", PREFIX="hero-cards/v14c/", roles=[
 {role:"shopper",title:"Shopper",note:"Browsing a bustling British market",original:"owner-shopper.webp"},
-{role:"trader",title:"Trader",note:"A male trader selling fresh baked goods",original:"owner-trader.png"},
-{role:"organiser",title:"Market organiser",note:"Organising and supporting a thriving market",original:"owner-organiser.png"}
+{role:"trader",title:"Trader",note:"A male trader selling fresh baked goods",original:"owner-trader-optimized.webp"},
+{role:"organiser",title:"Market organiser",note:"Organising and supporting a thriving market",original:"owner-organiser-optimized.webp"}
 ];
 const client=window.supabase?.createClient(DB,KEY,{auth:{storageKey:"marketdirectory-auth-token",persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
 const $=s=>document.querySelector(s);
