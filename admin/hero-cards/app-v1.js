@@ -1,8 +1,8 @@
 "use strict";
 const DB="https://ldwhbhsispjzmstcsgas.supabase.co", KEY="sb_publishable_oemv1UCnnNgVKORSMhRuKQ_NSXXFo63", STORE="market-images", PREVIEW="https://marketdirectory-v14c-glass-review.marketdirectory-review.workers.dev", PREFIX="hero-cards/v14c/", roles=[
-{role:"shopper",title:"Shopper",note:"Browsing a bustling British market",original:"shopper.webp"},
-{role:"trader",title:"Trader",note:"A male trader selling fresh baked goods",original:"trader-baker-hires.png"},
-{role:"organiser",title:"Market organiser",note:"Organising and supporting a thriving market",original:"organiser.webp"}
+{role:"shopper",title:"Shopper",note:"Browsing a bustling British market",original:"owner-shopper.webp"},
+{role:"trader",title:"Trader",note:"A male trader selling fresh baked goods",original:"owner-trader.png"},
+{role:"organiser",title:"Market organiser",note:"Organising and supporting a thriving market",original:"owner-organiser.png"}
 ];
 const client=window.supabase?.createClient(DB,KEY,{auth:{storageKey:"marketdirectory-auth-token",persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
 const $=s=>document.querySelector(s);
@@ -52,7 +52,7 @@ function refresh(role){
  const selected=overrides[role],original=roles.find(x=>x.role===role).original;
  node.querySelector("img.visual").src=previews[role]||(selected?.path?url(selected.path):PREVIEW+"/assets/"+original);
  node.querySelector("select").value=modes[role]||selected?.mode||"photo";
- node.querySelector(".status").textContent=drafts[role]?"New image selected — not saved":selected?.path?"Custom image is active":"Original image in use";
+ node.querySelector(".status").textContent=drafts[role]?"New image selected — not saved":selected?.path?"Custom image is active":"Current preview image (owner-approved)";
  node.querySelector(".save").disabled=editing||(!drafts[role]&&!selected?.path);
  node.querySelector(".foot").disabled=editing||!selected?.path;
  const tiles=node.querySelector(".tiles");tiles.replaceChildren();
@@ -117,7 +117,7 @@ async function save(role,history){
   }
   await commit(role,target);release(role);await loadHistory(role);
   message("Saved "+role+" image! Refresh the V14C preview to see it.","ok");
- }catch(e){message("Could not save "+role+": "+(e.message||e),"error");}
+ }catch(e){message(/row-level security/i.test(String(e?.message||e)) ? "Upload blocked by staging image-storage permissions. Your current pictures remain unchanged." : "Could not save "+role+": "+(e.message||e),"error");}
  finally{setEditing(false);paint();}
 }
 async function restore(role){
